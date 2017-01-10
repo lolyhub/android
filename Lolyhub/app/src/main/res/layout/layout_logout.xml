@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="@dimen/activity_horizontal_margin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/edit_firstName"
+            style="@style/CustomSignUpEdittext"
+            android:hint="@string/firstname"/>
+
+        <EditText
+            android:id="@+id/edit_lastName"
+            android:layout_marginTop="@dimen/marginTen"
+            style="@style/CustomSignUpEdittext"
+            android:hint="@string/lastname"/>
+
+        <EditText
+            android:id="@+id/edit_email"
+            android:layout_marginTop="@dimen/marginTen"
+            style="@style/CustomSignUpEdittext"
+            android:hint="@string/enterEmail"/>
+
+        <EditText
+            android:id="@+id/edit_reEnterEmail"
+            android:layout_marginTop="@dimen/marginTen"
+            style="@style/CustomSignUpEdittext"
+            android:hint="@string/reenterEmail"/>
+
+    <EditText
+        android:id="@+id/edit_newUser"
+        style="@style/CustomSignUpEdittext"
+        android:layout_marginTop="@dimen/marginTen"
+        android:hint="@string/newUsername"/>
+        <EditText
+            android:id="@+id/edit_password"
+            android:layout_marginTop="@dimen/marginTen"
+            style="@style/CustomSignUpEdittext"
+            android:hint="@string/password"/>
+        <EditText
+            android:id="@+id/edit_reEnterPassword"
+            android:layout_marginTop="@dimen/marginTen"
+            style="@style/CustomSignUpEdittext"
+            android:hint="@string/reenterPassword"/>
+
+        <TextView
+            android:id="@+id/edit_birthDate"
+            android:layout_marginTop="@dimen/marginTen"
+            style="@style/CustomSignUpEdittext"
+            android:hint="@string/BirthDate"/>
+        <EditText
+            android:id="@+id/edit_gender"
+            android:layout_marginTop="@dimen/marginTen"
+            style="@style/CustomSignUpEdittext"
+            android:hint="@string/Gender"/>
+        <EditText
+            android:id="@+id/edit_country"
+            android:layout_marginTop="@dimen/marginTen"
+            style="@style/CustomSignUpEdittext"
+            android:hint="@string/selectCountry"/>
+
+        <EditText
+            android:id="@+id/edit_city"
+            android:layout_marginTop="@dimen/marginTen"
+            style="@style/CustomSignUpEdittext"
+            android:hint="@string/selectCity"/>
+
+        <EditText
+            style="@style/CustomSignUpEdittext"
+            android:layout_marginTop="@dimen/marginTen"
+            />
+
+        <EditText
+            android:id="@+id/edit_phoneNumber"
+            android:inputType="number"
+            android:layout_marginTop="@dimen/marginTen"
+            style="@style/CustomSignUpEdittext"
+            android:hint="@string/number"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/checkBox_termsCondtions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txt_lolyTerms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lolyterms"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/checkBox_subscribe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txt_subscribe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subscribe"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_Register_signUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="@dimen/marginTwenty"
+        android:text="@string/signUp"
+        android:background="@drawable/rounded_button"/>
+    </LinearLayout>
+</ScrollView>

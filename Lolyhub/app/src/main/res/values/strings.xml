@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">LolyHubApp</string>
+    <string name="action_settings">Settings</string>
+
+    <!--placeholders for recyclerview-->
+    <string name="name">name</string>
+    <string name="alpha2">alpha2 code</string>
+    <string name="alpha3">alpha3 code</string>
+
+    <!--placeholder for login logout screens-->
+    <string name="signIn">Sign In</string>
+    <string name="signUp">Sign Up</string>
+    <string name="register">Register</string>
+    <string name="login">Login </string>
+    <string name="usernameMobile">Enter your user name or Mobile</string>
+    <string name="password">Enter your password</string>
+    <string name="remember">Remember me</string>
+    <string name="forgotpassword">Forgot your password?</string>
+    <string name="firstname">First Name</string>
+    <string name="lastname">Last Name</string>
+    <string name="enterEmail">Enter Your Email</string>
+    <string name="reenterEmail">Re-Enter Your Email</string>
+    <string name="newUsername">Enter New Username</string>
+    <string name="reenterPassword">Re-Enter Your Password</string>
+    <string name="number">+966</string>
+    <string name="BirthDate">Birth Date</string>
+    <string name="Gender">Gender</string>
+    <string name="selectCity">Select Your City</string>
+    <string name="selectCountry">Select Country</string>
+    <string name="lolyterms">I Accept All Lolyhub Terms and Conditions</string>
+    <string name="subscribe">Subscribe for Lolyhub Newsletter</string>
+
+
+
+
+
+</resources>
