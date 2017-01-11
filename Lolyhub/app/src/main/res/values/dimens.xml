@@ -5,6 +5,7 @@
     <dimen name="paddingTen">10dp</dimen>
     <dimen name="marginTwenty">20dp</dimen>
     <dimen name="marginTen">10dp</dimen>
+    <dimen name="facebookImgSize">60dp</dimen>
     <!--text widths-->
     <dimen name="txt_loginLogout_Width">40dp</dimen>
     <dimen name="txt_fontSize">14sp</dimen>
