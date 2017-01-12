@@ -1,11 +1,14 @@
 package com.neosoft.lolyhub.lolyhubapp.view.activities;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.test.suitebuilder.TestMethod;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -17,6 +20,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.neosoft.lolyhub.lolyhubapp.R;
+import com.neosoft.lolyhub.lolyhubapp.utilities.ValidationUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -77,6 +81,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mLayout_SignIN.setVisibility(View.VISIBLE);
         mLayout_SignUP=findViewById(R.id.layout_signUP);
         mTxt_BirthDate= (TextView) findViewById(R.id.edit_birthDate);
+        //sign in values
+        mEdit_UserMobuile= (EditText) findViewById(R.id.edit_userMobile);
+        mEdit_UserPassword= (EditText) findViewById(R.id.edit_userPassword);
+        mRememberMe= (CheckBox) findViewById(R.id.chk_remember);
+        mTxt_ForgotPassword= (TextView) findViewById(R.id.txt_forgotPassword);
+        mBtn_Login= (Button) findViewById(R.id.btn_login);
+
         //sign up values
         mEdit_FirstName= (EditText) findViewById(R.id.edit_firstName);
         mEdit_LastName= (EditText) findViewById(R.id.edit_lastName);
@@ -100,10 +111,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mLinearLayout_SignIn.setOnClickListener(this);
         mLinearLayout_SignUp.setOnClickListener(this);
         mTxt_BirthDate.setOnClickListener(this);
+        mBtn_Login.setOnClickListener(this);
         spin_adapter = new ArrayAdapter<String>(LoginActivity.this, android.R.layout.simple_spinner_item, gender);
 
 // setting adapters to spinners
-
         mSpinner_Gender.setAdapter(spin_adapter);
     }
     private void setDateTimeField() {
@@ -138,7 +149,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 setDateTimeField();
                 mDatePicker.show();
                 break;
+            case R.id.btn_login:
+                ValidationUtils validationUtils=new ValidationUtils();
+                validationUtils.validateSignIn(LoginActivity.this,mEdit_UserMobuile,mEdit_UserPassword);
+                break;
         }
     }
+
+
 
 }

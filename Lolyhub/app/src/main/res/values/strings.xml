@@ -29,6 +29,11 @@
     <string name="selectCountry">Select Country</string>
     <string name="lolyterms">I Accept All Lolyhub Terms and Conditions</string>
     <string name="subscribe">Subscribe for Lolyhub Newsletter</string>
+    <string name="promtMsg">Gender</string>
+    <!--validatio massages-->
+    <string name="validateMbileNumber">Please Enter Valid Mobile Number</string>
+    <string name="validatePassword">Please Enter Valid Password</string>
+    <string name="notEmpty">Fields can not be empty</string>
 
 
 
