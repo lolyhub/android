@@ -1,11 +1,19 @@
 <resources>
     <string name="app_name">LolyHubApp</string>
     <string name="action_settings">Settings</string>
+ <string name="menu_search">Search</string>
+    <!--navigation drawer placeholders-->
+    <string name="home">Home</string>
+    <string name="addPrgrams">Add Programs</string>
+    <string name="orderHistory">Order History</string>
+    <string name="Account_Setting">Account Settings</string>
 
     <!--placeholders for recyclerview-->
     <string name="name">name</string>
     <string name="alpha2">alpha2 code</string>
     <string name="alpha3">alpha3 code</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <!--placeholder for login logout screens-->
     <string name="signIn">Sign In</string>
