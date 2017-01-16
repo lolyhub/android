@@ -84,13 +84,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         mTabLayout.addTab(mTabLayout.newTab().setText("Cart "));
         mTabLayout.addTab(mTabLayout.newTab().setText("Wallet"));
         mTabLayout.addTab(mTabLayout.newTab().setText("Search"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("Wishlist"));
         mTabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
             }
-
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
 
@@ -142,7 +142,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         return super.onOptionsItemSelected(item);
     }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {

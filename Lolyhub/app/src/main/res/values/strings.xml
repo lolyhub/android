@@ -12,8 +12,8 @@
     <string name="name">name</string>
     <string name="alpha2">alpha2 code</string>
     <string name="alpha3">alpha3 code</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+   <string name="navigation_drawer_open">Open Navigation Drawer</string>
 
     <!--placeholder for login logout screens-->
     <string name="signIn">Sign In</string>
