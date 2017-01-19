@@ -6,7 +6,8 @@
     <dimen name="login_layaout_height">80dp</dimen>
     <dimen name="textSize">20sp</dimen>
     <dimen name="edit_Text_padding">20dp</dimen>
-    <dimen name="facebookImgSize">120dp</dimen>
-    <dimen name="marginTwenty">40dp</dimen>
-    <dimen name="marginTen">30dp</dimen>
+    <dimen name="facebookImgSize">100dp</dimen>
+    <dimen name="marginTwenty">30dp</dimen>
+    <dimen name="marginTen">20dp</dimen>
+
 </resources>

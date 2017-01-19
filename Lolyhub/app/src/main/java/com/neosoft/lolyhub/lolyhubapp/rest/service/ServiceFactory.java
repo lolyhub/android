@@ -20,7 +20,7 @@ public class ServiceFactory {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BaseURl)
                 .addConverterFactory(GsonConverterFactory.create())
-                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
         T service = retrofit.create(clazz);
 

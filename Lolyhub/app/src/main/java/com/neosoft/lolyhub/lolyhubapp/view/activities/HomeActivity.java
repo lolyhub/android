@@ -48,10 +48,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         myOnClickListener=new MyOnClickListener(this);
-       // FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+                                                                                                                              // FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         //Initializing the tablayout
         //Initializing the tablayout
-           setUpTabLayout();
+        setUpTabLayout();
         //Initializing viewPager
         viewPager = (ViewPager) findViewById(R.id.pager);
         //Creating our pager adapter
@@ -59,7 +59,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         //Adding adapter to pager
         viewPager.setAdapter(adapter);
         //Adding onTabSelectedListener to swipe views
-            //setup navigation drawer
+        //setup navigation drawer
         setUpNavigationView(toolbar);
 
        // initViews();
@@ -179,7 +179,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 break;
         }
     }
-
     @Override
     public void onError( String msg) {
 
