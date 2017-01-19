@@ -5,9 +5,7 @@ import android.text.TextUtils;
 import android.util.Patterns;
 import android.widget.EditText;
 
-import com.neosoft.lolyhub.lolyhubapp.R;
-
-import java.util.regex.Pattern;
+import com.lolyhub.lolyhubapp.R;
 
 
 /**

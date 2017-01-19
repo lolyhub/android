@@ -19,7 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.neosoft.lolyhub.lolyhubapp.R;
+import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.utilities.ValidationUtils;
 
 import java.text.SimpleDateFormat;

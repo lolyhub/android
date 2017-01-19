@@ -8,7 +8,8 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.neosoft.lolyhub.lolyhubapp.R;
+import com.lolyhub.lolyhubapp.R;
+
 
 /**
  * Created by neosoft on 16/1/17.

@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.neosoft.lolyhub.lolyhubapp.R;
+import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.controllers.interfaces.ClickListener;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.Result;
 import com.neosoft.lolyhub.lolyhubapp.view.activities.HomeActivity;

@@ -18,7 +18,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-import com.neosoft.lolyhub.lolyhubapp.R;
+
+import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.constants.CommonConstant;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CardAdapter;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.Pager;
@@ -42,7 +43,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
