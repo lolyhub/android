@@ -16,13 +16,18 @@
    <string name="navigation_drawer_open">Open Navigation Drawer</string>
 
     <!--placeholder for login logout screens-->
+
     <string name="signIn">Sign In</string>
     <string name="signUp">Sign Up</string>
     <string name="register">Register</string>
-    <string name="login">Login </string>
+     <string name="login">Login</string>
+    <string name="or">Or</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
     <string name="usernameMobile">Enter your user name or Mobile</string>
     <string name="password">Enter your password</string>
     <string name="remember">Remember me</string>
+    <string name="pressHere">Press Here</string>
     <string name="forgotpassword">Forgot your password?</string>
     <string name="firstname">First Name</string>
     <string name="lastname">Last Name</string>
@@ -38,12 +43,17 @@
     <string name="lolyterms">I Accept All Lolyhub Terms and Conditions</string>
     <string name="subscribe">Subscribe for Lolyhub Newsletter</string>
     <string name="promtMsg">Gender</string>
+    <string name="agreeMsg">By sign up,you agree to </string>
+    <string name="termsMsg">Terms of Service</string>
+    <string name="and">and</string>
+    <string name="privacyMsg">Privacy Policy</string>
     <!--validatio massages-->
     <string name="validateMbileNumber">Please Enter Valid Mobile Number</string>
     <string name="validatePassword">Please Enter Valid Password</string>
     <string name="notEmpty">Fields can not be empty</string>
 
-
+ <!--launching activity-->
+    <string name="marketPlace">A New Digital Marketplace</string>
 
 
 

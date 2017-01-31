@@ -185,7 +185,7 @@
                 android:layout_width="@dimen/facebookImgSize"
                 android:layout_marginRight="@dimen/facebookImgSize"
                 android:layout_height="@dimen/facebookImgSize"
-                android:src="@drawable/facebook"/>
+                android:src="@drawable/facbook"/>
             <ImageView
                 android:layout_width="@dimen/facebookImgSize"
                 android:layout_height="@dimen/facebookImgSize"
