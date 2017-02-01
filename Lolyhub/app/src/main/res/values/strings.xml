@@ -44,9 +44,9 @@
     <string name="subscribe">Subscribe for Lolyhub Newsletter</string>
     <string name="promtMsg">Gender</string>
     <string name="agreeMsg">By sign up,you agree to </string>
-    <string name="termsMsg">Terms of Service</string>
+    <string name="termsMsg"><u>Terms of Service</u></string>
     <string name="and">and</string>
-    <string name="privacyMsg">Privacy Policy</string>
+    <string name="privacyMsg"><u>Privacy Policy</u></string>
     <!--validatio massages-->
     <string name="validateMbileNumber">Please Enter Valid Mobile Number</string>
     <string name="validatePassword">Please Enter Valid Password</string>

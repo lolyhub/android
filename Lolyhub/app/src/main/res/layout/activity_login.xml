@@ -20,7 +20,8 @@
         android:id="@+id/edit_userPassword"
         android:layout_marginTop="@dimen/marginTen"
         style="@style/CustomSignUpEdittext"
-        android:hint="@string/password"/>
+        android:hint="@string/password">
+        </EditText>
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_marginTop="@dimen/marginTen"
@@ -29,12 +30,14 @@
                 android:id="@+id/txt_forgotPass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/blueColor"
                 android:textSize="@dimen/textSize"
                 android:text="@string/forgotpassword"/>
         <TextView
             android:id="@+id/txt_pressHere"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/blueColor"
             android:textSize="@dimen/textSize"
             android:layout_marginLeft="@dimen/marginTen"
             android:layout_toRightOf="@id/txt_forgotPass"

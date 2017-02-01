@@ -99,21 +99,19 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:layout_marginTop="@dimen/marginTen"
                 android:weightSum="2"
                 android:layout_weight="1">
                 <TextView
                     android:id="@+id/male_id"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/CustomSignUpEdittext"
                     android:padding="@dimen/edit_Text_padding"
                     android:text="@string/male"
                     android:layout_weight="1"/>
                 <TextView
                     android:id="@+id/female_id"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="@dimen/edit_Text_padding"
+                    style="@style/CustomSignUpEdittext"
                     android:background="@color/grey"
                     android:text="@string/female"
                     android:layout_weight="1"/>
@@ -173,44 +171,69 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginTwenty"
             android:orientation="horizontal">
-            <CheckBox
-                android:id="@+id/checkBox_termsCondtions"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
             <TextView
-                android:id="@+id/txt_lolyTerms"
+                android:id="@+id/txt_agree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/textSize"
-                android:text="I Accept Lolyhub"/>
+                android:text="@string/agreeMsg"/>
             <TextView
                 android:id="@+id/txt_termsCondtions"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginFive"
                 android:textColor="@color/blueColor"
                 android:textSize="@dimen/textSize"
-                android:text="Terms and Conditions"/>
+                android:text="@string/termsMsg"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <CheckBox
-                android:id="@+id/checkBox_subscribe"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
             <TextView
-                android:id="@+id/txt_subscribe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/blueColor"
+                android:textSize="@dimen/textSize"
+                android:text="@string/and"/>
+            <TextView
+                android:id="@+id/txt_privacyPolicy"
+                android:layout_marginLeft="@dimen/marginFive"
+                android:textColor="@color/blueColor"
                 android:textSize="@dimen/textSize"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/privacyMsg"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginRight="@dimen/marginTen"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginTen"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSize"
                 android:text="@string/subscribe"/>
+            <ToggleButton
+                android:id="@+id/toggle"
+                android:layout_width="@dimen/marginThirty"
+                android:layout_height="@dimen/marginTwenty"
+                android:layout_marginLeft="@dimen/marginThirty"
+                android:background="@drawable/togglebuttoncheck"
+                android:textOn=""
+                android:textOff=""
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:layout_centerVertical="true"/>
         </LinearLayout>
         <Button
             android:id="@+id/btn_Register_signUp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/loginLogoutButtonSize"
             android:textColor="@android:color/white"
             android:layout_marginTop="@dimen/marginTwenty"
             android:text="@string/signUp"

@@ -2,6 +2,7 @@ package com.neosoft.lolyhub.lolyhubapp.view.activities;
 
 import android.app.DatePickerDialog;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -14,6 +15,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.utilities.ValidationUtils;
@@ -42,8 +44,7 @@ public class SignUpActivity extends AppCompatActivity  implements View.OnClickLi
     private Spinner mSpinner_Country;
     private Spinner mSpinner_City;
     private Spinner mSpinner_CoutryCode;
-    private CheckBox mChk_Terms;
-    private CheckBox mChk_Subscribe;
+    private TextView mPrivacyPolicy;
     private TextView mTxt_TermsCondtions;
     private Button mBtn_Registration;
 
@@ -57,9 +58,12 @@ public class SignUpActivity extends AppCompatActivity  implements View.OnClickLi
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+        initViews();
+        initValues();
+
 
     }
-private void initValues(){
+private void initViews(){
     //sign up values
     mEdit_FirstName= (EditText) findViewById(R.id.edit_firstName);
     mEdit_LastName= (EditText) findViewById(R.id.edit_lastName);
@@ -73,16 +77,20 @@ private void initValues(){
     mSpinner_City= (Spinner) findViewById(R.id.select_city);
     mSpinner_Country= (Spinner) findViewById(R.id.select_country);
     mSpinner_CoutryCode= (Spinner) findViewById(R.id.select_codeCountry);
-    // mChk_Terms= (CheckBox) findViewById(R.id.checkBox_termsCondtions);
-    mChk_Subscribe= (CheckBox) findViewById(R.id.checkBox_subscribe);
+    mPrivacyPolicy= (TextView) findViewById(R.id.txt_privacyPolicy);
     mTxt_TermsCondtions= (TextView) findViewById(R.id.txt_termsCondtions);
     mBtn_Registration= (Button) findViewById(R.id.btn_Register_signUp);
     mTxt_BirthDate= (TextView) findViewById(R.id.edit_birthDate);
 }
+    private void initValues(){
+        mPrivacyPolicy.setPaintFlags(mPrivacyPolicy.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        mPrivacyPolicy.setText(R.string.privacyMsg);
+        mTxt_TermsCondtions.setPaintFlags(mTxt_TermsCondtions.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        mTxt_TermsCondtions.setText(R.string.termsMsg);
+    }
     private void initListener(){
         mTxt_BirthDate.setOnClickListener(this);
         spin_adapter = new ArrayAdapter<String>(SignUpActivity.this, android.R.layout.simple_spinner_item, gender);
-
 // setting adapters to spinners
         mSpinner_Gender.setAdapter(spin_adapter);
     }
@@ -101,14 +109,16 @@ private void initValues(){
     }
     @Override
     public void onClick(View view) {
+        ValidationUtils validationUtils=new ValidationUtils();
         switch (view.getId()){
             case R.id.edit_birthDate:
                 setDateTimeField();
                 mDatePicker.show();
                 break;
             case R.id.btn_login:
-                ValidationUtils validationUtils=new ValidationUtils();
-                //validationUtils.validateSignIn(SignUpActivity.this,mEdit_UserMobuile,mEdit_UserPassword);
+//                if (validationUtils.validateSignIn(SignUpActivity.this,mEdit_UserMobuile,mEdit_UserPassword)){
+//                    Toast.makeText(this, "Successfully logged in", Toast.LENGTH_SHORT).show();
+//                }
                 break;
         }
     }

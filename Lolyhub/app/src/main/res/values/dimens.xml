@@ -9,6 +9,7 @@
     <dimen name="marginTwenty">20dp</dimen>
     <dimen name="marginTen">10dp</dimen>
     <dimen name="marginFive">5dp</dimen>
+    <dimen name="marginThirty">30dp</dimen>
     <dimen name="loginLogoutButtonSize">40dp</dimen>
     <dimen name="logoSize">200dp</dimen>
     <dimen name="facebookImgSize">60dp</dimen>
