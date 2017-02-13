@@ -48,7 +48,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         myOnClickListener=new MyOnClickListener(this);
-                                                                                                                              // FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        // FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         //Initializing the tablayout
         //Initializing the tablayout
         setUpTabLayout();
@@ -62,22 +62,22 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         //setup navigation drawer
         setUpNavigationView(toolbar);
 
-       // initViews();
-       // initAdapter();
-       // NetworkCall networkCall=new NetworkCall(this,this);
-      //  networkCall.fetchWSCall();
+        // initViews();
+        // initAdapter();
+        // NetworkCall networkCall=new NetworkCall(this,this);
+        //  networkCall.fetchWSCall();
     }
-   /* private void initViews(){
-       mRecyclerView= (RecyclerView) findViewById(R.id.recycler_view);
-        mProgressBar= (ProgressBar) findViewById(R.id.progress_bar);
-        mProgressBar.setVisibility(View.VISIBLE);
-    }
-    private void initAdapter(){
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mCardAdapter=new CardAdapter(this);
-        mRecyclerView.setAdapter(mCardAdapter);
-    }*/
+    /* private void initViews(){
+        mRecyclerView= (RecyclerView) findViewById(R.id.recycler_view);
+         mProgressBar= (ProgressBar) findViewById(R.id.progress_bar);
+         mProgressBar.setVisibility(View.VISIBLE);
+     }
+     private void initAdapter(){
+         mRecyclerView.setHasFixedSize(true);
+         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+         mCardAdapter=new CardAdapter(this);
+         mRecyclerView.setAdapter(mCardAdapter);
+     }*/
     private void setUpTabLayout(){
         mTabLayout = (TabLayout) findViewById(R.id.tabLayout);
 

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">LolyHubApp</string>
     <string name="action_settings">Settings</string>
- <string name="menu_search">Search</string>
+    <string name="menu_search">Search</string>
     <!--navigation drawer placeholders-->
     <string name="home">Home</string>
     <string name="addPrgrams">Add Programs</string>
@@ -13,30 +13,31 @@
     <string name="alpha2">alpha2 code</string>
     <string name="alpha3">alpha3 code</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-   <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
 
     <!--placeholder for login logout screens-->
 
     <string name="signIn">Sign In</string>
     <string name="signUp">Sign Up</string>
     <string name="register">Register</string>
-     <string name="login">Login</string>
+    <string name="login">Log in</string>
     <string name="or">Or</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="usernameMobile">Enter your user name or Mobile</string>
-    <string name="password">Enter your password</string>
+    <string name="password">Password</string>
     <string name="remember">Remember me</string>
     <string name="pressHere">Press Here</string>
     <string name="forgotpassword">Forgot your password?</string>
     <string name="firstname">First Name</string>
     <string name="lastname">Last Name</string>
-    <string name="enterEmail">Enter Your Email</string>
-    <string name="reenterEmail">Re-Enter Your Email</string>
-    <string name="newUsername">Enter New Username</string>
-    <string name="reenterPassword">Re-Enter Your Password</string>
+    <string name="enterEmail">Email</string>
+    <string name="reenterEmail">Confirm Email</string>
+    <string name="newUsername">Username</string>
+    <string name="reenterPassword">Confirm Password</string>
     <string name="number">+966</string>
-    <string name="BirthDate">Birth Date</string>
+    <string name="BirthDate">Birth date</string>
+
     <string name="Gender">Gender</string>
     <string name="selectCity">Select Your City</string>
     <string name="selectCountry">Select Country</string>
@@ -48,11 +49,25 @@
     <string name="and">and</string>
     <string name="privacyMsg"><u>Privacy Policy</u></string>
     <!--validatio massages-->
+    <string name="emailConfirmMsg"> Email and Confirm Email should be same</string>
+    <string name="valid_mail">Please Enter Valid Email Id</string>
     <string name="validateMbileNumber">Please Enter Valid Mobile Number</string>
     <string name="validatePassword">Please Enter Valid Password</string>
     <string name="notEmpty">Fields can not be empty</string>
+    <string name="validate_firstname">Enter Firstname</string>
+    <string name="validate_lastname">Enter Lastname</string>
+    <string name="validate_mail">Enter Mail</string>
+    <string name="validate_confirmmail">Confirm Mail</string>
+    <string name="validate_username">Enter Username</string>
+    <string name="validate_password">Enter Password</string>
+    <string name="validate_confirmpassword">Enter Confirm Password</string>
+    <string name="validate_birthdate">Enter Birthdate</string>
+    <string name="validate_gender">Select Gender</string>
+    <string name="validate_mobileNumber">Enter Mobile Number</string>
 
- <!--launching activity-->
+
+    <string name="validate_missmatchpassword">password should be same</string>
+    <!--launching activity-->
     <string name="marketPlace">A New Digital Marketplace</string>
 
 

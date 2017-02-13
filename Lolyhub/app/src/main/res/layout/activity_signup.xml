@@ -3,15 +3,26 @@
     android:padding="@dimen/activity_horizontal_margin"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="match_parent">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signUp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="@dimen/textSizeMarketPlace"
+            android:layout_gravity="center"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginTop="@dimen/marginTwenty"
             android:weightSum="2">
             <EditText
                 android:id="@+id/edit_firstName"
@@ -67,6 +78,7 @@
                 android:id="@+id/edit_password"
                 android:layout_marginTop="@dimen/marginTen"
                 style="@style/CustomSignUpEdittext"
+                android:inputType="textPassword"
                 android:layout_weight="1"
                 android:hint="@string/password"/>
             <View
@@ -77,6 +89,7 @@
                 android:id="@+id/edit_reEnterPassword"
                 android:layout_marginTop="@dimen/marginTen"
                 style="@style/CustomSignUpEdittext"
+                android:inputType="textPassword"
                 android:layout_weight="1"
                 android:hint="@string/reenterPassword"/>
 
@@ -97,8 +110,8 @@
                 android:layout_width="@dimen/marginTen"
                 android:layout_height="0dp"/>
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/genderLayout_ID"
+                style="@style/genderLayout"
                 android:orientation="horizontal"
                 android:layout_marginTop="@dimen/marginTen"
                 android:weightSum="2"
@@ -106,7 +119,6 @@
                 <TextView
                     android:id="@+id/male_id"
                     style="@style/CustomSignUpEdittext"
-                    android:padding="@dimen/edit_Text_padding"
                     android:text="@string/male"
                     android:layout_weight="1"/>
                 <TextView
@@ -115,19 +127,15 @@
                     android:background="@color/grey"
                     android:text="@string/female"
                     android:layout_weight="1"/>
-
             </LinearLayout>
-
         </LinearLayout>
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2">
             <Spinner
-                android:id="@+id/select_city"
+                android:id="@+id/select_country"
                 android:layout_marginTop="@dimen/marginTen"
                 android:layout_marginBottom="@dimen/marginTen"
                 android:layout_width="wrap_content"
@@ -138,7 +146,7 @@
                 android:layout_width="@dimen/marginTen"
                 android:layout_height="0dp"/>
             <Spinner
-                android:id="@+id/select_country"
+                android:id="@+id/select_city"
                 android:layout_marginTop="@dimen/marginTen"
                 android:layout_marginBottom="@dimen/marginTen"
                 android:layout_width="wrap_content"
@@ -160,6 +168,7 @@
                 android:layout_width="60dp"
                 android:layout_height="wrap_content">
             </Spinner>
+
             <EditText
                 android:id="@+id/edit_phoneNumber"
                 android:inputType="number"
@@ -221,15 +230,16 @@
             <ToggleButton
                 android:id="@+id/toggle"
                 android:layout_width="@dimen/marginThirty"
-                android:layout_height="@dimen/marginTwenty"
+                android:layout_height="@dimen/height_togglebutton"
                 android:layout_marginLeft="@dimen/marginThirty"
+                android:layout_marginStart="@dimen/marginThirty"
                 android:background="@drawable/togglebuttoncheck"
                 android:textOn=""
                 android:textOff=""
                 android:focusable="false"
-                android:focusableInTouchMode="false"
-                android:layout_centerVertical="true"/>
+                android:focusableInTouchMode="false" />
         </LinearLayout>
+
         <Button
             android:id="@+id/btn_Register_signUp"
             android:layout_width="match_parent"
@@ -239,6 +249,7 @@
             android:text="@string/signUp"
             android:textSize="@dimen/textSize"
             android:background="@drawable/rounded_button"/>
+
         <TextView
             android:layout_marginTop="@dimen/marginTwenty"
             android:layout_width="wrap_content"
