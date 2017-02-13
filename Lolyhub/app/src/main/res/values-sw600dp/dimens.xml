@@ -13,6 +13,7 @@
     <dimen name="marginTwenty">30dp</dimen>
     <dimen name="marginTen">20dp</dimen>
     <dimen name="marginThirty">40dp</dimen>
+    <dimen name="hieght_togglebutton">28dp</dimen>
     <dimen name="logoSize">300dp</dimen>
 
     <dimen name="loginLogoutButtonSize">70dp</dimen>

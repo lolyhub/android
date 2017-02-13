@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -44,8 +45,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+      //  Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+      //  setSupportActionBar(toolbar);
 
         myOnClickListener=new MyOnClickListener(this);
         // FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -60,7 +61,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         viewPager.setAdapter(adapter);
         //Adding onTabSelectedListener to swipe views
         //setup navigation drawer
-        setUpNavigationView(toolbar);
+       // setUpNavigationView(toolbar);
 
         // initViews();
         // initAdapter();
@@ -82,10 +83,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         mTabLayout = (TabLayout) findViewById(R.id.tabLayout);
 
         //Adding the tabs using addTab() method
-        mTabLayout.addTab(mTabLayout.newTab().setText("Cart "));
-        mTabLayout.addTab(mTabLayout.newTab().setText("Wallet"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("Search"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("Wishlist"));
+        mTabLayout.addTab(mTabLayout.newTab().setText(getResources().getString(R.string.home)));
+        mTabLayout.addTab(mTabLayout.newTab().setText(getResources().getString(R.string.search)));
+        mTabLayout.addTab(mTabLayout.newTab().setText(getResources().getString(R.string.wallet)));
+        mTabLayout.addTab(mTabLayout.newTab().setText(getResources().getString(R.string.wishlist)));
+        mTabLayout.addTab(mTabLayout.newTab().setText(getResources().getString(R.string.cart)));
         mTabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

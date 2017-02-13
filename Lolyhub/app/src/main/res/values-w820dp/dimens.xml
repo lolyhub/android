@@ -10,6 +10,7 @@
     <dimen name="facebookImgSize">120dp</dimen>
     <dimen name="marginTwenty">40dp</dimen>
     <dimen name="marginTen">30dp</dimen>
+    <dimen name="hieght_togglebutton">30dp</dimen>
     <dimen name="logoSize">300dp</dimen>
     <dimen name="loginLogoutButtonSize">70dp</dimen>
 </resources>

@@ -16,6 +16,7 @@ import java.util.regex.Pattern;
 /**
  * Created by neosoft on 11/1/17.
  */
+
 public class ValidationUtils {
     private  Pattern usrNamePtrn = Pattern.compile("^[a-z0-9._-]{3,16}$");
 
@@ -178,4 +179,3 @@ public class ValidationUtils {
         return false;
     }
 }
-
