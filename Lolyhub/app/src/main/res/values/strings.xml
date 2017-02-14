@@ -71,9 +71,20 @@
     <string name="validate_missmatchpassword">password should be same</string>
     <!--launching activity-->
     <string name="marketPlace">A New Digital Marketplace</string>
+    <string name="foods">Foods</string>
     <!--placeholders for home activitiy-->
+    <string name="winter_msg">Winter is Comming</string>
     <string name="shope_by_categories">SHOPE BY CATEGORIES</string>
-
+    <string name="product_title">this is lolyhub android application</string>
+    <string name="product_viewMore">View More</string>
+    <string name="product_imagetitle">product image title</string>
+    <string name="product_redeemOne"> redeem one</string>
+    <string name="product_redeemtwo"> redeem two</string>
+    <string name="product_redeemthree"> redeem three</string>
+    <string name="product_EarningOne"> Earning One</string>
+    <string name="product_EarningTwo"> Earning Two</string>
+    <string name="product_EarningThree"> Earning Three</string>
+    <string name="points">133 LP</string>
 
 
 </resources>

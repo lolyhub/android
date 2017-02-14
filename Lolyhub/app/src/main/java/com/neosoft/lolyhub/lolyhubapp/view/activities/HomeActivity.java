@@ -17,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -45,8 +46,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-      //  Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-      //  setSupportActionBar(toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         myOnClickListener=new MyOnClickListener(this);
         // FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -60,8 +61,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         //Adding adapter to pager
         viewPager.setAdapter(adapter);
         //Adding onTabSelectedListener to swipe views
-        //setup navigation drawer
-       // setUpNavigationView(toolbar);
+       // setup navigation drawer
+          setUpNavigationView(toolbar);
 
         // initViews();
         // initAdapter();
@@ -80,15 +81,28 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
          mRecyclerView.setAdapter(mCardAdapter);
      }*/
     private void setUpTabLayout(){
+        TabLayout layout = new TabLayout(this);
+        ImageView imageView;
+        View view = getLayoutInflater().inflate(R.layout.tab_customeview,null);
+        imageView= (ImageView) view.findViewById(R.id.tab_search_Id);
         mTabLayout = (TabLayout) findViewById(R.id.tabLayout);
 
         //Adding the tabs using addTab() method
-        mTabLayout.addTab(mTabLayout.newTab().setText(getResources().getString(R.string.home)));
-        mTabLayout.addTab(mTabLayout.newTab().setText(getResources().getString(R.string.search)));
-        mTabLayout.addTab(mTabLayout.newTab().setText(getResources().getString(R.string.wallet)));
-        mTabLayout.addTab(mTabLayout.newTab().setText(getResources().getString(R.string.wishlist)));
-        mTabLayout.addTab(mTabLayout.newTab().setText(getResources().getString(R.string.cart)));
+        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.logo));
+
+      //  mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.search));
+        mTabLayout.addTab(mTabLayout.newTab().setCustomView(view));
+        imageView.setImageResource(R.drawable.logo);
+
+        mTabLayout.addTab(mTabLayout.newTab().setCustomView(view));
+        imageView.setImageResource(R.drawable.search);
+        mTabLayout.addTab(mTabLayout.newTab().setCustomView(view));
+        imageView.setImageResource(R.drawable.logo);
+        mTabLayout.addTab(mTabLayout.newTab().setCustomView(view));
         mTabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+
+
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
