@@ -50,7 +50,7 @@ public class NetworkCall {
                     }
                 });
     }
-    public void postResult(Countries countries,int tag){
+    public void postResult(Countries countries, int tag){
 
         switch (tag){
             case CommonConstant.TAG_COUNTRY:

@@ -3,6 +3,7 @@ package com.neosoft.lolyhub.lolyhubapp.view.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,10 +13,14 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
 import com.lolyhub.lolyhubapp.R;
+import com.neosoft.lolyhub.lolyhubapp.constants.CommonConstant;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CardAdapter;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.HorizontalProductListingAdapter;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.ProductListingAdapter;
+import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.SlidingImage_Adapter;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.HorizontalViewModel;
+
+import java.util.ArrayList;
 
 /**
  * Created by neosoft on 13/2/17.
@@ -29,9 +34,10 @@ public class HomeFragment extends Fragment {
     private RecyclerView mRecyclerView_ProductListing;
     private HorizontalProductListingAdapter mHorizontalAdapter;
     private ProductListingAdapter mProductListingAdapter;
+    private ViewPager mOffersIamgesViewpager;
     private View mView;
     private HorizontalViewModel mHorizontalViewModel;
-
+    private ArrayList<Integer> mImagesArray = new ArrayList<Integer>();
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +55,11 @@ public class HomeFragment extends Fragment {
 
     }
      private void initViews(View view){
+         mOffersIamgesViewpager = (ViewPager)view.findViewById(R.id.offersViewpager_Id);
+         for(int i=0;i< CommonConstant.IMAGES.length;i++)
+             mImagesArray.add(CommonConstant.IMAGES[i]);
+         mOffersIamgesViewpager.setAdapter(new SlidingImage_Adapter(getActivity(),mImagesArray));
+
          mRecyclerView_HoriZontal= (RecyclerView)view.findViewById(R.id.horizontalRecyclerview);
          mRecyclerView_ProductListing= (RecyclerView) view.findViewById(R.id.productRecyclerview);
    }

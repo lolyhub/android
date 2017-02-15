@@ -2,11 +2,8 @@ package com.neosoft.lolyhub.lolyhubapp.view.activities;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -17,7 +14,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -41,6 +37,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public static View.OnClickListener myOnClickListener;
     private TabLayout mTabLayout;
     private ViewPager viewPager;
+    private View searchView,walletView,wishlistView,cartView,homeView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +45,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
 
         myOnClickListener=new MyOnClickListener(this);
         // FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -81,24 +80,24 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
          mRecyclerView.setAdapter(mCardAdapter);
      }*/
     private void setUpTabLayout(){
-        TabLayout layout = new TabLayout(this);
-        ImageView imageView;
-        View view = getLayoutInflater().inflate(R.layout.tab_customeview,null);
-        imageView= (ImageView) view.findViewById(R.id.tab_search_Id);
+        initViews();
+
         mTabLayout = (TabLayout) findViewById(R.id.tabLayout);
 
+        mTabLayout.addTab(mTabLayout.newTab().setCustomView(homeView));
+
         //Adding the tabs using addTab() method
-        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.logo));
+        mTabLayout.addTab(mTabLayout.newTab().setCustomView(searchView));
 
       //  mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.search));
-        mTabLayout.addTab(mTabLayout.newTab().setCustomView(view));
-        imageView.setImageResource(R.drawable.logo);
+        mTabLayout.addTab(mTabLayout.newTab().setCustomView(walletView));
 
-        mTabLayout.addTab(mTabLayout.newTab().setCustomView(view));
-        imageView.setImageResource(R.drawable.search);
-        mTabLayout.addTab(mTabLayout.newTab().setCustomView(view));
-        imageView.setImageResource(R.drawable.logo);
-        mTabLayout.addTab(mTabLayout.newTab().setCustomView(view));
+
+        mTabLayout.addTab(mTabLayout.newTab().setCustomView(wishlistView));
+
+        mTabLayout.addTab(mTabLayout.newTab().setCustomView(cartView));
+
+
         mTabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
 
@@ -117,6 +116,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             }
         });
+    }
+    private void initViews(){
+        homeView= getLayoutInflater().inflate(R.layout.tab_home,null);
+        searchView= getLayoutInflater().inflate(R.layout.tab_customeview,null);
+        walletView = getLayoutInflater().inflate(R.layout.tab_wallet,null);
+        wishlistView = getLayoutInflater().inflate(R.layout.tab_wishlist,null);
+        cartView = getLayoutInflater().inflate(R.layout.tab_cart,null);
     }
     private void setUpNavigationView(Toolbar toolbar){
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -23,7 +23,7 @@
             android:theme="@style/NoActionBar">
         </activity>
         <activity android:name="com.neosoft.lolyhub.lolyhubapp.view.activities.HomeActivity"
-            android:theme="@style/AppTheme">
+            android:theme="@style/NoActionBar">
         </activity>
     </application>
 </manifest>

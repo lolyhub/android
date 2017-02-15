@@ -85,6 +85,11 @@
     <string name="product_EarningTwo"> Earning Two</string>
     <string name="product_EarningThree"> Earning Three</string>
     <string name="points">133 LP</string>
-
+    <integer-array name="img_id_arr">
+        <item>@drawable/search</item>
+        <item>@drawable/logo</item>
+        <item>@drawable/facbook</item>
+        <item>@drawable/googleplus</item>
+    </integer-array>
 
 </resources>

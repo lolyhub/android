@@ -24,14 +24,10 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabMode="fixed"
+        app:tabMode="scrollable"
         app:tabPadding="2dp"
+        android:paddingTop="5dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
-
-   <!-- app:tabPaddingStart="1dp"
-    app:tabPaddingEnd="1dp"
-    app:tabPaddingBottom="1dp"
-    app:tabPaddingTop="1dp"-->
 
 
     <ProgressBar
@@ -47,11 +43,7 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <!--<android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            android:paddingTop="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>-->
+
     </FrameLayout>
 
 

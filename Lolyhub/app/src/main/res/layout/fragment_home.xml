@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:padding="@dimen/activity_horizontal_margin"
@@ -12,22 +13,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <FrameLayout
+            <RelativeLayout
                 android:id="@+id/homeContent"
                 android:layout_width="match_parent"
                 android:layout_height="250dp">
-                <TextView
-                    android:id="@+id/offersTxt_Id"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textSize="60sp"
-                    android:text="@string/winter_msg"/>
                 <android.support.v4.view.ViewPager
                     android:id="@+id/offersViewpager_Id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </android.support.v4.view.ViewPager>
-            </FrameLayout>
+
+                <com.chabbal.slidingdotsplash.SlidingSplashView
+                    android:id="@+id/splash"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:imageResources="@array/img_id_arr"/>
+
+            </RelativeLayout>
 
            <TextView
                android:layout_width="match_parent"
