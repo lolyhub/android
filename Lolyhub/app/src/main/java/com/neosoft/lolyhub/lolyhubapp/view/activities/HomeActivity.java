@@ -43,42 +43,26 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+      /*  Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-
+*/
         myOnClickListener=new MyOnClickListener(this);
-        // FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        //Initializing the tablayout
-        //Initializing the tablayout
-        setUpTabLayout();
-        //Initializing viewPager
+
         viewPager = (ViewPager) findViewById(R.id.pager);
+
+        setUpTabLayout();
+
         //Creating our pager adapter
         Pager adapter = new Pager(getSupportFragmentManager(), mTabLayout.getTabCount());
-        //Adding adapter to pager
-        viewPager.setAdapter(adapter);
-        //Adding onTabSelectedListener to swipe views
-       // setup navigation drawer
-          setUpNavigationView(toolbar);
 
-        // initViews();
-        // initAdapter();
+        viewPager.setAdapter(adapter);
+
         // NetworkCall networkCall=new NetworkCall(this,this);
         //  networkCall.fetchWSCall();
     }
-    /* private void initViews(){
-        mRecyclerView= (RecyclerView) findViewById(R.id.recycler_view);
-         mProgressBar= (ProgressBar) findViewById(R.id.progress_bar);
-         mProgressBar.setVisibility(View.VISIBLE);
-     }
-     private void initAdapter(){
-         mRecyclerView.setHasFixedSize(true);
-         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-         mCardAdapter=new CardAdapter(this);
-         mRecyclerView.setAdapter(mCardAdapter);
-     }*/
+
     private void setUpTabLayout(){
         initViews();
 
@@ -100,7 +84,21 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         mTabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
+            }
+            @Override
+            public void onPageSelected(int position) {
+               mTabLayout.getTabAt(position).select();
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -116,6 +114,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             }
         });
+
+//        mTabLayout.setupWithViewPager(viewPager);
+
     }
     private void initViews(){
         homeView= getLayoutInflater().inflate(R.layout.tab_home,null);
@@ -124,33 +125,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         wishlistView = getLayoutInflater().inflate(R.layout.tab_wishlist,null);
         cartView = getLayoutInflater().inflate(R.layout.tab_cart,null);
     }
-    private void setUpNavigationView(Toolbar toolbar){
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

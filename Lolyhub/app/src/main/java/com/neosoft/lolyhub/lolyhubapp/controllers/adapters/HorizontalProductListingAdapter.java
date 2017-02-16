@@ -53,7 +53,7 @@ public class HorizontalProductListingAdapter extends RecyclerView.Adapter<Horizo
                 .inflate(R.layout.layout_shopebycategory, viewGroup, false);
         ViewHolder viewHolder = new ViewHolder(v);
 
-        v.setOnClickListener(HomeActivity.myOnClickListener);
+      //  v.setOnClickListener(HomeActivity.myOnClickListener);
 
        /* v.setOnClickListener(new View.OnClickListener() {
             @Override

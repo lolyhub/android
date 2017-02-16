@@ -50,7 +50,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
                 .inflate(R.layout.recycler_view, viewGroup, false);
         ViewHolder viewHolder = new ViewHolder(v);
 
-        v.setOnClickListener(HomeActivity.myOnClickListener);
+      //  v.setOnClickListener(HomeActivity.myOnClickListener);
 
        /* v.setOnClickListener(new View.OnClickListener() {
             @Override

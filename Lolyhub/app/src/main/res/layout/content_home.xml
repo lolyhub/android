@@ -8,27 +8,15 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.neosoft.lolyhub.lolyhubapp.view.activities.HomeActivity"
     tools:showIn="@layout/app_bar_home">
-
-    <!-- our toolbar -->
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-
-    <!-- our tablayout to display tabs  -->
     <android.support.design.widget.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabMode="scrollable"
+        app:tabIndicatorColor="@color/grey"
         app:tabPadding="2dp"
         android:paddingTop="5dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
-
 
     <ProgressBar
         android:id="@+id/progress_bar"
@@ -39,19 +27,17 @@
         />
     <FrameLayout
         android:padding="@dimen/activity_horizontal_margin"
-        android:layout_below="@+id/tabLayout"
         android:id="@+id/container"
+        android:layout_below="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     </FrameLayout>
 
-
-
     <!-- View pager to swipe views -->
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
-        android:layout_below="@id/tabLayout"
+        android:layout_below="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </RelativeLayout>

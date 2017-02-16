@@ -40,8 +40,6 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
     compile 'io.reactivex:rxandroid:1.0.1'
 
-    //viewpager indicator
-    compile 'com.chabbal:slidingdotsplash:1.0.2'
 
 
     testCompile 'junit:junit:4.12'

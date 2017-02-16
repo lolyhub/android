@@ -73,9 +73,13 @@
     <string name="marketPlace">A New Digital Marketplace</string>
     <string name="foods">Foods</string>
     <!--placeholders for home activitiy-->
+    <string name="electronics">Electronics</string>
+    <string name="food">food</string>
+    <string name="book">book</string>
+    <string name="watches">watches</string>
     <string name="winter_msg">Winter is Comming</string>
     <string name="shope_by_categories">SHOPE BY CATEGORIES</string>
-    <string name="product_title">this is lolyhub android application</string>
+    <string name="product_title"> lolyhub piza</string>
     <string name="product_viewMore">View More</string>
     <string name="product_imagetitle">product image title</string>
     <string name="product_redeemOne"> redeem one</string>
@@ -85,11 +89,5 @@
     <string name="product_EarningTwo"> Earning Two</string>
     <string name="product_EarningThree"> Earning Three</string>
     <string name="points">133 LP</string>
-    <integer-array name="img_id_arr">
-        <item>@drawable/search</item>
-        <item>@drawable/logo</item>
-        <item>@drawable/facbook</item>
-        <item>@drawable/googleplus</item>
-    </integer-array>
 
 </resources>

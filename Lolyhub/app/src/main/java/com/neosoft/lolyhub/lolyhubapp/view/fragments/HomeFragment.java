@@ -2,6 +2,7 @@ package com.neosoft.lolyhub.lolyhubapp.view.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -35,6 +36,7 @@ public class HomeFragment extends Fragment {
     private HorizontalProductListingAdapter mHorizontalAdapter;
     private ProductListingAdapter mProductListingAdapter;
     private ViewPager mOffersIamgesViewpager;
+    private TabLayout mOffersTablayout;
     private View mView;
     private HorizontalViewModel mHorizontalViewModel;
     private ArrayList<Integer> mImagesArray = new ArrayList<Integer>();
@@ -55,10 +57,16 @@ public class HomeFragment extends Fragment {
 
     }
      private void initViews(View view){
+
+         mOffersTablayout= (TabLayout) view.findViewById(R.id.tabDots);
          mOffersIamgesViewpager = (ViewPager)view.findViewById(R.id.offersViewpager_Id);
+
+
+
          for(int i=0;i< CommonConstant.IMAGES.length;i++)
              mImagesArray.add(CommonConstant.IMAGES[i]);
          mOffersIamgesViewpager.setAdapter(new SlidingImage_Adapter(getActivity(),mImagesArray));
+         mOffersTablayout.setupWithViewPager(mOffersIamgesViewpager, true);
 
          mRecyclerView_HoriZontal= (RecyclerView)view.findViewById(R.id.horizontalRecyclerview);
          mRecyclerView_ProductListing= (RecyclerView) view.findViewById(R.id.productRecyclerview);
@@ -76,7 +84,7 @@ public class HomeFragment extends Fragment {
 
        for (int i=0;i<5;i++){
            HorizontalViewModel mHorizontalViewModel=new HorizontalViewModel();
-           mHorizontalViewModel.setTitle("title text");
+           mHorizontalViewModel.setTitle("Electronics");
            mHorizontalViewModel.setImgIds(R.drawable.logo);
            mHorizontalAdapter.addData(mHorizontalViewModel);
 

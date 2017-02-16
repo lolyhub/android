@@ -51,7 +51,7 @@ public class ProductListingAdapter extends RecyclerView.Adapter<ProductListingAd
                 .inflate(R.layout.layout_productlisting, viewGroup, false);
         ProductListingAdapter.ViewHolder viewHolder = new ProductListingAdapter.ViewHolder(v);
 
-        v.setOnClickListener(HomeActivity.myOnClickListener);
+       // v.setOnClickListener(HomeActivity.myOnClickListener);
 
        /* v.setOnClickListener(new View.OnClickListener() {
             @Override

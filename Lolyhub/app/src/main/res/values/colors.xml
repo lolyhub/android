@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#808080</color>
     <color name="grey">#808080</color>
     <color name="loginButtonColor">#B3B3B3</color>
     <color name="marketTextColor">#89C540</color>
