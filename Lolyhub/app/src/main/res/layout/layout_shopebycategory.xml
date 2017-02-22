@@ -6,9 +6,9 @@
     android:layout_height="wrap_content">
     <ImageView
         android:id="@+id/imageId"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/logo"/>
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:src="@drawable/foods"/>
     <TextView
         android:id="@+id/titleId"
         android:layout_width="wrap_content"

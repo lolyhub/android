@@ -84,7 +84,7 @@ public class HomeFragment extends Fragment {
 
        for (int i=0;i<5;i++){
            HorizontalViewModel mHorizontalViewModel=new HorizontalViewModel();
-           mHorizontalViewModel.setTitle("Electronics");
+           mHorizontalViewModel.setTitle("foods");
            mHorizontalViewModel.setImgIds(R.drawable.logo);
            mHorizontalAdapter.addData(mHorizontalViewModel);
 

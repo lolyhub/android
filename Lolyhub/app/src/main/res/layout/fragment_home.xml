@@ -20,6 +20,7 @@
                 <android.support.v4.view.ViewPager
                     android:id="@+id/offersViewpager_Id"
                     android:layout_width="match_parent"
+                     android:layout_marginBottom="@dimen/marginThirty"
                     android:layout_height="wrap_content">
                 </android.support.v4.view.ViewPager>
 
@@ -42,17 +43,21 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/horizontalRecyclerview"
                 android:layout_width="match_parent"
-                android:layout_height="100dp">
+                android:layout_height="120dp">
 
             </android.support.v7.widget.RecyclerView>
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/productRecyclerview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                            android:id="@+id/productRecyclerview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+             </android.support.v7.widget.RecyclerView>
+                    <ImageView
+                        android:id="@+id/lastHomeImage_Id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/homeimg"/>
+                </LinearLayout>
 
-            </android.support.v7.widget.RecyclerView>
-
-        </LinearLayout>
 
     </ScrollView>
 

@@ -9,6 +9,6 @@ import com.lolyhub.lolyhubapp.R;
 public class CommonConstant {
     public static String[] COUNTRYLIST = { "india", "US","Japan","UAE","England" };//array of strings used to populate the spinner
     public static String[] CITYLIST = { "pune", "mumbai","nashik","nagpur" };//array of strings used to populate the spinner
-    public static final Integer[] IMAGES= {R.drawable.logo,R.drawable.search,R.drawable.facbook,R.drawable.googleplus};
+    public static final Integer[] IMAGES= {R.drawable.homeimg,R.drawable.homeimg,R.drawable.homeimg,R.drawable.homeimg};
     public static final int TAG_COUNTRY = 1;
 }
