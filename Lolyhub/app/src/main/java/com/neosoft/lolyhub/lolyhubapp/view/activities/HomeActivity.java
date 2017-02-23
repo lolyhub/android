@@ -2,6 +2,7 @@ package com.neosoft.lolyhub.lolyhubapp.view.activities;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
@@ -11,6 +12,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,12 +26,15 @@ import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.Pager;
 import com.neosoft.lolyhub.lolyhubapp.controllers.interfaces.NetworkReceiver;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.Countries;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.Result;
+import com.neosoft.lolyhub.lolyhubapp.utilities.CommonUtils;
+
+import java.util.zip.Inflater;
 
 /**
  * Created by neosoft on 29/12/16.
  */
 
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,NetworkReceiver{
+public class HomeActivity extends AppCompatActivity implements NetworkReceiver{
     public static String TAG="HomeActivity";
     private RecyclerView mRecyclerView;
     private CardAdapter mCardAdapter;
@@ -37,6 +42,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public static View.OnClickListener myOnClickListener;
     private TabLayout mTabLayout;
     private ViewPager viewPager;
+    private FloatingActionButton floatingActionButton;
     private View searchView,walletView,wishlistView,cartView,homeView;
 
     @Override
@@ -46,14 +52,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
       /*  Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-
 */
         myOnClickListener=new MyOnClickListener(this);
 
         viewPager = (ViewPager) findViewById(R.id.pager);
 
+        initViews();
         setUpTabLayout();
-
+        addListners();
         //Creating our pager adapter
         Pager adapter = new Pager(getSupportFragmentManager(), mTabLayout.getTabCount());
 
@@ -61,10 +67,17 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         // NetworkCall networkCall=new NetworkCall(this,this);
         //  networkCall.fetchWSCall();
-    }
 
+    }
+ public void addListners(){
+     floatingActionButton.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
+             setDialog();
+         }
+     });
+ }
     private void setUpTabLayout(){
-        initViews();
 
         mTabLayout = (TabLayout) findViewById(R.id.tabLayout);
 
@@ -115,17 +128,22 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-//        mTabLayout.setupWithViewPager(viewPager);
 
     }
+    public void setDialog(){
+        LayoutInflater layoutInflater= (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view=layoutInflater.inflate(R.layout.layout_custom_floatinbuttonview,null);
+
+        CommonUtils.CustomDialog(view,HomeActivity.this);
+    }
     private void initViews(){
+        floatingActionButton= (FloatingActionButton) findViewById(R.id.fab);
         homeView= getLayoutInflater().inflate(R.layout.tab_home,null);
         searchView= getLayoutInflater().inflate(R.layout.tab_customeview,null);
         walletView = getLayoutInflater().inflate(R.layout.tab_wallet,null);
         wishlistView = getLayoutInflater().inflate(R.layout.tab_wishlist,null);
         cartView = getLayoutInflater().inflate(R.layout.tab_cart,null);
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -147,26 +165,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         return super.onOptionsItemSelected(item);
     }
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
     @Override
     public <T> void onResponse(T obj, int tag) {
         Countries countries;

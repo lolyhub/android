@@ -39,6 +39,7 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:layout_marginLeft="@dimen/marginTwenty"
+               android:textStyle="bold"
                android:text="@string/shope_by_categories"/>
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/horizontalRecyclerview"

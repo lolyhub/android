@@ -61,8 +61,6 @@ public class HomeFragment extends Fragment {
          mOffersTablayout= (TabLayout) view.findViewById(R.id.tabDots);
          mOffersIamgesViewpager = (ViewPager)view.findViewById(R.id.offersViewpager_Id);
 
-
-
          for(int i=0;i< CommonConstant.IMAGES.length;i++)
              mImagesArray.add(CommonConstant.IMAGES[i]);
          mOffersIamgesViewpager.setAdapter(new SlidingImage_Adapter(getActivity(),mImagesArray));
@@ -89,8 +87,6 @@ public class HomeFragment extends Fragment {
            mHorizontalAdapter.addData(mHorizontalViewModel);
 
        }
-
-
    }
     @Override
     public void onPrepareOptionsMenu(Menu menu) {

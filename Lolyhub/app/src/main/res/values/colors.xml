@@ -8,6 +8,7 @@
     <color name="marketTextColor">#89C540</color>
     <color name="customPrimary">#FFFFFF</color>
     <color name="customDark">#ABABAB</color>
-
+    <color name="fredeemColor">#9CCD61</color>
+    <color name="earningColor">#F9B83E</color>
     <color name="blueColor">#0080ff</color>
 </resources>

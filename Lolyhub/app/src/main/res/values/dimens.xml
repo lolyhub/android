@@ -20,13 +20,14 @@
     <dimen name="textSize">14sp</dimen>
     <dimen name="heading_text_size">10sp</dimen>
     <dimen name="textSizeMarketPlace">18sp</dimen>
-
-
+    <dimen name="filter_image">50dp</dimen>
+    <dimen name="image_filter">60dp</dimen>
+    <dimen name="margin_right">20dp</dimen>
     <dimen name="boldSizeText">30sp</dimen>
     <dimen name="orTextSize">22sp</dimen>
     <dimen name="edit_Text_padding">10dp</dimen>
     <dimen name="genderPadding">1dp</dimen>
-
+    <dimen name="cross_margin">6dp</dimen>
     <!--text widths-->
     <dimen name="txt_loginLogout_Width">40dp</dimen>
     <dimen name="txt_fontSize">14sp</dimen>

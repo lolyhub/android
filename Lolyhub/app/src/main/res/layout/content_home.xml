@@ -11,7 +11,7 @@
     <android.support.design.widget.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/actionBarSize"
         app:tabMode="scrollable"
         app:tabIndicatorColor="@color/grey"
         app:tabPadding="2dp"

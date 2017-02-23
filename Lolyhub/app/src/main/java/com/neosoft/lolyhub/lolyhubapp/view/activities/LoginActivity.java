@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mPressHere.setPaintFlags(mPressHere.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         mPressHere.setText(R.string.pressHere);
 
-        Drawable questionMarkDrawable=new CommonUtils().resizeDrawable(this,ContextCompat.getDrawable(this,R.drawable.question_mark));
+        Drawable questionMarkDrawable=CommonUtils.resizeDrawable(this,ContextCompat.getDrawable(this,R.drawable.question_mark));
         //  mEdit_UserPassword.setCompoundDrawablesWithIntrinsicBounds(0, 0, questionMarkDrawable, 0);
         mEdit_UserPassword.setCompoundDrawablesWithIntrinsicBounds(null,null,questionMarkDrawable,null);
 

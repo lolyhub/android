@@ -11,6 +11,7 @@
         android:src="@drawable/foods"/>
     <TextView
         android:id="@+id/titleId"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
