@@ -10,6 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -22,6 +23,7 @@ import android.widget.Toast;
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.constants.CommonConstant;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CardAdapter;
+import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.NavigationListingAdapter;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.Pager;
 import com.neosoft.lolyhub.lolyhubapp.controllers.interfaces.NetworkReceiver;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.Countries;
@@ -34,7 +36,7 @@ import java.util.zip.Inflater;
  * Created by neosoft on 29/12/16.
  */
 
-public class HomeActivity extends AppCompatActivity implements NetworkReceiver{
+public class HomeActivity extends AppCompatActivity implements NetworkReceiver, NavigationView.OnNavigationItemSelectedListener{
     public static String TAG="HomeActivity";
     private RecyclerView mRecyclerView;
     private CardAdapter mCardAdapter;
@@ -44,7 +46,8 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver{
     private ViewPager viewPager;
     private FloatingActionButton floatingActionButton;
     private View searchView,walletView,wishlistView,cartView,homeView;
-
+    private RecyclerView mNavigationRecyclerView;
+    private NavigationListingAdapter mNavigationAdapterListing;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +71,12 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver{
         // NetworkCall networkCall=new NetworkCall(this,this);
         //  networkCall.fetchWSCall();
 
+       CommonUtils.initDrawer(this);
+        NavigationView navigationView = (NavigationView)findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
     }
+
  public void addListners(){
      floatingActionButton.setOnClickListener(new View.OnClickListener() {
          @Override
@@ -76,6 +84,11 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver{
              setDialog();
          }
      });
+     mNavigationRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+     mNavigationAdapterListing=new NavigationListingAdapter(this);
+     mNavigationRecyclerView.setAdapter(mNavigationAdapterListing);
+
+
  }
     private void setUpTabLayout(){
 
@@ -137,18 +150,13 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver{
         CommonUtils.CustomDialog(view,HomeActivity.this);
     }
     private void initViews(){
+        mNavigationRecyclerView= (RecyclerView) findViewById(R.id.navigation_item_list);
         floatingActionButton= (FloatingActionButton) findViewById(R.id.fab);
         homeView= getLayoutInflater().inflate(R.layout.tab_home,null);
         searchView= getLayoutInflater().inflate(R.layout.tab_customeview,null);
         walletView = getLayoutInflater().inflate(R.layout.tab_wallet,null);
         wishlistView = getLayoutInflater().inflate(R.layout.tab_wishlist,null);
         cartView = getLayoutInflater().inflate(R.layout.tab_cart,null);
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
     }
 
     @Override
@@ -166,6 +174,32 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver{
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.nav_camera) {
+            // Handle the camera action
+        } else if (id == R.id.nav_gallery) {
+
+        } else if (id == R.id.nav_slideshow) {
+
+        } else if (id == R.id.nav_manage){
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
     @Override
     public <T> void onResponse(T obj, int tag) {
         Countries countries;

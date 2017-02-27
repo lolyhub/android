@@ -89,5 +89,12 @@
     <string name="product_EarningTwo"> Earning Two</string>
     <string name="product_EarningThree"> Earning Three</string>
     <string name="points">133LP</string>
+    
+    <!--wishlist-->
+    <string name="title_dominos">dominoz pizza</string>
+    <string name="price">Price</string>
+    <string name="earn">Earn</string>
+    <string name="move_to_cart">Move to Cart</string>
+    <string name="points_plus">+133LP</string>
 
 </resources>
