@@ -23,13 +23,16 @@ import android.widget.Toast;
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.constants.CommonConstant;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CardAdapter;
+import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.ComplexRecyclerViewAdapter;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.NavigationListingAdapter;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.Pager;
 import com.neosoft.lolyhub.lolyhubapp.controllers.interfaces.NetworkReceiver;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.Countries;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.Result;
+import com.neosoft.lolyhub.lolyhubapp.rest.model.User;
 import com.neosoft.lolyhub.lolyhubapp.utilities.CommonUtils;
 
+import java.util.ArrayList;
 import java.util.zip.Inflater;
 
 /**
@@ -48,6 +51,7 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
     private View searchView,walletView,wishlistView,cartView,homeView;
     private RecyclerView mNavigationRecyclerView;
     private NavigationListingAdapter mNavigationAdapterListing;
+    private  DrawerLayout drawer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,9 +75,11 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
         // NetworkCall networkCall=new NetworkCall(this,this);
         //  networkCall.fetchWSCall();
 
-       CommonUtils.initDrawer(this);
+        CommonUtils.initDrawer(this);
         NavigationView navigationView = (NavigationView)findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        drawer= (DrawerLayout) findViewById(R.id.drawer_layout);
+
 
     }
 
@@ -86,7 +92,16 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
      });
      mNavigationRecyclerView.setLayoutManager(new LinearLayoutManager(this));
      mNavigationAdapterListing=new NavigationListingAdapter(this);
-     mNavigationRecyclerView.setAdapter(mNavigationAdapterListing);
+    // mNavigationRecyclerView.setAdapter(mNavigationAdapterListing);
+     ArrayList<Object> items = new ArrayList<>();
+     items.add(new User("Dany Targaryen", "Valyria"));
+     items.add(new User("Rob Stark", "Winterfell"));
+     items.add("image");
+     items.add(new User("Jon Snow", "Castle Black"));
+     items.add("image");
+     items.add(new User("Tyrion Lanister", "King's Landing"));
+
+     mNavigationRecyclerView.setAdapter(new ComplexRecyclerViewAdapter(items));
 
 
  }
@@ -125,11 +140,12 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
 
             }
         });
-
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
+
+                drawer.openDrawer(GravityCompat.START);
             }
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
@@ -140,8 +156,6 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
 
             }
         });
-
-
     }
     public void setDialog(){
         LayoutInflater layoutInflater= (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -196,7 +210,7 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
         } else if (id == R.id.nav_manage){
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
