@@ -1,6 +1,7 @@
 package com.neosoft.lolyhub.lolyhubapp.view.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -145,7 +146,11 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
 
-                drawer.openDrawer(GravityCompat.START);
+               // drawer.openDrawer(GravityCompat.START);
+                startActivity(new Intent(HomeActivity.this, WishlistActivity.class));
+                overridePendingTransition(R.anim.enter, R.anim.exit);
+
+
             }
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
