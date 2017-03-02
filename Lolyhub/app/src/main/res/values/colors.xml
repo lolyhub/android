@@ -11,4 +11,6 @@
     <color name="fredeemColor">#9CCD61</color>
     <color name="earningColor">#F9B83E</color>
     <color name="blueColor">#0080ff</color>
+    <color name="transperent">#07000000</color>
+    <color name="wishlist_button_color">#7AC24D</color>
 </resources>

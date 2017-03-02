@@ -1,34 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/grey"/>
+
     <LinearLayout
+        android:id="@+id/container_layout"
         android:orientation="horizontal"
+        android:layout_below="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
         android:weightSum="6">
         <ImageView
             android:id="@+id/wishlist_image_Id"
+            android:layout_marginTop="@dimen/marginFive"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
             android:layout_weight="1"
             android:src="@drawable/piza"/>
         <LinearLayout
             android:id="@+id/detail_catainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
+            android:layout_weight="4"
             android:layout_marginLeft="@dimen/marginFive"
             android:paddingTop="@dimen/fab_margin"
-            android:paddingBottom="@dimen/activity_horizontal_margin"
+            android:paddingBottom="@dimen/marginFive"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/wishlist_title_Id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
+                android:textColor="@android:color/black"
                 android:textSize="@dimen/textSizeMarketPlace"
                 android:text="@string/title_dominos"/>
             <LinearLayout
@@ -40,11 +52,13 @@
                     android:id="@+id/wishlist_price_Id"
                     style="@style/customTextVerticalView"
                     android:textStyle="normal"
+                    android:textColor="@android:color/black"
                     android:text="@string/price"/>
                 <TextView
                     android:id="@+id/wishlist_pricePoints_Id"
                     android:layout_marginLeft="@dimen/marginTwenty"
                     style="@style/customTextVerticalView"
+
                     android:textColor="@color/fredeemColor"
                     android:text="@string/points"/>
             </LinearLayout>
@@ -58,6 +72,7 @@
                     android:id="@+id/wishlist_earn_Id"
                     style="@style/customTextVerticalView"
                     android:textStyle="normal"
+                    android:textColor="@android:color/black"
                     android:text="@string/earn"/>
                 <TextView
                     android:id="@+id/wishlist_earnPoints_Id"
@@ -74,18 +89,22 @@
                 <TextView
                     android:id="@+id/wishlist_move_Id"
                     style="@style/customTextVerticalView"
+                    android:textColor="@android:color/black"
                     android:textStyle="normal"
                     android:text="@string/move_to_cart"/>
                 <RadioButton
                     android:id="@+id/wishlist_moveCheck_Id"
                     android:layout_marginLeft="@dimen/marginTwenty"
+                    android:layout_marginStart="@dimen/marginTwenty"
                     style="@style/customTextVerticalView"
                     android:textStyle="normal"
+                    android:buttonTint="@android:color/holo_red_dark"
                     />
             </LinearLayout>
-    </LinearLayout>
+        </LinearLayout>
         <LinearLayout
             android:id="@+id/cancel_layout"
+            android:visibility="gone"
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_weight="1"
@@ -102,6 +121,7 @@
         </LinearLayout>
 
     </LinearLayout>
+
 
 
 </RelativeLayout>

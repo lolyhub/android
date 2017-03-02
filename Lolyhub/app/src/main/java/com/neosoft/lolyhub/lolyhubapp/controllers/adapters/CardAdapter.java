@@ -13,20 +13,22 @@ import android.widget.TextView;
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.controllers.interfaces.ClickListener;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.Result;
-import com.neosoft.lolyhub.lolyhubapp.view.activities.HomeActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
+public class CardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     List<Result> mItems;
     Context mContext;
     private ClickListener mClickListener;
+    private int viewType;
+    private final int USER = 0, IMAGE = 1;
 
-    public CardAdapter(Context context) {
+    public CardAdapter(Context context, int viewType) {
         super();
         mContext=context;
         mItems = new ArrayList<Result>();
+        this.viewType=viewType;
     }
 
     public void addData(Result  result) {
@@ -45,10 +47,26 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.recycler_view, viewGroup, false);
-        ViewHolder viewHolder = new ViewHolder(v);
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        RecyclerView.ViewHolder viewHolder=null;
+        if (viewType==1)
+        {
+            View v = LayoutInflater.from(viewGroup.getContext())
+                    .inflate(R.layout.item_row_cart, viewGroup, false);
+             viewHolder = new CardViewHolder(v);
+
+            return viewHolder;
+
+        }else if(viewType==2){
+            View v = LayoutInflater.from(viewGroup.getContext())
+                    .inflate(R.layout.item_row_wishlist, viewGroup, false);
+             viewHolder = new WishlistViewHolder(v);
+
+            return viewHolder;
+
+        }
+
+return null;
 
       //  v.setOnClickListener(HomeActivity.myOnClickListener);
 
@@ -58,31 +76,62 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
                 Toast.makeText(mContext, "Clicked", Toast.LENGTH_SHORT).show();
             }
         });*/
-        return viewHolder;
+
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, int i) {
-        Result result = mItems.get(i);
-        viewHolder.name.setText(result.getName());
-        viewHolder.alpha2.setText(result.getAlpha2_code());
-        viewHolder.alpha3.setText(result.getAlpha3_code());
+    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
+        switch (viewType) {
+            case 1:
+                CardViewHolder vh1 = (CardViewHolder) viewHolder;
+                /*Result result = mItems.get(position);
+                vh1.name.setText(result.getName());
+                vh1.alpha2.setText(result.getAlpha2_code());
+                vh1.alpha3.setText(result.getAlpha3_code());*/
 
+                break;
+            case 2:
+                WishlistViewHolder vh2=(WishlistViewHolder)viewHolder;
+
+                break;
+
+        }
     }
+
 
     @Override
     public int getItemCount() {
-        return mItems.size();
+        return 5;
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    class CardViewHolder extends RecyclerView.ViewHolder {
         public TextView name;
         public TextView alpha2;
         public TextView alpha3;
         public CardView cardView;
         public LinearLayout mLyaout;
 
-        public ViewHolder(View itemView) {
+        public CardViewHolder(View itemView) {
+            super(itemView);
+
+            name = (TextView) itemView.findViewById(R.id.id_name);
+            alpha2 = (TextView) itemView.findViewById(R.id.id_alpha2);
+            alpha3 = (TextView) itemView.findViewById(R.id.id_alpha3);
+            cardView= (CardView) itemView.findViewById(R.id.card_view);
+            mLyaout= (LinearLayout) itemView.findViewById(R.id.home_layout);
+            setRippleEffect(cardView,mLyaout);
+        }
+
+
+    }
+    class WishlistViewHolder extends RecyclerView.ViewHolder {
+        public TextView name;
+        public TextView alpha2;
+        public TextView alpha3;
+        public CardView cardView;
+        public LinearLayout mLyaout;
+
+        public WishlistViewHolder(View itemView) {
             super(itemView);
 
             name = (TextView) itemView.findViewById(R.id.id_name);

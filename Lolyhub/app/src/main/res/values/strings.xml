@@ -93,6 +93,7 @@
     <!--wishlist-->
     <string name="title_dominos">dominoz pizza</string>
     <string name="price">Price</string>
+    <string name="move_items">Move ll items to cart</string>
     <string name="earn">Earn</string>
     <string name="move_to_cart">Move to Cart</string>
     <string name="points_plus">+133LP</string>

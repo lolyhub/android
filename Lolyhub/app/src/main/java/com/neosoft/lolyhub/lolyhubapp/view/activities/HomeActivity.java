@@ -9,11 +9,9 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,7 +22,7 @@ import android.widget.Toast;
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.constants.CommonConstant;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CardAdapter;
-import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.ComplexRecyclerViewAdapter;
+import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CartCustomAdapter;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.NavigationListingAdapter;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.Pager;
 import com.neosoft.lolyhub.lolyhubapp.controllers.interfaces.NetworkReceiver;
@@ -32,9 +30,9 @@ import com.neosoft.lolyhub.lolyhubapp.rest.model.Countries;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.Result;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.User;
 import com.neosoft.lolyhub.lolyhubapp.utilities.CommonUtils;
+import com.neosoft.lolyhub.lolyhubapp.utilities.GetOlaBaseFare;
 
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 /**
  * Created by neosoft on 29/12/16.
@@ -102,7 +100,7 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
      items.add("image");
      items.add(new User("Tyrion Lanister", "King's Landing"));
 
-     mNavigationRecyclerView.setAdapter(new ComplexRecyclerViewAdapter(items));
+    // mNavigationRecyclerView.setAdapter(new ComplexRecyclerViewAdapter(items));
 
 
  }
@@ -126,7 +124,7 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
 
         mTabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+       /* viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -140,15 +138,23 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
             public void onPageScrollStateChanged(int state) {
 
             }
-        });
+        });*/
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
+              //  viewPager.setCurrentItem(tab.getPosition());
 
                // drawer.openDrawer(GravityCompat.START);
-                startActivity(new Intent(HomeActivity.this, WishlistActivity.class));
-                overridePendingTransition(R.anim.enter, R.anim.exit);
+
+                if (tab.getPosition()==3){
+                    startActivity(new Intent(HomeActivity.this, WishlistActivity.class));
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
+                }else if(tab.getPosition()==4){
+                    startActivity(new Intent(HomeActivity.this, CartActivity.class));
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
+                }
+
+
 
 
             }
