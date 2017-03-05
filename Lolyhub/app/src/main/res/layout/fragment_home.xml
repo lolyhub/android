@@ -33,13 +33,24 @@
                     app:tabIndicatorHeight="0dp"/>
 
             </RelativeLayout>
+            <LinearLayout
+                android:layout_width="@dimen/shope_by_category"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/marginTwenty"
+                    android:textStyle="bold"
+                    android:text="@string/shope_by_categories"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/headericon"
+                    android:layout_marginLeft="@dimen/marginTwenty"/>
+            </LinearLayout>
 
-           <TextView
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_marginLeft="@dimen/marginTwenty"
-               android:textStyle="bold"
-               android:text="@string/shope_by_categories"/>
+
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/horizontalRecyclerview"
                 android:layout_width="match_parent"

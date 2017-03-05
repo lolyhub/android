@@ -6,6 +6,7 @@
     <color name="grey">#808080</color>
     <color name="loginButtonColor">#B3B3B3</color>
     <color name="marketTextColor">#89C540</color>
+    <color name="light_grey">#D3D3D3</color>
     <color name="customPrimary">#FFFFFF</color>
     <color name="customDark">#ABABAB</color>
     <color name="fredeemColor">#9CCD61</color>

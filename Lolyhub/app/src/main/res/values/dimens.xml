@@ -31,6 +31,8 @@
     <!--text widths-->
     <dimen name="txt_loginLogout_Width">40dp</dimen>
     <dimen name="txt_fontSize">14sp</dimen>
+    <dimen name="shope_by_category">180dp</dimen>
+    <dimen name="view_setting">0.05dp</dimen>
 
     <dimen name="fab_margin">16dp</dimen>
 </resources>

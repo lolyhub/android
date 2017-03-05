@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:layout_marginTop="@dimen/marginTen"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:background="@color/light_grey"
+        android:layout_height="@dimen/login_layaout_height"
         android:weightSum="2"
         android:orientation="horizontal">
         <TextView
@@ -14,15 +16,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:layout_gravity="center"
             android:textStyle="bold"
             android:text="@string/foods"
             android:textSize="@dimen/textSizeMarketPlace"
              />
-        <ImageView
+        <TextView
             android:id="@+id/product_viewMore"
-            android:layout_width="40dp"
+            android:layout_width="wrap_content"
+            android:background="@drawable/border"
             android:layout_marginLeft="@dimen/marginTen"
+            android:layout_marginTop="@dimen/marginFive"
             android:layout_height="30dp"
+            android:padding="@dimen/marginFive"
+            android:gravity="center"
             android:layout_weight="1"
             android:src="@drawable/view_more"
             android:text="@string/product_viewMore"
@@ -32,7 +39,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marginTwenty"
+        android:layout_marginTop="@dimen/marginTen"
+        android:layout_marginBottom="@dimen/marginFive"
+        android:background="@drawable/product_listing_border"
         android:weightSum="3"
         android:visibility="visible"
         android:orientation="horizontal">
@@ -54,7 +63,6 @@
                 android:id="@+id/productTitleOne_Id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:text="@string/product_title"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -94,6 +102,10 @@
             </LinearLayout>
 
         </LinearLayout>
+        <View
+            android:layout_width="@dimen/view_setting"
+            android:background="@color/grey"
+            android:layout_height="match_parent"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -155,6 +167,10 @@
             </LinearLayout>
 
         </LinearLayout>
+        <View
+            android:layout_width="@dimen/view_setting"
+            android:background="@color/grey"
+            android:layout_height="match_parent"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -222,8 +238,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marginTwenty"
+        android:layout_marginTop="@dimen/marginTen"
         android:weightSum="2"
+        android:paddingBottom="@dimen/marginFive"
+        android:background="@drawable/product_listing_border"
         android:visibility="gone"
         android:orientation="horizontal">
         <LinearLayout
@@ -283,6 +301,10 @@
             </LinearLayout>
 
         </LinearLayout>
+        <View
+            android:layout_width="@dimen/view_setting"
+            android:background="@color/grey"
+            android:layout_height="match_parent"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -342,6 +364,7 @@
             </LinearLayout>
 
         </LinearLayout>
+
 
 
         </LinearLayout>
