@@ -78,7 +78,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 if (validationUtils.validateSignIn(LoginActivity.this,mEdit_UserMobuile,mEdit_UserPassword)){
                     Toast.makeText(this, "Successfully logged in", Toast.LENGTH_SHORT).show();
                     Intent intent=new Intent(this,HomeActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     this.startActivity(intent);
+                    this.finish();
                 }
         }
     }

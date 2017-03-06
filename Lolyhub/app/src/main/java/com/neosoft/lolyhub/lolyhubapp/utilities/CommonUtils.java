@@ -3,6 +3,7 @@ package com.neosoft.lolyhub.lolyhubapp.utilities;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
@@ -18,6 +19,7 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.lolyhub.lolyhubapp.R;
+import com.neosoft.lolyhub.lolyhubapp.view.activities.HomeActivity;
 
 /**
  * Created by neosoft on 2/2/17.
@@ -73,4 +75,5 @@ public class CommonUtils  {
         toggle.syncState();
 
     }
+
 }

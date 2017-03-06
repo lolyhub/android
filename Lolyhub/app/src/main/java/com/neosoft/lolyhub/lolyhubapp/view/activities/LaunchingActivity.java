@@ -35,9 +35,11 @@ public class LaunchingActivity extends AppCompatActivity implements View.OnClick
             case R.id.btnSignUpLaunch:
                 startActivity(new Intent(LaunchingActivity.this,SignUpActivity.class));
 
+
                 break;
             case R.id.btnLoginLaunch:
                 startActivity(new Intent(LaunchingActivity.this,LoginActivity.class));
+
                 break;
         }
 

@@ -67,6 +67,14 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/wishlist_cart_textsize</item>
     </style>
+    <style name="MRadioButton.Purple" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="colorAccent">@color/red</item>
+        <item name="colorControlHighlight">@color/red</item>
+        <item name="android:colorPressedHighlight">@color/red</item>
+        <item name="colorPrimaryDark">@color/red</item>
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorControlActivated">@color/red</item>
+    </style>
     <style name="Theme.AppCompat.Translucent">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

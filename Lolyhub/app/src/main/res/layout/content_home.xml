@@ -12,7 +12,7 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/actionBarSize"
-        app:tabMode="scrollable"
+        app:tabMode="fixed"
         app:tabIndicatorColor="@color/grey"
         app:tabPadding="2dp"
         android:paddingTop="5dp"

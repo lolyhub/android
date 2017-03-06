@@ -1,6 +1,7 @@
 package com.neosoft.lolyhub.lolyhubapp.view.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -77,5 +78,11 @@ public class WishlistActivity extends AppCompatActivity {
             int selectedItemPosition = mRecyclerView.getChildPosition(v);
             mCardAdapter.removeData(selectedItemPosition);
         }*/
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
     }
 }

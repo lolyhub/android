@@ -1,6 +1,7 @@
 package com.neosoft.lolyhub.lolyhubapp.view.activities;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
@@ -187,7 +188,6 @@ public class SignUpActivity extends AppCompatActivity  implements View.OnClickLi
                 mGenderFemale.setBackgroundColor(Color.WHITE);
                 mGenderLayout.setPadding(1,1,1,1);
                 mGenderString="Male";
-
                 break;
             case R.id.female_id:
                 mGenderFemale.setBackgroundColor(ContextCompat.getColor(this,R.color.grey));
@@ -200,6 +200,10 @@ public class SignUpActivity extends AppCompatActivity  implements View.OnClickLi
             case R.id.btn_Register_signUp:
                 if (validationUtils.validateSignUp(SignUpActivity.this,mEdit_FirstName,mEdit_LastName,mEdit_Email,mEdit_ReEnterEmail,mEdit_UserName,mEdit_NewUserPassword,mEdit_NewUserReEnterPassword,mTxt_BirthDate,mGenderString,mCountryString,mCityString,mEdit_MobileNumber,isCheckedValue)){
                     Toast.makeText(this, "Successfully logged in", Toast.LENGTH_SHORT).show();
+                    Intent intent=new Intent(this,HomeActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    this.startActivity(intent);
+                    this.finish();
                 }
                 break;
         }
