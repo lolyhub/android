@@ -22,7 +22,6 @@ import android.widget.Toast;
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.constants.CommonConstant;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CardAdapter;
-import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CartCustomAdapter;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.NavigationListingAdapter;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.Pager;
 import com.neosoft.lolyhub.lolyhubapp.controllers.interfaces.NetworkReceiver;
@@ -30,7 +29,6 @@ import com.neosoft.lolyhub.lolyhubapp.rest.model.Countries;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.Result;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.User;
 import com.neosoft.lolyhub.lolyhubapp.utilities.CommonUtils;
-import com.neosoft.lolyhub.lolyhubapp.utilities.GetOlaBaseFare;
 
 import java.util.ArrayList;
 

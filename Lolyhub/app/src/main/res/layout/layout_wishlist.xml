@@ -28,8 +28,8 @@
                 android:id="@+id/wishlist_title_Id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="@dimen/textSizeMarketPlace"
+                android:textSize="@dimen/textSize"
+
                 android:text="@string/title_dominos"/>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -39,7 +39,7 @@
                 <TextView
                     android:id="@+id/wishlist_price_Id"
                     style="@style/customTextVerticalView"
-                    android:textStyle="normal"
+
                     android:text="@string/price"/>
                 <TextView
                     android:id="@+id/wishlist_pricePoints_Id"
@@ -57,7 +57,7 @@
                 <TextView
                     android:id="@+id/wishlist_earn_Id"
                     style="@style/customTextVerticalView"
-                    android:textStyle="normal"
+
                     android:text="@string/earn"/>
                 <TextView
                     android:id="@+id/wishlist_earnPoints_Id"
@@ -74,13 +74,13 @@
                 <TextView
                     android:id="@+id/wishlist_move_Id"
                     style="@style/customTextVerticalView"
-                    android:textStyle="normal"
+
                     android:text="@string/move_to_cart"/>
                 <RadioButton
                     android:id="@+id/wishlist_moveCheck_Id"
                     android:layout_marginLeft="@dimen/marginTwenty"
                     style="@style/customTextVerticalView"
-                    android:textStyle="normal"
+
                     />
             </LinearLayout>
     </LinearLayout>

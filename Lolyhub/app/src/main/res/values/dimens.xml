@@ -18,6 +18,7 @@
     <dimen name="actionBarSize">56dp</dimen>
     <dimen name="login_layaout_height">40dp</dimen>
     <dimen name="textSize">14sp</dimen>
+    <dimen name="wishlist_cart_textsize">12sp</dimen>
     <dimen name="heading_text_size">10sp</dimen>
     <dimen name="textSizeMarketPlace">18sp</dimen>
     <dimen name="filter_image">50dp</dimen>

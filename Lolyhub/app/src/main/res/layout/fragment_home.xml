@@ -40,14 +40,14 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/marginTwenty"
+                    android:layout_marginLeft="@dimen/marginTen"
                     android:textStyle="bold"
                     android:text="@string/shope_by_categories"/>
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:src="@drawable/headericon"
-                    android:layout_marginLeft="@dimen/marginTwenty"/>
+                    android:layout_marginLeft="@dimen/marginTen"/>
             </LinearLayout>
 
 

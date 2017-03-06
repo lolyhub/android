@@ -14,6 +14,7 @@
         <item name="colorPrimary">@color/customPrimary</item>
         <item name="colorPrimaryDark">@color/customDark</item>
         <item name="windowActionBar">false</item>
+        <item name="android:typeface">serif</item>
         <item name="windowNoTitle">true</item>
     </style>
 
@@ -64,8 +65,7 @@
     <style name="customTextVerticalView" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">@dimen/textSize</item>
+        <item name="android:textSize">@dimen/wishlist_cart_textsize</item>
     </style>
     <style name="Theme.AppCompat.Translucent">
         <item name="windowActionBar">false</item>
@@ -73,6 +73,7 @@
         <item name="colorPrimary">@color/customPrimary</item>
         <item name="colorPrimaryDark">@color/customDark</item>
         <item name="android:windowNoTitle">true</item>
+        <item name="android:typeface">serif</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:windowIsTranslucent">true</item>

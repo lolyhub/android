@@ -98,4 +98,8 @@
     <string name="move_to_cart">Move to Cart</string>
     <string name="points_plus">+133LP</string>
 
+    <!--cart view-->
+    <string name="checkout">Checkout</string>
+    <string name="total_lp">Total LP</string>
+    <string name="total_Earn">Total Earn</string>
 </resources>
