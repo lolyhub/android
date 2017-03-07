@@ -102,4 +102,6 @@
     <string name="checkout">Checkout</string>
     <string name="total_lp">Total LP</string>
     <string name="total_Earn">Total Earn</string>
+    <string name="cart_points">166LP</string>
+    <string name="cart_poits_plus">+16LP</string>
 </resources>

@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.controllers.interfaces.ClickListener;
@@ -17,15 +16,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by neosoft on 27/2/17.
+ * Created by neosoft on 7/3/17.
  */
 
-public class NavigationListingAdapter extends RecyclerView.Adapter<NavigationListingAdapter.ViewHolder> {
+public class CartNavigationAdpater extends RecyclerView.Adapter<CartNavigationAdpater.ViewHolder> {
     List<ProductViewModel> mItems;
     Context mContext;
     private ClickListener mClickListener;
 
-    public NavigationListingAdapter(Context context) {
+    public CartNavigationAdpater(Context context) {
         super();
         mContext = context;
         mItems = new ArrayList<ProductViewModel>();
@@ -45,24 +44,24 @@ public class NavigationListingAdapter extends RecyclerView.Adapter<NavigationLis
     }
 
     @Override
-    public NavigationListingAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public CartNavigationAdpater.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.item_row_wishlist, viewGroup, false);
-        NavigationListingAdapter.ViewHolder viewHolder = new NavigationListingAdapter.ViewHolder(v);
+                .inflate(R.layout.item_row_cart, viewGroup, false);
+        CartNavigationAdpater.ViewHolder viewHolder = new CartNavigationAdpater.ViewHolder(v);
 
         // v.setOnClickListener(HomeActivity.myOnClickListener);
 
-        v.setOnClickListener(new View.OnClickListener() {
+       /* v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(mContext, "Clicked", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(NavigationListingAdapter.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(CartNavigationAdpater.ViewHolder viewHolder, int i) {
       /*  ProductViewModel result = mItems.get(i);
         viewHolder.txtView.setText(result.getTitle());*/
         //    viewHolder.imageViewmageView.setImageResource(result.getAlpha2_code());
@@ -72,7 +71,7 @@ public class NavigationListingAdapter extends RecyclerView.Adapter<NavigationLis
 
     @Override
     public int getItemCount() {
-        return 5;
+        return 8;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -12,6 +13,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -26,6 +28,7 @@ import com.neosoft.lolyhub.lolyhubapp.view.activities.HomeActivity;
  */
 
 public class CommonUtils  {
+    // step 1. create a MenuCreator
 
 
     public static Drawable resizeDrawable(Activity activity, Drawable drawable){
@@ -75,5 +78,6 @@ public class CommonUtils  {
         toggle.syncState();
 
     }
+
 
 }

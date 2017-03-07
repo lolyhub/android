@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CartCustomAdapter;
-import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.WishlistCustomAdapter;
-import com.neosoft.lolyhub.lolyhubapp.utilities.AlphaTextView;
 import com.neosoft.lolyhub.lolyhubapp.utilities.GetterSetter;
 
 import java.util.ArrayList;
@@ -32,12 +30,11 @@ public class CartActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cartview);
-
         initViews();
         initAdapter();
     }
     private void initViews(){
-        AlphaTextView alphaTextView=new AlphaTextView(this);
+        //AlphaTextView alphaTextView=new AlphaTextView(this);
         mAlphaTextView= (TextView)findViewById(R.id.rightText);
         mAlphaTextView.getBackground().setAlpha(255);
 

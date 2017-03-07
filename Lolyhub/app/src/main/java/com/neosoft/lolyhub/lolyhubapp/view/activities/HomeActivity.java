@@ -2,6 +2,7 @@ package com.neosoft.lolyhub.lolyhubapp.view.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Canvas;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -12,18 +13,24 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.constants.CommonConstant;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CardAdapter;
+import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CartNavigationAdpater;
+import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CartSwipeToDeleteAdapter;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.NavigationListingAdapter;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.Pager;
+import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.SwipeToDeleteAdapter;
 import com.neosoft.lolyhub.lolyhubapp.controllers.interfaces.NetworkReceiver;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.Countries;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.Result;
@@ -31,6 +38,7 @@ import com.neosoft.lolyhub.lolyhubapp.rest.model.User;
 import com.neosoft.lolyhub.lolyhubapp.utilities.CommonUtils;
 
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 /**
  * Created by neosoft on 29/12/16.
@@ -48,7 +56,17 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
     private View searchView,walletView,wishlistView,cartView,homeView;
     private RecyclerView mNavigationRecyclerView;
     private NavigationListingAdapter mNavigationAdapterListing;
+    private CartNavigationAdpater mCartNavigationAdapter;
     private  DrawerLayout drawer;
+    ArrayList<Object> items = new ArrayList<>();
+    private SwipeToDeleteAdapter mSwipeAdapter;
+    private CartSwipeToDeleteAdapter mCartSwipeToDeleteAdapter;
+    private Button mBottomView;
+    private RelativeLayout mTotalLPContainer;
+    private RelativeLayout mEarningContainer;
+    private View mFirstView;
+    private View mSecondView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,10 +94,9 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
         NavigationView navigationView = (NavigationView)findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         drawer= (DrawerLayout) findViewById(R.id.drawer_layout);
-
+        drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
 
     }
-
  public void addListners(){
      floatingActionButton.setOnClickListener(new View.OnClickListener() {
          @Override
@@ -88,9 +105,8 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
          }
      });
      mNavigationRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-     mNavigationAdapterListing=new NavigationListingAdapter(this);
-    // mNavigationRecyclerView.setAdapter(mNavigationAdapterListing);
-     ArrayList<Object> items = new ArrayList<>();
+
+
      items.add(new User("Dany Targaryen", "Valyria"));
      items.add(new User("Rob Stark", "Winterfell"));
      items.add("image");
@@ -99,8 +115,6 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
      items.add(new User("Tyrion Lanister", "King's Landing"));
 
     // mNavigationRecyclerView.setAdapter(new ComplexRecyclerViewAdapter(items));
-
-
  }
     private void setUpTabLayout(){
 
@@ -141,20 +155,23 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
               //  viewPager.setCurrentItem(tab.getPosition());
-
-               // drawer.openDrawer(GravityCompat.START);
-
-                if (tab.getPosition()==3){
-                    startActivity(new Intent(HomeActivity.this, WishlistActivity.class));
-                    overridePendingTransition(R.anim.enter, R.anim.exit);
-                }else if(tab.getPosition()==4){
-                    startActivity(new Intent(HomeActivity.this, CartActivity.class));
-                    overridePendingTransition(R.anim.enter, R.anim.exit);
+                ArrayList<String> list=new ArrayList<String>();
+                for (int i=0;i<2;i++){
+                    list.add("objects");
                 }
-
-
-
-
+                if (tab.getPosition()==3){
+                    mSwipeAdapter=new SwipeToDeleteAdapter(HomeActivity.this,list);
+                    mNavigationRecyclerView.setAdapter(mSwipeAdapter);
+                    drawer.openDrawer(GravityCompat.START);
+                    mBottomView.setText(R.string.move_to_cart);
+                    setInVisibility();
+                }else if(tab.getPosition()==4){
+                    mCartSwipeToDeleteAdapter=new CartSwipeToDeleteAdapter(HomeActivity.this,list);
+                    mNavigationRecyclerView.setAdapter(mCartSwipeToDeleteAdapter);
+                    drawer.openDrawer(GravityCompat.START);
+                    mBottomView.setText(R.string.checkout);
+                    setVisibility();
+                }
             }
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
@@ -173,6 +190,11 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
         CommonUtils.CustomDialog(view,HomeActivity.this);
     }
     private void initViews(){
+        mTotalLPContainer= (RelativeLayout) findViewById(R.id.total_rel_container);
+        mEarningContainer= (RelativeLayout) findViewById(R.id.earn_rel_caontainer);
+        mFirstView=findViewById(R.id.first_View_id);
+        mSecondView=findViewById(R.id.second_View_id);
+        mBottomView= (Button) findViewById(R.id.bottomLayout);
         mNavigationRecyclerView= (RecyclerView) findViewById(R.id.navigation_item_list);
         floatingActionButton= (FloatingActionButton) findViewById(R.id.fab);
         homeView= getLayoutInflater().inflate(R.layout.tab_home,null);
@@ -181,7 +203,20 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
         wishlistView = getLayoutInflater().inflate(R.layout.tab_wishlist,null);
         cartView = getLayoutInflater().inflate(R.layout.tab_cart,null);
     }
+    private void setVisibility(){
+        mTotalLPContainer.setVisibility(View.VISIBLE);
+        mEarningContainer.setVisibility(View.VISIBLE);
+        mFirstView.setVisibility(View.VISIBLE);
+        mSecondView.setVisibility(View.VISIBLE);
 
+    }
+    private void setInVisibility(){
+        mTotalLPContainer.setVisibility(View.GONE);
+        mEarningContainer.setVisibility(View.GONE);
+        mFirstView.setVisibility(View.GONE);
+        mSecondView.setVisibility(View.GONE);
+
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -262,5 +297,16 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
             int selectedItemPosition = mRecyclerView.getChildPosition(v);
             mCardAdapter.removeData(selectedItemPosition);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(drawer.isDrawerOpen(GravityCompat.START)) {
+            //drawer is open
+            drawer.closeDrawer(GravityCompat.START);
+        }else{
+            super.onBackPressed();
+        }
+
     }
 }

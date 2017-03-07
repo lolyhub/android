@@ -1,7 +1,6 @@
 package com.neosoft.lolyhub.lolyhubapp.view.activities;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +13,6 @@ import android.widget.Toast;
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CardAdapter;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.WishlistCustomAdapter;
-import com.neosoft.lolyhub.lolyhubapp.utilities.AlphaTextView;
 import com.neosoft.lolyhub.lolyhubapp.utilities.GetterSetter;
 
 import java.util.ArrayList;
@@ -42,7 +40,7 @@ public class WishlistActivity extends AppCompatActivity {
         initAdapter();
     }
     private void initViews(){
-        AlphaTextView alphaTextView=new AlphaTextView(this);
+       // AlphaTextView alphaTextView=new AlphaTextView(this);
         mAlphaTextView= (TextView)findViewById(R.id.rightText);
         mAlphaTextView.getBackground().setAlpha(255);
 
@@ -51,7 +49,6 @@ public class WishlistActivity extends AppCompatActivity {
             GetterSetter getterSetter = new GetterSetter();
             feedItemList.add(getterSetter);
         }
-
 
     }
     private void initAdapter(){
