@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "208226474884",
+    "project_id": "firebase-lolyhub"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208226474884:android:f80e7ddeb69b8efb",
+        "android_client_info": {
+          "package_name": "com.neosoft.lolyhub.lolyhubapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208226474884-c0hufnp15snib6vvok07vue1821ous3a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.neosoft.lolyhub.lolyhubapp",
+            "certificate_hash": "3ccfbda9bf365741e4e0a50e085e914838c7542c"
+          }
+        },
+        {
+          "client_id": "208226474884-r1lhrea91injigobb205i02rr5f1089r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuD93rjeKDjWkXI25fM4ER1QM8MuzHPHk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
