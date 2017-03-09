@@ -18,6 +18,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.lolyhub.lolyhubapp.R;
@@ -79,5 +81,17 @@ public class CommonUtils  {
 
     }
 
+    public static void gainFocus(Context mContext,EditText mEditText ){
+    //  mEditText.requestFocus();
+       /* InputMethodManager imm = (InputMethodManager)mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.showSoftInput(mEditText, InputMethodManager.SHOW_IMPLICIT);*/
+    }
+    public static void closeFocus(Context context, EditText editText){
+        InputMethodManager imm = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
+    }
+    public static void removeFocus(Activity activity){
+        activity.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+    }
 
 }

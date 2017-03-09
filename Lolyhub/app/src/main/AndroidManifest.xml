@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name="com.neosoft.lolyhub.lolyhubapp.view.activities.LoginActivity"
-            android:theme="@style/NoActionBar">
+            android:theme="@style/NoActionBar"
+            android:windowSoftInputMode="stateAlwaysVisible">
         </activity>
         <activity android:name="com.neosoft.lolyhub.lolyhubapp.view.activities.SignUpActivity"
             android:theme="@style/NoActionBar">

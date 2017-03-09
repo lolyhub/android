@@ -104,4 +104,5 @@
     <string name="total_Earn">Total Earn</string>
     <string name="cart_points">166LP</string>
     <string name="cart_poits_plus">+16LP</string>
+    <string name="loading">wait while loading...</string>
 </resources>
