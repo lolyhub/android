@@ -28,8 +28,6 @@ public class CartFragment extends Fragment {
     private RecyclerView mWishlistReclerview;
     private CartCustomAdapter mWishlistCustomAdapter;
     private View mView;
-
-
     private ArrayList<GetterSetter> feedItemList;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,7 +53,7 @@ public class CartFragment extends Fragment {
             GetterSetter getterSetter = new GetterSetter();
             feedItemList.add(getterSetter);
         }
-
+//ajsdjsadjsdjsj
 
     }
     private void initAdapter(View view){
