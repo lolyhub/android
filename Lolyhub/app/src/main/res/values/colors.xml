@@ -2,7 +2,18 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#808080</color>
     <color name="grey">#808080</color>
-    <color name="loginButtonColor">#6B8E23</color>
+    <color name="loginButtonColor">#B3B3B3</color>
+    <color name="marketTextColor">#89C540</color>
+    <color name="light_grey">#D3D3D3</color>
+    <color name="lighter_grey">#e6e6e6</color>
+    <color name="customPrimary">#FFFFFF</color>
+    <color name="customDark">#ABABAB</color>
+    <color name="fredeemColor">#9CCD61</color>
+    <color name="earningColor">#F9B83E</color>
+    <color name="blueColor">#0080ff</color>
+    <color name="transperent">#07000000</color>
+    <color name="wishlist_button_color">#7AC24D</color>
+    <color name="red">#D50000</color>
 </resources>

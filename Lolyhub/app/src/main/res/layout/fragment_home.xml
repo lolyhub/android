@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/homeContent"
+                android:layout_width="match_parent"
+                android:layout_height="250dp">
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/offersViewpager_Id"
+                    android:layout_width="match_parent"
+                     android:layout_marginBottom="@dimen/marginThirty"
+                    android:layout_height="wrap_content">
+                </android.support.v4.view.ViewPager>
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tabDots"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:tabBackground="@drawable/tab_selector"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp"/>
+
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="@dimen/shope_by_category"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/marginTen"
+                    android:textStyle="bold"
+                    android:text="@string/shope_by_categories"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/headericon"
+                    android:layout_marginLeft="@dimen/marginTen"/>
+            </LinearLayout>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/horizontalRecyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="120dp">
+
+            </android.support.v7.widget.RecyclerView>
+            <android.support.v7.widget.RecyclerView
+                            android:id="@+id/productRecyclerview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+             </android.support.v7.widget.RecyclerView>
+                    <ImageView
+                        android:id="@+id/lastHomeImage_Id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/homeimg"/>
+                </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+</LinearLayout>

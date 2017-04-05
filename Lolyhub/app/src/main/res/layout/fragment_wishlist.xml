@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/wishlist_recyclerview"
+        android:paddingTop="@dimen/marginFive"
+        android:layout_toLeftOf="@+id/rightText"
+        android:layout_width="match_parent"
+        android:layout_above="@+id/bottomLayout"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+    <Button
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/rightText"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="@dimen/textSize"
+        android:background="@color/wishlist_button_color"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:text="@string/move_items"/>
+
+</RelativeLayout>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:padding="@dimen/activity_horizontal_margin"
+    android:padding="@dimen/registration_layout_margin"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
@@ -52,35 +52,75 @@
             android:layout_marginTop="@dimen/marginTen"
             style="@style/CustomSignUpEdittext"
             android:hint="@string/BirthDate"/>
-        <EditText
-            android:id="@+id/edit_gender"
-            android:layout_marginTop="@dimen/marginTen"
-            style="@style/CustomSignUpEdittext"
-            android:hint="@string/Gender"/>
-        <EditText
-            android:id="@+id/edit_country"
-            android:layout_marginTop="@dimen/marginTen"
-            style="@style/CustomSignUpEdittext"
-            android:hint="@string/selectCountry"/>
 
-        <EditText
-            android:id="@+id/edit_city"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/marginTen"
-            style="@style/CustomSignUpEdittext"
-            android:hint="@string/selectCity"/>
 
-        <EditText
-            style="@style/CustomSignUpEdittext"
+            android:background="@drawable/round_editetxt">
+            <Spinner
+                android:id="@+id/select_gender"
+                android:layout_marginTop="@dimen/marginTen"
+                android:layout_marginBottom="@dimen/marginTen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </Spinner>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginTen"
+
+        android:background="@drawable/round_editetxt">
+        <Spinner
+            android:id="@+id/select_country"
             android:layout_marginTop="@dimen/marginTen"
-            />
+            android:layout_marginBottom="@dimen/marginTen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+        </Spinner>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginTen"
+
+            android:background="@drawable/round_editetxt">
+            <Spinner
+                android:id="@+id/select_city"
+                android:layout_marginTop="@dimen/marginTen"
+                android:layout_marginBottom="@dimen/marginTen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </Spinner>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/marginTen"
+
+        android:background="@drawable/round_editetxt">
+        <Spinner
+            android:id="@+id/select_codeCountry"
+            android:layout_marginTop="@dimen/marginTen"
+            android:layout_marginBottom="@dimen/marginTen"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content">
+        </Spinner>
         <EditText
             android:id="@+id/edit_phoneNumber"
             android:inputType="number"
-            android:layout_marginTop="@dimen/marginTen"
-            style="@style/CustomSignUpEdittext"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="10dp"
             android:hint="@string/number"/>
-
+    </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -93,7 +133,15 @@
             android:id="@+id/txt_lolyTerms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/lolyterms"/>
+            android:textSize="@dimen/textSize"
+            android:text="I Accept Lolyhub"/>
+         <TextView
+             android:id="@+id/txt_termsCondtions"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textColor="@color/blueColor"
+             android:textSize="@dimen/textSize"
+             android:text="Terms and Conditions"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -105,6 +153,7 @@
             android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/txt_subscribe"
+            android:textSize="@dimen/textSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/subscribe"/>
@@ -116,6 +165,33 @@
         android:textColor="@android:color/white"
         android:layout_marginTop="@dimen/marginTwenty"
         android:text="@string/signUp"
+        android:textSize="@dimen/textSize"
         android:background="@drawable/rounded_button"/>
+        <TextView
+            android:layout_marginTop="@dimen/marginTwenty"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/textSize"
+            android:layout_height="wrap_content"
+            android:text="Or"
+
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="@dimen/facebookImgSize"
+                android:layout_marginRight="@dimen/facebookImgSize"
+                android:layout_height="@dimen/facebookImgSize"
+                android:src="@drawable/facbook"/>
+            <ImageView
+                android:layout_width="@dimen/facebookImgSize"
+                android:layout_height="@dimen/facebookImgSize"
+                android:src="@drawable/googleplus"/>
+        </LinearLayout>
+
     </LinearLayout>
+
 </ScrollView>

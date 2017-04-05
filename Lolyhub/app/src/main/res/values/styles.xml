@@ -6,33 +6,87 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
+    <style name="NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/customPrimary</item>
+        <item name="colorPrimaryDark">@color/customDark</item>
         <item name="windowActionBar">false</item>
+        <item name="android:typeface">serif</item>
         <item name="windowNoTitle">true</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-    
+
+
+    <style name="NoActionBarTheme" parent="AppTheme.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <style name="CustomLoginLogout" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="SocialLoginButton" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/loginLogoutButtonSize</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitXY</item>
+
+    </style>
+
     <style name="CustomSignUpEdittext" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">@dimen/textSize</item>
         <item name="android:background">@drawable/round_editetxt</item>
-        <item name="android:padding">10dp</item>
+        <item name="android:padding">@dimen/edit_Text_padding</item>
+        <item name="android:gravity">center</item>
         <item name="android:maxLines">1</item>
         <item name="android:singleLine">true</item>
     </style>
 
+    <style name="genderLayout" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/round_editetxt</item>
+    </style>
+    <style name="customTextVerticalView" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/wishlist_cart_textsize</item>
+    </style>
+    <style name="MRadioButton.Purple" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="colorAccent">@color/red</item>
+        <item name="colorControlHighlight">@color/red</item>
+        <item name="android:colorPressedHighlight">@color/red</item>
+        <item name="colorPrimaryDark">@color/red</item>
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorControlActivated">@color/red</item>
+    </style>
+    <style name="Theme.AppCompat.Translucent">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/customPrimary</item>
+        <item name="colorPrimaryDark">@color/customDark</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
 
 
 </resources>
