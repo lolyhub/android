@@ -8,7 +8,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/search"
+        android:src="@drawable/shope"
         />
     <TextView
         android:layout_below="@id/tab_search_Id"
@@ -17,6 +17,6 @@
         android:layout_centerHorizontal="true"
         android:textStyle="bold"
         android:textSize="@dimen/heading_text_size"
-        android:text="@string/search"/>
+        android:text="@string/shope"/>
 
 </RelativeLayout>

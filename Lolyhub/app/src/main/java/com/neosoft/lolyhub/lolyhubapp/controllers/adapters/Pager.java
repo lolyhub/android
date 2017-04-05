@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.neosoft.lolyhub.lolyhubapp.view.fragments.CartFragment;
 import com.neosoft.lolyhub.lolyhubapp.view.fragments.HomeFragment;
-import com.neosoft.lolyhub.lolyhubapp.view.fragments.SearchFragment;
+import com.neosoft.lolyhub.lolyhubapp.view.fragments.ShopeFragment;
 import com.neosoft.lolyhub.lolyhubapp.view.fragments.WalletFragment;
 import com.neosoft.lolyhub.lolyhubapp.view.fragments.WishListFragment;
 
@@ -31,7 +31,7 @@ public class Pager extends FragmentStatePagerAdapter {
                 HomeFragment tab1 = new HomeFragment();
                 return tab1;
             case 1:
-                SearchFragment tab2 = new SearchFragment();
+                ShopeFragment tab2 = new ShopeFragment();
                 return tab2;
             case 2:
                 WalletFragment tab3 = new WalletFragment();

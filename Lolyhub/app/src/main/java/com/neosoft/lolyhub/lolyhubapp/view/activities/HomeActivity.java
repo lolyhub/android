@@ -115,7 +115,7 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
         mTabLayout.addTab(mTabLayout.newTab().setCustomView(wishlistView));
         mTabLayout.addTab(mTabLayout.newTab().setCustomView(cartView));
         mTabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-       /* viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -129,7 +129,7 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
             public void onPageScrollStateChanged(int state) {
 
             }
-        });*/
+        });
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -138,7 +138,7 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
                 for (int i=0;i<2;i++){
                     list.add("objects");
                 }
-                if (tab.getPosition()==3){
+                /*if (tab.getPosition()==3){
                     mSwipeAdapter=new SwipeToDeleteAdapter(HomeActivity.this,list);
                     mNavigationRecyclerView.setAdapter(mSwipeAdapter);
                     drawer.openDrawer(GravityCompat.START);
@@ -150,7 +150,7 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
                     drawer.openDrawer(GravityCompat.START);
                     mBottomView.setText(R.string.checkout);
                     setVisibility();
-                }
+                }*/
             }
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
