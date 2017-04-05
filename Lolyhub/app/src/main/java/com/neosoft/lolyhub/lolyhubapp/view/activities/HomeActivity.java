@@ -1,8 +1,6 @@
 package com.neosoft.lolyhub.lolyhubapp.view.activities;
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Canvas;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -13,7 +11,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,7 +19,6 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
-
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.constants.CommonConstant;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CardAdapter;
@@ -36,49 +32,45 @@ import com.neosoft.lolyhub.lolyhubapp.rest.model.Countries;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.Result;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.User;
 import com.neosoft.lolyhub.lolyhubapp.utilities.CommonUtils;
-
 import java.util.ArrayList;
-import java.util.StringTokenizer;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by neosoft on 29/12/16.
  */
-
 public class HomeActivity extends AppCompatActivity implements NetworkReceiver, NavigationView.OnNavigationItemSelectedListener{
     public static String TAG="HomeActivity";
     private RecyclerView mRecyclerView;
     private CardAdapter mCardAdapter;
     private ProgressBar mProgressBar;
     public static View.OnClickListener myOnClickListener;
-    private TabLayout mTabLayout;
-    private ViewPager viewPager;
-    private FloatingActionButton floatingActionButton;
+    @BindView(R.id.tabLayout)TabLayout mTabLayout;
+    @BindView(R.id.pager)ViewPager viewPager;
+    @BindView(R.id.fab)FloatingActionButton floatingActionButton;
     private View searchView,walletView,wishlistView,cartView,homeView;
-    private RecyclerView mNavigationRecyclerView;
+    @BindView(R.id.navigation_item_list)  RecyclerView mNavigationRecyclerView;
     private NavigationListingAdapter mNavigationAdapterListing;
     private CartNavigationAdpater mCartNavigationAdapter;
-    private  DrawerLayout drawer;
-    ArrayList<Object> items = new ArrayList<>();
+    @BindView(R.id.drawer_layout)  DrawerLayout drawer;
+    private ArrayList<Object> items = new ArrayList<>();
     private SwipeToDeleteAdapter mSwipeAdapter;
     private CartSwipeToDeleteAdapter mCartSwipeToDeleteAdapter;
-    private Button mBottomView;
-    private RelativeLayout mTotalLPContainer;
-    private RelativeLayout mEarningContainer;
-    private View mFirstView;
-    private View mSecondView;
-
+    @BindView(R.id.bottomLayout) Button mBottomView;
+    @BindView(R.id.total_rel_container) RelativeLayout mTotalLPContainer;
+    @BindView(R.id.earn_rel_caontainer) RelativeLayout mEarningContainer;
+    @BindView(R.id.first_View_id) View mFirstView;
+    @BindView(R.id.second_View_id) View mSecondView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        ButterKnife.bind(this);
       /*  Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 */
         myOnClickListener=new MyOnClickListener(this);
-
-        viewPager = (ViewPager) findViewById(R.id.pager);
-
         initViews();
         setUpTabLayout();
         addListners();
@@ -93,7 +85,7 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
         CommonUtils.initDrawer(this);
         NavigationView navigationView = (NavigationView)findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        drawer= (DrawerLayout) findViewById(R.id.drawer_layout);
+
         drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
 
     }
@@ -105,8 +97,6 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
          }
      });
      mNavigationRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
      items.add(new User("Dany Targaryen", "Valyria"));
      items.add(new User("Rob Stark", "Winterfell"));
      items.add("image");
@@ -117,25 +107,14 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
     // mNavigationRecyclerView.setAdapter(new ComplexRecyclerViewAdapter(items));
  }
     private void setUpTabLayout(){
-
-        mTabLayout = (TabLayout) findViewById(R.id.tabLayout);
-
         mTabLayout.addTab(mTabLayout.newTab().setCustomView(homeView));
-
         //Adding the tabs using addTab() method
         mTabLayout.addTab(mTabLayout.newTab().setCustomView(searchView));
-
       //  mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.search));
         mTabLayout.addTab(mTabLayout.newTab().setCustomView(walletView));
-
-
         mTabLayout.addTab(mTabLayout.newTab().setCustomView(wishlistView));
-
         mTabLayout.addTab(mTabLayout.newTab().setCustomView(cartView));
-
-
         mTabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-
        /* viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -190,13 +169,6 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
         CommonUtils.CustomDialog(view,HomeActivity.this);
     }
     private void initViews(){
-        mTotalLPContainer= (RelativeLayout) findViewById(R.id.total_rel_container);
-        mEarningContainer= (RelativeLayout) findViewById(R.id.earn_rel_caontainer);
-        mFirstView=findViewById(R.id.first_View_id);
-        mSecondView=findViewById(R.id.second_View_id);
-        mBottomView= (Button) findViewById(R.id.bottomLayout);
-        mNavigationRecyclerView= (RecyclerView) findViewById(R.id.navigation_item_list);
-        floatingActionButton= (FloatingActionButton) findViewById(R.id.fab);
         homeView= getLayoutInflater().inflate(R.layout.tab_home,null);
         searchView= getLayoutInflater().inflate(R.layout.tab_customeview,null);
         walletView = getLayoutInflater().inflate(R.layout.tab_wallet,null);
@@ -223,12 +195,10 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 

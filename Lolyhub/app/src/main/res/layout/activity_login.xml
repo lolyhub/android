@@ -86,11 +86,19 @@
     </LinearLayout>
 
     <Button
+        android:visibility="gone"
         android:id="@+id/gplus_signout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginTwenty"
         android:layout_gravity="center"
         android:text="Gplus sign out "/>
+    <Button
+        android:visibility="gone"
+        android:id="@+id/fbSignOut_signout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_gravity="center"
+        android:text="fb  sign out "/>
 
 </LinearLayout>

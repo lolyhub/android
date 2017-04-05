@@ -36,7 +36,6 @@ import java.util.Locale;
 
 public class SignUpActivity extends AppCompatActivity  implements View.OnClickListener{
 
-
     //views for sign up modules
     private EditText mEdit_FirstName;
     private EditText mEdit_LastName;

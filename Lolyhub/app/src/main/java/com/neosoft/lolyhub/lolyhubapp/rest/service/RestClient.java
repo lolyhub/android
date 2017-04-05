@@ -11,7 +11,6 @@ import rx.Observable;
 
 public interface RestClient {
     String SERVICE_BASEURL = "http://services.groupkt.com";
-
     @GET("country/get/all")
     Observable<Countries> getUser();
 

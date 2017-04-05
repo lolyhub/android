@@ -17,5 +17,4 @@ public class Constants {
     public static Integer Min_fare = 0;
     public static Integer cost_per_min = 0;
     public static double calculated_estimate_price = 0;
-
 }

@@ -1,33 +1,32 @@
 package com.neosoft.lolyhub.lolyhubapp.view.activities;
 
-import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.test.suitebuilder.TestMethod;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.AccessToken;
+import com.facebook.AccessTokenTracker;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.Profile;
+import com.facebook.ProfileTracker;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
@@ -40,16 +39,15 @@ import com.google.android.gms.common.api.Status;
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.ApplicationUtil;
 import com.neosoft.lolyhub.lolyhubapp.utilities.CommonUtils;
-import com.neosoft.lolyhub.lolyhubapp.utilities.Constants;
 import com.neosoft.lolyhub.lolyhubapp.utilities.ValidationUtils;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Locale;
+
+import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
 
 /**
  * Created by neosoft on 9/1/17.
@@ -70,12 +68,37 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
     private GoogleApiAvailability google_api_availability;
     @BindView(R.id.gplus_signout)Button mGplusSignOut;
     @BindView(R.id.gplusLogin_ID)ImageView mGplusSignIn;
-    //hhjhh
+  //twiiter login
+
+
+    //facebook login
+    @BindView(R.id.fbSignOut_signout) Button mFbSignOut;
+
+    private CallbackManager callbackManager;
+    private AccessTokenTracker accessTokenTracker;
+    private ProfileTracker profileTracker;
+    @BindView(R.id.fbLogin_ID) ImageView mFbLoginButton;
+    //Facebook login button
+    private FacebookCallback<LoginResult> callback = new FacebookCallback<LoginResult>() {
+        @Override
+        public void onSuccess(LoginResult loginResult) {
+            Profile profile = Profile.getCurrentProfile();
+            Toast.makeText(LoginActivity.this, "current profile name="+profile.getFirstName(), Toast.LENGTH_SHORT).show();
+        }
+        @Override
+        public void onCancel() {        }
+        @Override
+        public void onError(FacebookException e) {      }
+    };
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(getApplicationContext());
+
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+        initFbCallBack();
+
         mGoogleApiClient=((ApplicationUtil)getApplication()).getGoogleApiClient(LoginActivity.this,this);
         initValues();
     }
@@ -111,7 +134,54 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
         }
     }
 
+    private void initFbCallBack(){
+        callbackManager = CallbackManager.Factory.create();
+        LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                AccessToken accessToken = loginResult.getAccessToken();
+                Profile profile = Profile.getCurrentProfile();
+                // nextActivity(profile);
+                Toast.makeText(getApplicationContext(), "Logging in...", Toast.LENGTH_SHORT).show();
+            }
+            @Override
+            public void onCancel() {
+            }
+            @Override
+            public void onError(FacebookException error) {
+            }
+        });
+
+
+        accessTokenTracker = new AccessTokenTracker() {
+            @Override
+            protected void onCurrentAccessTokenChanged(AccessToken oldToken, AccessToken newToken) {
+                if (newToken == null) {
+                    //write your code here what to do when user logout
+
+                    LoginManager.getInstance().logOut();
+                }
+
+            }
+        };
+        profileTracker = new ProfileTracker() {
+            @Override
+            protected void onCurrentProfileChanged(Profile oldProfile, Profile newProfile) {
+                // nextActivity(newProfile);
+                if (newProfile!=null){
+                    Toast.makeText(LoginActivity.this, "on current profile changed="+newProfile.getFirstName(), Toast.LENGTH_SHORT).show();
+
+                }else if (newProfile ==null){
+                    LoginManager.getInstance().logOut();
+                }
+
+            }
+        };
+        accessTokenTracker.startTracking();
+        profileTracker.startTracking();
+    }
     // [START onActivityResult]
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -120,6 +190,9 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             handleSignInResult(result);
+        }else
+        {
+            callbackManager.onActivityResult(requestCode, resultCode, data);
         }
     }
     private void handleSignInResult(GoogleSignInResult result) {
@@ -208,6 +281,13 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
             this.finish();
         }
     }
+
+    /**
+     * facebook login button
+     */
+    @OnClick(R.id.fbLogin_ID)void fbLogin(){
+        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile"));
+    }
     /*
     Sign in with google Plus login
      */
@@ -220,8 +300,23 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
     @OnClick(R.id.gplus_signout)void submitSignOut(){
         signOut();
     }
+    @OnClick(R.id.fbSignOut_signout)void fbSignOut(){
+         logout();
+    }
+    private void logout(){
+        AccessToken accessToken = AccessToken.getCurrentAccessToken();
+        if(accessToken != null){
+            LoginManager.getInstance().logOut();
+        }
+    }
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
+    }
+    protected void onStop() {
+        super.onStop();
+        //Facebook login
+        accessTokenTracker.stopTracking();
+        profileTracker.stopTracking();
     }
 }
