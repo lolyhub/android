@@ -108,5 +108,18 @@
 
     <!--facebook app id-->
 <string name="facebook_app_id">290500948031280</string>
-
+    
+    <!--wallet plaacholders-->
+    <string name="program">Program</string>
+    <string name="txtpoints">points</string>
+    <string name="LP">LP</string>
+    <string name="exchange">Exchage</string>
+    <string name="wallet_exchangetxt">Exchange</string>
+    <string name="wallet_points">10000 Point</string>
+    <string name="wallet_LP_points">1666 LP</string>
+    <string name="wallet_setvalue">Set Value</string>
+    <string name="wallet_zero">0</string>
+    <string name="wallet_lp">LP</string>
+    <string name="wallet_msg">Your remaining points balance will be</string>
+    <string name="wallet_zero_points">0 points</string>
 </resources>

@@ -7,8 +7,11 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ExpandableListAdapter;
+import android.widget.ExpandableListView;
 
 import com.lolyhub.lolyhubapp.R;
+import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CustomExpandableListAdapter;
 
 
 /**
@@ -16,7 +19,9 @@ import com.lolyhub.lolyhubapp.R;
  */
 
 public class WalletFragment extends Fragment {
-    private View view;
+    private View mView;
+    private ExpandableListView expandableListView;
+    private ExpandableListAdapter expandableListAdapter;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,9 +31,26 @@ public class WalletFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        mView=inflater.inflate(R.layout.fragment_wallet,container,false);
+        initViews(mView);
+        return mView;
 
-        return inflater.inflate(R.layout.fragment_wallet,container,false);
+    }
+    private void initViews(View view){
+        expandableListView= (ExpandableListView) view.findViewById(R.id.expandableListView);
+        expandableListAdapter=new CustomExpandableListAdapter(getActivity());
+        expandableListView.setAdapter(expandableListAdapter);
+        expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+            @Override
+            public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
 
+                if (v.getId()==R.id.wallet_plus_container){
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+        });
     }
     @Override
     public void onPrepareOptionsMenu(Menu menu) {

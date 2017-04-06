@@ -46,8 +46,6 @@ public class CartFragment extends Fragment {
 
     } private void initViews(View view){
         //AlphaTextView alphaTextView=new AlphaTextView(this);
-
-
         feedItemList = new ArrayList<GetterSetter>();
         for (int i = 0; i < 20; i++) {
             GetterSetter getterSetter = new GetterSetter();

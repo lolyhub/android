@@ -1,12 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/title_header_container"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Wallet Fragment"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
-</LinearLayout>
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/program"
+            android:textSize="@dimen/textSize"
+            android:layout_marginLeft="@dimen/marginTwenty"
+            android:padding="@dimen/marginTwenty"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtpoints"
+            android:layout_marginLeft="@dimen/marginTen"
+            android:padding="@dimen/marginTwenty"
+            android:textSize="@dimen/textSize"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/LP"
+            android:padding="@dimen/marginTwenty"
+            android:textSize="@dimen/textSize"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:padding="@dimen/marginTwenty"
+            android:text="@string/wallet_exchangetxt"
+            android:textSize="@dimen/textSize"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+    <ExpandableListView
+        android:id="@+id/expandableListView"
+        android:layout_below="@+id/title_header_container"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="0.5dp" />
+
+</RelativeLayout>
