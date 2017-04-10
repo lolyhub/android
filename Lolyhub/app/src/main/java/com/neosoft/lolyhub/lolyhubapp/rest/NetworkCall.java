@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.util.Log;
 
 import com.neosoft.lolyhub.lolyhubapp.constants.CommonConstant;
+import com.neosoft.lolyhub.lolyhubapp.constants.URLCONSTANTS;
 import com.neosoft.lolyhub.lolyhubapp.controllers.interfaces.NetworkReceiver;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.Countries;
+import com.neosoft.lolyhub.lolyhubapp.rest.model.requestpojos.RequestLogin;
 import com.neosoft.lolyhub.lolyhubapp.rest.service.RestClient;
 import com.neosoft.lolyhub.lolyhubapp.rest.service.ServiceFactory;
 
@@ -27,11 +29,11 @@ public class NetworkCall {
         this.mActivity = mActivity;
     }
     public void fetchWSCall(){
-        RestClient service = ServiceFactory.createRetrofitService(RestClient.class, RestClient.SERVICE_BASEURL);
-        service.getUser()
+        RestClient service = ServiceFactory.createRetrofitService(RestClient.class, URLCONSTANTS.BASE_URL);
+        service.getUserLogin()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<Countries>() {
+                .subscribe(new Subscriber<RequestLogin>() {
                     @Override
                     public final void onCompleted() {
                         // do nothing
@@ -43,14 +45,15 @@ public class NetworkCall {
                         mReceiver.onError(e.getMessage());
                     }
                     @Override
-                    public final void onNext(Countries response) {
-                        Log.d(TAG,"onNext");
+                    public final void onNext(RequestLogin response) {
+                        Log.d(TAG,"onNext"+response.getUserEmail());
+
                         postResult(response, CommonConstant.TAG_COUNTRY);
 
                     }
                 });
     }
-    public void postResult(Countries countries, int tag){
+    public void postResult(RequestLogin countries, int tag){
 
         switch (tag){
             case CommonConstant.TAG_COUNTRY:

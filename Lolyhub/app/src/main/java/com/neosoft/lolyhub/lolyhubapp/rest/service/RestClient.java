@@ -1,8 +1,12 @@
 package com.neosoft.lolyhub.lolyhubapp.rest.service;
 
 import com.neosoft.lolyhub.lolyhubapp.rest.model.Countries;
+import com.neosoft.lolyhub.lolyhubapp.rest.model.requestpojos.RequestLogin;
 
 import retrofit2.http.GET;
+import retrofit2.http.Header;
+import retrofit2.http.Headers;
+import retrofit2.http.POST;
 import rx.Observable;
 
 /**
@@ -10,8 +14,8 @@ import rx.Observable;
  */
 
 public interface RestClient {
-    String SERVICE_BASEURL = "http://services.groupkt.com";
-    @GET("country/get/all")
-    Observable<Countries> getUser();
+    @Headers("Content-Type: application/json")
+    @POST("/Service1.svc/login")
+    Observable<RequestLogin> getUserLogin();
 
 }

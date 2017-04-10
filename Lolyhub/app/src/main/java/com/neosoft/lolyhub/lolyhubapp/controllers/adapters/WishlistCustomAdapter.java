@@ -1,6 +1,7 @@
 package com.neosoft.lolyhub.lolyhubapp.controllers.adapters;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +9,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.daimajia.swipe.SwipeLayout;
+import com.daimajia.swipe.util.Attributes;
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.controllers.interfaces.ClickListener;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.ProductViewModel;
@@ -24,6 +28,7 @@ import java.util.List;
 public class WishlistCustomAdapter extends RecyclerView.Adapter<WishlistCustomAdapter.ViewHolder> {
     List<ProductViewModel> mItems;
     Context mContext;
+    private SwipeLayout mLayout;
     private ClickListener mClickListener;
 
     public WishlistCustomAdapter(Context context) {
@@ -51,14 +56,15 @@ public class WishlistCustomAdapter extends RecyclerView.Adapter<WishlistCustomAd
                 .inflate(R.layout.item_row_wishlist, viewGroup, false);
 
         final WishlistCustomAdapter.ViewHolder viewHolder = new WishlistCustomAdapter.ViewHolder(v);
+        mLayout= (SwipeLayout)v.findViewById(R.id.container_wishlist);
 
 
-      //  v.setOnClickListener(WishlistActivity.myOnClickListener);
+       v.setOnClickListener(WishlistActivity.myOnClickListener);
 
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            viewHolder.cancelLayout.setVisibility(View.VISIBLE);
+
             }
         });
         return viewHolder;

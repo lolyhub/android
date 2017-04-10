@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.swipe.SwipeLayout;
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CardAdapter;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.WishlistCustomAdapter;
@@ -27,6 +28,7 @@ public class WishlistActivity extends AppCompatActivity {
     private WishlistCustomAdapter mWishlistCustomAdapter;
     public static View.OnClickListener myOnClickListener;
     private CardAdapter cardAdapter;
+    private SwipeLayout mLayout;
 
 
     private ArrayList<GetterSetter> feedItemList;
@@ -43,6 +45,7 @@ public class WishlistActivity extends AppCompatActivity {
        // AlphaTextView alphaTextView=new AlphaTextView(this);
         mAlphaTextView= (TextView)findViewById(R.id.rightText);
         mAlphaTextView.getBackground().setAlpha(255);
+
 
         feedItemList = new ArrayList<GetterSetter>();
         for (int i = 0; i < 20; i++) {

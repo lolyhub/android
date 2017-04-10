@@ -3,6 +3,7 @@ package com.neosoft.lolyhub.lolyhubapp.utilities;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -13,6 +14,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -23,7 +25,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.lolyhub.lolyhubapp.R;
+import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CustomExpandableListAdapter;
 import com.neosoft.lolyhub.lolyhubapp.view.activities.HomeActivity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by neosoft on 2/2/17.
@@ -94,5 +100,33 @@ public class CommonUtils  {
         activity.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
 
+    public static void deleteWalletRowDialog(Context context, final ArrayList<Integer> params, final int pos){
+        int width = (int)(context.getResources().getDisplayMetrics().widthPixels*0.70);
+        int height = (int)(context.getResources().getDisplayMetrics().heightPixels*0.70);
+
+
+        final AlertDialog builder=new AlertDialog.Builder(context,R.style.CustomAlertDialog)
+        .setTitle(context.getResources().getString(R.string.alert_wallet_title))
+        .setMessage(context.getResources().getString(R.string.alert_wallet_message))
+
+                .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                   params.remove(pos);
+                    }
+                })
+                .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .create();
+        builder.show();
+        builder.getWindow().setLayout(width, height);
+
+
+
+    }
 
 }

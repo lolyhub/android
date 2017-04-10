@@ -38,6 +38,8 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.ApplicationUtil;
+import com.neosoft.lolyhub.lolyhubapp.controllers.interfaces.NetworkReceiver;
+import com.neosoft.lolyhub.lolyhubapp.rest.NetworkCall;
 import com.neosoft.lolyhub.lolyhubapp.utilities.CommonUtils;
 import com.neosoft.lolyhub.lolyhubapp.utilities.ValidationUtils;
 
@@ -53,7 +55,7 @@ import butterknife.OnClick;
  * Created by neosoft on 9/1/17.
  */
 
-public class LoginActivity extends AppCompatActivity implements  GoogleApiClient.OnConnectionFailedListener{
+public class LoginActivity extends AppCompatActivity implements  GoogleApiClient.OnConnectionFailedListener,NetworkReceiver{
     //views for login module
     @BindView(R.id.edit_userMobile) EditText mEdit_UserMobuile;
     @BindView(R.id.edit_userPassword)EditText mEdit_UserPassword;
@@ -68,6 +70,7 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
     private GoogleApiAvailability google_api_availability;
     @BindView(R.id.gplus_signout)Button mGplusSignOut;
     @BindView(R.id.gplusLogin_ID)ImageView mGplusSignIn;
+    private NetworkReceiver mReceiver;
   //twiiter login
 
 
@@ -274,6 +277,7 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
     @OnClick(R.id.btn_login)public void submitLogin(){
         ValidationUtils validationUtils=new ValidationUtils();
         if (validationUtils.validateSignIn(LoginActivity.this,mEdit_UserMobuile,mEdit_UserPassword)){
+
             Toast.makeText(this, "Successfully logged in", Toast.LENGTH_SHORT).show();
             Intent intent=new Intent(this,HomeActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -318,5 +322,15 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
         //Facebook login
         accessTokenTracker.stopTracking();
         profileTracker.stopTracking();
+    }
+
+    @Override
+    public <T> void onResponse(T obj, int tag) {
+
+    }
+
+    @Override
+    public void onError(String msg) {
+
     }
 }
