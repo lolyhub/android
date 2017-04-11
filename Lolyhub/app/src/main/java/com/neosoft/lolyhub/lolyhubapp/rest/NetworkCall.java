@@ -8,8 +8,11 @@ import com.neosoft.lolyhub.lolyhubapp.constants.URLCONSTANTS;
 import com.neosoft.lolyhub.lolyhubapp.controllers.interfaces.NetworkReceiver;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.Countries;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.requestpojos.RequestLogin;
+import com.neosoft.lolyhub.lolyhubapp.rest.model.responsepojo.LoginResponse;
 import com.neosoft.lolyhub.lolyhubapp.rest.service.RestClient;
 import com.neosoft.lolyhub.lolyhubapp.rest.service.ServiceFactory;
+
+import org.greenrobot.eventbus.EventBus;
 
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -24,45 +27,28 @@ public class NetworkCall {
     private Activity mActivity;
     private NetworkReceiver mReceiver;
 
-    public NetworkCall(Activity mActivity, NetworkReceiver mReceiver) {
-        this.mReceiver = mReceiver;
+    public NetworkCall(Activity mActivity) {
         this.mActivity = mActivity;
     }
-    public void fetchWSCall(){
+    public void loginWSCall(RequestLogin requestLogin){
         RestClient service = ServiceFactory.createRetrofitService(RestClient.class, URLCONSTANTS.BASE_URL);
-        service.getUserLogin()
+        service.getUserLogin(requestLogin)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<RequestLogin>() {
+                .subscribe(new Subscriber<LoginResponse>() {
                     @Override
                     public final void onCompleted() {
-                        // do nothing
                         Log.d(TAG,"onCompleted");
                     }
                     @Override
                     public final void onError(Throwable e) {
-                        Log.d(TAG,"onError"+e.getMessage());
-                        mReceiver.onError(e.getMessage());
+                        EventBus.getDefault().post(e.getMessage());
                     }
                     @Override
-                    public final void onNext(RequestLogin response) {
-                        Log.d(TAG,"onNext"+response.getUserEmail());
-
-                        postResult(response, CommonConstant.TAG_COUNTRY);
-
+                    public final void onNext(LoginResponse response) {
+                        Log.d(TAG,"onNext="+response.toString());
+                        EventBus.getDefault().post(response);
                     }
                 });
     }
-    public void postResult(RequestLogin countries, int tag){
-
-        switch (tag){
-            case CommonConstant.TAG_COUNTRY:
-                 mReceiver.onResponse(countries,tag);
-                break;
-            default:
-                Log.d("default","default");
-                break;
-        }
-    }
-
 }

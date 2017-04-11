@@ -10,5 +10,5 @@ public class CommonConstant {
     public static String[] COUNTRYLIST = { "india", "US","Japan","UAE","England" };//array of strings used to populate the spinner
     public static String[] CITYLIST = { "pune", "mumbai","nashik","nagpur" };//array of strings used to populate the spinner
     public static final Integer[] IMAGES= {R.drawable.homeimg,R.drawable.homeimg,R.drawable.homeimg,R.drawable.homeimg};
-    public static final int TAG_COUNTRY = 1;
+    public static final int TAG_LOGIN = 1;
 }

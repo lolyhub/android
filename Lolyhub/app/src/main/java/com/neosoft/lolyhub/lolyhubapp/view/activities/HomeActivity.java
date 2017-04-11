@@ -133,7 +133,7 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-              //  viewPager.setCurrentItem(tab.getPosition());
+               viewPager.setCurrentItem(tab.getPosition());
                 ArrayList<String> list=new ArrayList<String>();
                 for (int i=0;i<2;i++){
                     list.add("objects");
@@ -233,7 +233,7 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
         Countries countries;
         countries= (Countries) obj;
         switch (tag){
-            case CommonConstant.TAG_COUNTRY:
+            case CommonConstant.TAG_LOGIN:
 
                 for(final Result resultObj : countries.getRestResponse().getResult()) {
                     mCardAdapter.addData(resultObj);

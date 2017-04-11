@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,11 +39,18 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.ApplicationUtil;
+import com.neosoft.lolyhub.lolyhubapp.constants.CommonConstant;
 import com.neosoft.lolyhub.lolyhubapp.controllers.interfaces.NetworkReceiver;
 import com.neosoft.lolyhub.lolyhubapp.rest.NetworkCall;
+import com.neosoft.lolyhub.lolyhubapp.rest.model.Errors;
+import com.neosoft.lolyhub.lolyhubapp.rest.model.requestpojos.RequestLogin;
+import com.neosoft.lolyhub.lolyhubapp.rest.model.responsepojo.LoginResponse;
 import com.neosoft.lolyhub.lolyhubapp.utilities.CommonUtils;
 import com.neosoft.lolyhub.lolyhubapp.utilities.ValidationUtils;
 
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.Arrays;
 
@@ -55,7 +63,7 @@ import butterknife.OnClick;
  * Created by neosoft on 9/1/17.
  */
 
-public class LoginActivity extends AppCompatActivity implements  GoogleApiClient.OnConnectionFailedListener,NetworkReceiver{
+public class LoginActivity extends AppCompatActivity implements  GoogleApiClient.OnConnectionFailedListener{
     //views for login module
     @BindView(R.id.edit_userMobile) EditText mEdit_UserMobuile;
     @BindView(R.id.edit_userPassword)EditText mEdit_UserPassword;
@@ -71,6 +79,7 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
     @BindView(R.id.gplus_signout)Button mGplusSignOut;
     @BindView(R.id.gplusLogin_ID)ImageView mGplusSignIn;
     private NetworkReceiver mReceiver;
+    private ProgressBar mProgressBar;
   //twiiter login
 
 
@@ -106,6 +115,7 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
         initValues();
     }
     private void initValues(){
+        mProgressBar= (ProgressBar) findViewById(R.id.login_progress_id);
         mPressHere.setPaintFlags(mPressHere.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         mPressHere.setText(R.string.pressHere);
         Drawable questionMarkDrawable=CommonUtils.resizeDrawable(this,ContextCompat.getDrawable(this,R.drawable.question_mark));
@@ -114,7 +124,7 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
     @Override
     public void onStart() {
         super.onStart();
-
+        EventBus.getDefault().register(this);
         OptionalPendingResult<GoogleSignInResult> opr = Auth.GoogleSignInApi.silentSignIn(mGoogleApiClient);
         if (opr.isDone()) {
             // If the user's cached credentials are valid, the OptionalPendingResult will be "done"
@@ -277,12 +287,10 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
     @OnClick(R.id.btn_login)public void submitLogin(){
         ValidationUtils validationUtils=new ValidationUtils();
         if (validationUtils.validateSignIn(LoginActivity.this,mEdit_UserMobuile,mEdit_UserPassword)){
-
-            Toast.makeText(this, "Successfully logged in", Toast.LENGTH_SHORT).show();
-            Intent intent=new Intent(this,HomeActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            this.startActivity(intent);
-            this.finish();
+            mProgressBar.setVisibility(View.VISIBLE);
+            mProgressBar.bringToFront();
+            NetworkCall networkCall=new NetworkCall(LoginActivity.this);
+            networkCall.loginWSCall(new RequestLogin(mEdit_UserMobuile.getText().toString(),mEdit_UserPassword.getText().toString()));
         }
     }
 
@@ -317,20 +325,34 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
+
     protected void onStop() {
         super.onStop();
         //Facebook login
+        EventBus.getDefault().unregister(this);
         accessTokenTracker.stopTracking();
         profileTracker.stopTracking();
     }
-
-    @Override
-    public <T> void onResponse(T obj, int tag) {
-
+    @Subscribe
+    public void OnGetLoginResponse(LoginResponse loginResponse){
+        mProgressBar.setVisibility(View.GONE);
+        if (loginResponse.getResultMsg().equalsIgnoreCase("Done")){
+            sendToHomeScreen();
+        }else if (loginResponse.getResultMsg().equalsIgnoreCase("Fail")){
+            Toast.makeText(LoginActivity.this, "Something went wrong ...please try again", Toast.LENGTH_SHORT).show();
+        }
     }
-
-    @Override
-    public void onError(String msg) {
-
+    @Subscribe
+    public void OnError(Errors errorMsg){
+        Toast.makeText(LoginActivity.this, ""+errorMsg, Toast.LENGTH_SHORT).show();
     }
+    /**
+     * method to go to home screen if login is successfull
+     */
+   public void sendToHomeScreen(){
+       Intent intent=new Intent(LoginActivity.this,HomeActivity.class);
+       intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+       this.startActivity(intent);
+       this.finish();
+   }
 }

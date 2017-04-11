@@ -23,7 +23,7 @@ public class ValidationUtils {
     public boolean validateSignIn(Context context, EditText userMob, EditText password){
         ValidationUtils ValidationUtils=new ValidationUtils();
         if(!TextUtils.isEmpty(userMob.getText())&&!TextUtils.isEmpty(password.getText())){
-            if (ValidationUtils.isValidPhoneNumber(userMob.getText()) || ValidationUtils.validateUserName(userMob.getText().toString())){
+            if (ValidationUtils.isValidPhoneNumber(userMob.getText()) || ValidationUtils.validateUserName(userMob.getText().toString())||ValidationUtils.isValidEmail(userMob.getText().toString())){
                 return true;
             }else{
                 userMob.setError(context.getResources().getString(R.string.validateMbileNumber));

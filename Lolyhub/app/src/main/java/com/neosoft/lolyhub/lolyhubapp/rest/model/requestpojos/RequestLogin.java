@@ -6,6 +6,11 @@ public class RequestLogin
 
     private String password;
 
+    public RequestLogin(String userEmail, String password) {
+        this.userEmail = userEmail;
+        this.password = password;
+    }
+
     public String getUserEmail ()
     {
         return userEmail;
