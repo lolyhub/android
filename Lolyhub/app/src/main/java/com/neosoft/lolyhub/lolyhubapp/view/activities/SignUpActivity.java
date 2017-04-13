@@ -24,7 +24,13 @@ import android.widget.ToggleButton;
 
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.constants.CommonConstant;
+import com.neosoft.lolyhub.lolyhubapp.rest.NetworkCall;
+import com.neosoft.lolyhub.lolyhubapp.rest.model.requestpojos.RegistrationRequest;
+import com.neosoft.lolyhub.lolyhubapp.rest.model.responsepojo.RegistrationResponse;
 import com.neosoft.lolyhub.lolyhubapp.utilities.ValidationUtils;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -54,9 +60,7 @@ public class SignUpActivity extends AppCompatActivity  implements View.OnClickLi
     private TextView mGenderMale;
     private TextView mGenderFemale;
     private ToggleButton mToggleButton;
-
     private Button mBtn_Registration;
-
     private ArrayAdapter<String> spin_adapter;
     private ArrayAdapter<String> mCountryadapter;
     private ArrayAdapter<String> mCityAdapter;
@@ -198,13 +202,34 @@ public class SignUpActivity extends AppCompatActivity  implements View.OnClickLi
                 break;
             case R.id.btn_Register_signUp:
                 if (validationUtils.validateSignUp(SignUpActivity.this,mEdit_FirstName,mEdit_LastName,mEdit_Email,mEdit_ReEnterEmail,mEdit_UserName,mEdit_NewUserPassword,mEdit_NewUserReEnterPassword,mTxt_BirthDate,mGenderString,mCountryString,mCityString,mEdit_MobileNumber,isCheckedValue)){
-                    Toast.makeText(this, "Successfully logged in", Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(this,HomeActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    this.startActivity(intent);
-                    this.finish();
+                    RegistrationRequest registrationRequest=new RegistrationRequest();
+                    NetworkCall networkCall=new NetworkCall(SignUpActivity.this);
+                    networkCall.registerWSCall(registrationRequest);
                 }
                 break;
         }
+    }
+ @Subscribe
+ public void OnRegistrationEvent(RegistrationResponse registrationResponse){
+     Toast.makeText(this, "Successfully logged in", Toast.LENGTH_SHORT).show();
+         goToHomeScreen();
+
+ }
+ public void goToHomeScreen(){
+     Intent intent=new Intent(this,HomeActivity.class);
+     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+     this.startActivity(intent);
+     this.finish();
+ }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
     }
 }
