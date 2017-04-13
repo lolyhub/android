@@ -125,8 +125,6 @@ public class CommonUtils  {
         builder.show();
         builder.getWindow().setLayout(width, height);
 
-
-
     }
 
 }
