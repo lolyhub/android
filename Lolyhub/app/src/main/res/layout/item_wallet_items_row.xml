@@ -5,47 +5,47 @@
     <LinearLayout
         android:id="@+id/wallet_value_layout"
         android:layout_width="match_parent"
-        android:layout_marginLeft="@dimen/marginTen"
         android:orientation="horizontal"
         android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/wallet_setvalue"
-            android:textSize="@dimen/textSize"
-            />
-        <LinearLayout
-            android:layout_width="@dimen/wallet_header_icon_size"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/marginTen"
-            android:background="@drawable/border"
-            android:padding="@dimen/marginTen"
-            android:orientation="vertical">
             <TextView
-                android:layout_width="@dimen/marginTwenty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/wallet_txt_padding"
+                android:textColor="@color/wallet_points_color"
+                android:text="@string/wallet_setvalue"
+                android:textSize="@dimen/wallet_txt_size"
+                android:layout_gravity="center"/>
+            <EditText
+                android:layout_width="@dimen/wallet_setvalue_width"
                 android:layout_height="wrap_content"
                 android:textColor="@color/wallet_points_color"
                 android:text="@string/wallet_zero"
+                android:padding="@dimen/wallet_txt_padding"
+                android:textSize="@dimen/wallet_txt_size"
                 android:gravity="center"/>
-        </LinearLayout>
-        <TextView
+
+          <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="@dimen/marginTen"
+              android:padding="@dimen/wallet_txt_padding"
+            android:layout_marginLeft="@dimen/wallet_margin_twenty"
+            android:textSize="@dimen/wallet_txt_size"
             android:text="="/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/marginTwenty"
-            android:padding="@dimen/marginTen"
+            android:padding="@dimen/wallet_txt_padding"
+            android:layout_marginLeft="@dimen/wallet_margin_ten"
+            android:textSize="@dimen/wallet_txt_size"
             android:textColor="@color/wallet_lppoints_color"
             android:text="@string/wallet_zero"/>
         <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+            android:padding="@dimen/wallet_txt_padding"
+            android:textSize="@dimen/wallet_txt_size"
             android:textColor="@color/wallet_lppoints_color"
-        android:layout_marginLeft="@dimen/marginTwenty"
-        android:padding="@dimen/marginTen"
+            android:layout_marginLeft="@dimen/wallet_margin_twenty"
         android:text="@string/wallet_lp"/>
 
     </LinearLayout>
@@ -59,12 +59,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="@dimen/wallet_txt_size"
             android:text="@string/wallet_msg"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/marginTwenty"
+            android:layout_marginLeft="@dimen/wallet_margin_twenty"
             android:text="@string/wallet_zero_points"
+            android:textSize="@dimen/wallet_txt_size"
             android:textColor="@color/wallet_points_color"
             android:gravity="end"/>
 
@@ -73,7 +75,8 @@
         android:id="@+id/btn_exchange"
         android:layout_below="@+id/wallet_msg_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:textSize="@dimen/wallet_txt_size"
+        android:layout_height="@dimen/wallet_button_height"
         android:background="@color/wallet_lppoints_color"
         android:textColor="@android:color/white"
         android:textAllCaps="false"

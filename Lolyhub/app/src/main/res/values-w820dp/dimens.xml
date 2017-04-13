@@ -13,4 +13,15 @@
     <dimen name="hieght_togglebutton">30dp</dimen>
     <dimen name="logoSize">300dp</dimen>
     <dimen name="loginLogoutButtonSize">70dp</dimen>
+
+    <!--wallet screen sizes-->
+    <dimen name="wallet_imagewidth">200dp</dimen>
+    <dimen name="wallet_imageheight">100dp</dimen>
+    <dimen name="wallet_margin_ten">30dp</dimen>
+    <dimen name="wallet_margin_twenty">50dp</dimen>
+    <dimen name="wallet_txt_padding">20dp</dimen>
+    <dimen name="wallet_txt_size">25sp</dimen>
+    <dimen name="wallet_txt_width">180dp</dimen>
+    <dimen name="wallet_button_height">50dp</dimen>
+    <dimen name="wallet_setvalue_width">220dp</dimen>
 </resources>

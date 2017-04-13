@@ -14,8 +14,6 @@
     <dimen name="loginLogoutButtonSize">40dp</dimen>
     <dimen name="logoSize">200dp</dimen>
     <dimen name="facebookImgSize">60dp</dimen>
-    <dimen name="wallet_header_icon_size">120dp</dimen>
-    <dimen name="wallet_headeicon_height">80dp</dimen>
     <dimen name="marginEighty">80dp</dimen>
     <dimen name="actionBarSize">56dp</dimen>
     <dimen name="login_layaout_height">40dp</dimen>
@@ -38,4 +36,17 @@
     <dimen name="view_setting">0.05dp</dimen>
 
     <dimen name="fab_margin">16dp</dimen>
+
+    <!--wallet screen sizes-->
+    <dimen name="wallet_imagewidth">120dp</dimen>
+    <dimen name="wallet_imageheight">80dp</dimen>
+    <dimen name="wallet_margin_ten">10dp</dimen>
+    <dimen name="wallet_margin_five">5dp</dimen>
+    <dimen name="wallet_margin_twenty">20dp</dimen>
+
+    <dimen name="wallet_txt_padding">10dp</dimen>
+    <dimen name="wallet_txt_size">14sp</dimen>
+    <dimen name="wallet_txt_width">100dp</dimen>
+    <dimen name="wallet_button_height">40dp</dimen>
+    <dimen name="wallet_setvalue_width">120dp</dimen>
 </resources>

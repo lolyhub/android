@@ -11,7 +11,7 @@ import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 
 import com.lolyhub.lolyhubapp.R;
-import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CustomExpandableListAdapter;
+import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.WalletExpandableListAdapter;
 
 
 /**
@@ -38,7 +38,7 @@ public class WalletFragment extends Fragment {
     }
     private void initViews(View view){
         expandableListView= (ExpandableListView) view.findViewById(R.id.expandableListView);
-        expandableListAdapter=new CustomExpandableListAdapter(getActivity());
+        expandableListAdapter=new WalletExpandableListAdapter(getActivity());
         expandableListView.setAdapter(expandableListAdapter);
         expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
             @Override

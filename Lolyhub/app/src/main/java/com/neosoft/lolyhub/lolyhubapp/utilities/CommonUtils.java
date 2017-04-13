@@ -4,18 +4,14 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.support.design.widget.NavigationView;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -25,11 +21,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.lolyhub.lolyhubapp.R;
-import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CustomExpandableListAdapter;
-import com.neosoft.lolyhub.lolyhubapp.view.activities.HomeActivity;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by neosoft on 2/2/17.
