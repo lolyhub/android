@@ -1,8 +1,10 @@
 package com.neosoft.lolyhub.lolyhubapp.rest.service;
 
 import com.neosoft.lolyhub.lolyhubapp.rest.model.Countries;
+import com.neosoft.lolyhub.lolyhubapp.rest.model.requestpojos.RegistrationRequest;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.requestpojos.RequestLogin;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.responsepojo.LoginResponse;
+import com.neosoft.lolyhub.lolyhubapp.rest.model.responsepojo.RegistrationResponse;
 
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -19,5 +21,9 @@ public interface RestClient {
     @Headers("Content-Type: application/json")
     @POST("/Service1.svc/login")
     Observable<LoginResponse> getUserLogin(@Body RequestLogin requestLogin);
+
+    @Headers("Content-Type: application/json")
+    @POST("/Service1.svc/signup")
+    Observable<RegistrationResponse> registerUser(@Body RegistrationRequest registrationRequest);
 
 }
