@@ -5,7 +5,7 @@
     <dimen name="activity_horizontal_margin">48dp</dimen>
     <dimen name="activity_vertical_margin">48dp</dimen>
     <dimen name="login_layaout_height">80dp</dimen>
-    <dimen name="textSize">20sp</dimen>
+    <dimen name="textSize">25sp</dimen>
     <dimen name="textSizeMarketPlace">25sp</dimen>
 
     <dimen name="edit_Text_padding">20dp</dimen>
@@ -15,18 +15,54 @@
     <dimen name="marginThirty">40dp</dimen>
     <dimen name="hieght_togglebutton">28dp</dimen>
     <dimen name="logoSize">300dp</dimen>
-
+    <dimen name="actionBarSize">80dp</dimen>
     <dimen name="loginLogoutButtonSize">70dp</dimen>
 
+    <!--global values -->
+    <dimen name="bottom_button_textsize">25sp</dimen>
+    <dimen name="bottom_button_height">70dp</dimen>
+
+    <!--main screen header textsizes-->
+    <dimen name="heading_text_size">20sp</dimen>
     <!--wallet screen sizes-->
     <dimen name="wallet_imagewidth">250dp</dimen>
-    <dimen name="wallet_imageheight">120dp</dimen>
-    <dimen name="wallet_margin_ten">50dp</dimen>
+    <dimen name="wallet_imageheight">150dp</dimen>
+    <dimen name="wallet_margin_ten">10dp</dimen>
     <dimen name="wallet_margin_twenty">80dp</dimen>
-    <dimen name="wallet_txt_padding">40dp</dimen>
-    <dimen name="wallet_txt_size">40sp</dimen>
+    <dimen name="wallet_txt_padding">15dp</dimen>
+    <dimen name="wallet_buttonplus_padding">30dp</dimen>
+    <dimen name="wallet_plusbutton_width">70dp</dimen>
+    <dimen name="wallet_margin_five">10dp</dimen>
+    <dimen name="wallet_txt_size">25sp</dimen>
     <dimen name="wallet_txt_width">210dp</dimen>
     <dimen name="wallet_button_height">90dp</dimen>
     <dimen name="wallet_setvalue_width">300dp</dimen>
+    <dimen name="wallet_plusbutton_padding">10dp</dimen>
+    <dimen name="wallet_plusbtn_txt_size">30sp</dimen>
+    <dimen name="wallet_item_row_textsize">20sp</dimen>
+    <dimen name="wallet_header_txt_size">20sp</dimen>
+    <dimen name="wallet_item_img_width">180dp</dimen>
+    <dimen name="wallet_item_img_height">110dp</dimen>
+    <dimen name="wallet_item_botm_padding">7dp</dimen>
+    <dimen name="wallet_item_row_exchange_size">25sp</dimen>
+    <dimen name="wallet_item_row_exchange_btn_height">60dp</dimen>
 
+    <!--wishlist screen sizes-->
+    <dimen name="wishlist_itemimg_width">180dp</dimen>
+    <dimen name="wishlist_itemimg_height">120dp</dimen>
+    <dimen name="wishlist_item_divider_hight">1dp</dimen>
+    <dimen name="wishlist_item_margin_five">5dp</dimen>
+    <dimen name="wishlist_fab_margin">30dp</dimen>
+    <dimen name="wishlist_marginTwenty">50dp</dimen>
+    <dimen name="wishlist_item_txtsize">25sp</dimen>
+    <dimen name="walletmargin_thirty">70dp</dimen>
+    <dimen name="wishlist_item_small_textsize">20sp</dimen>
+    <dimen name="wishlist_itemmargin_small_textviews">50dp</dimen>
+    <dimen name="wallet_topbar_marginleft">20dp</dimen>
+
+    <!--cart screen sizes-->
+    <dimen name="cart_txt_itmes_margintop">5dp</dimen>
+    <dimen name="cart_plusbutton_size">50dp</dimen>
+    <dimen name="cart_plus_button_topmargin">10dp</dimen>
+    <dimen name="cart_plusbutton_text_size">30sp</dimen>
 </resources>

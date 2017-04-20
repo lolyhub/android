@@ -2,9 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_marginTop="@dimen/marginFive"
     android:layout_height="wrap_content">
-
     <com.daimajia.swipe.SwipeLayout
         android:id="@+id/container_cartview"
         android:layout_width="match_parent"
@@ -36,7 +34,7 @@
                 <View
                     android:id="@+id/divider"
                     android:layout_width="match_parent"
-                    android:layout_height="0.3dp"
+                    android:layout_height="@dimen/wishlist_item_divider_hight"
                     android:background="@color/grey"/>
             </LinearLayout>
             <LinearLayout
@@ -48,8 +46,9 @@
                 android:weightSum="6">
                 <ImageView
                     android:id="@+id/wishlist_image_Id"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="@dimen/wishlist_itemimg_width"
+                    android:layout_height="@dimen/wishlist_itemimg_height"
+                    android:adjustViewBounds="true"
                     android:layout_weight="1"
                     android:src="@drawable/piza"/>
                 <LinearLayout
@@ -57,33 +56,28 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:layout_marginLeft="@dimen/marginFive"
-                    android:paddingTop="@dimen/fab_margin"
-                    android:paddingBottom="@dimen/activity_horizontal_margin"
+                    android:layout_marginLeft="@dimen/wishlist_item_margin_five"
+                    android:paddingTop="@dimen/cart_txt_itmes_margintop"
+                    android:paddingBottom="@dimen/wallet_margin_ten"
                     android:orientation="vertical">
                     <TextView
                         android:id="@+id/wishlist_title_Id"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/custom_item_row_txtview"
                         android:textColor="@android:color/black"
-                        android:textSize="@dimen/textSize"
                         android:text="@string/title_dominos"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/marginFive"
+                        android:layout_marginTop="@dimen/wishlist_item_margin_five"
                         android:orientation="horizontal">
                         <TextView
                             android:id="@+id/wishlist_price_Id"
                             style="@style/customTextVerticalView"
-                            android:textStyle="normal"
-                            android:textColor="@android:color/black"
                             android:text="@string/price"/>
                         <TextView
                             android:id="@+id/wishlist_pricePoints_Id"
-                            android:layout_marginLeft="@dimen/marginTwenty"
+                            android:layout_marginLeft="@dimen/wishlist_marginTwenty"
                             style="@style/customTextVerticalView"
-
                             android:textColor="@color/fredeemColor"
                             android:text="@string/points"/>
                     </LinearLayout>
@@ -91,17 +85,15 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/marginFive"
+                        android:layout_marginTop="@dimen/wishlist_item_margin_five"
                         android:orientation="horizontal">
                         <TextView
                             android:id="@+id/wishlist_earn_Id"
                             style="@style/customTextVerticalView"
-                            android:textStyle="normal"
-                            android:textColor="@android:color/black"
                             android:text="@string/earn"/>
                         <TextView
                             android:id="@+id/wishlist_earnPoints_Id"
-                            android:layout_marginLeft="@dimen/marginTwenty"
+                            android:layout_marginLeft="@dimen/wishlist_marginTwenty"
                             style="@style/customTextVerticalView"
                             android:textColor="@color/earningColor"
                             android:text="@string/points_plus"/>
@@ -111,15 +103,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/border"
-                    android:layout_marginTop="@dimen/marginTen"
-                    android:layout_marginBottom="@dimen/marginTen"
-                    android:layout_marginRight="@dimen/marginTen"
+                    android:layout_marginTop="@dimen/cart_plus_button_topmargin"
+                    android:layout_marginBottom="@dimen/cart_plus_button_topmargin"
                     android:weightSum="3"
                     android:orientation="vertical">
                     <TextView
-                        android:layout_width="@dimen/marginTwenty"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/cart_plusbutton_size"
+                        android:layout_height="@dimen/cart_plusbutton_height"
                         android:layout_weight="1"
+                        android:textSize="@dimen/cart_plusbutton_text_size"
                         android:textColor="@android:color/black"
                         android:text="+"
                         android:gravity="center"/>
@@ -128,10 +120,11 @@
                         android:background="@color/grey"
                         android:layout_height="1dp"/>
                     <TextView
-                        android:layout_width="@dimen/marginTwenty"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/cart_plusbutton_size"
+                        android:layout_height="@dimen/cart_plusbutton_height"
                         android:layout_weight="1"
                         android:textColor="@android:color/black"
+                        android:textSize="@dimen/cart_plusbutton_text_size"
                         android:text="1"
                         android:gravity="center"/>
                     <View
@@ -139,10 +132,11 @@
                         android:background="@color/grey"
                         android:layout_height="1dp"/>
                     <TextView
-                        android:layout_width="@dimen/marginTwenty"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/cart_plusbutton_size"
+                        android:layout_height="@dimen/cart_plusbutton_height"
                         android:layout_weight="1"
                         android:textColor="@android:color/black"
+                        android:textSize="@dimen/cart_plusbutton_text_size"
                         android:text="-"
                         android:gravity="center"/>
 

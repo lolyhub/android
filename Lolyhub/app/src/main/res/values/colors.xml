@@ -19,4 +19,5 @@
     <color name="wallet_points_color">#0079C1</color>
     <color name="wallet_lppoints_color">#52D035</color>
     <color name="wallet_plusicon_color">#4D4D4D</color>
+    <color name="wallet_addprogram_color">#FFAC00</color>
 </resources>

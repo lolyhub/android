@@ -59,14 +59,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/wallet_txt_size"
+            android:textSize="@dimen/wallet_item_row_textsize"
             android:text="@string/wallet_msg"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/wallet_margin_twenty"
+            android:layout_marginLeft="@dimen/wallet_margin_ten"
             android:text="@string/wallet_zero_points"
-            android:textSize="@dimen/wallet_txt_size"
+            android:textSize="@dimen/wallet_item_row_textsize"
             android:textColor="@color/wallet_points_color"
             android:gravity="end"/>
 
@@ -75,8 +75,8 @@
         android:id="@+id/btn_exchange"
         android:layout_below="@+id/wallet_msg_container"
         android:layout_width="match_parent"
-        android:textSize="@dimen/wallet_txt_size"
-        android:layout_height="@dimen/wallet_button_height"
+        android:textSize="@dimen/wallet_item_row_exchange_size"
+        android:layout_height="@dimen/wallet_item_row_exchange_btn_height"
         android:background="@color/wallet_lppoints_color"
         android:textColor="@android:color/white"
         android:textAllCaps="false"

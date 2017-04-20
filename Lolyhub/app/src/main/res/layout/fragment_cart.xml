@@ -16,11 +16,11 @@
     <Button
         android:id="@+id/bottomLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/bottom_button_height"
         android:layout_toLeftOf="@+id/rightText"
         android:textAllCaps="false"
         android:textStyle="bold"
-        android:textSize="@dimen/textSize"
+        android:textSize="@dimen/bottom_button_textsize"
         android:background="@color/wishlist_button_color"
         android:textColor="@android:color/white"
         android:gravity="center"

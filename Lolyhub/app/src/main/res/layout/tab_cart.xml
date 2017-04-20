@@ -2,23 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="wrap_content"
     android:layout_height="wrap_content">
-    <TextView
+    <ImageView
         android:id="@+id/toolbar_wallet_Id"
-        android:layout_height="30dp"
         android:layout_width="30dp"
-        android:text="454"
-        android:textColor="#fff"
+        android:layout_height="30dp"
         android:layout_centerHorizontal="true"
-        android:textSize="@dimen/heading_text_size"
-        android:background="@drawable/cart_circular"
-        android:gravity="center_vertical|center_horizontal"
+        android:src="@drawable/cart_img"
         />
     <TextView
         android:layout_below="@id/toolbar_wallet_Id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="@string/cart"
         android:textStyle="bold"
-        android:textSize="@dimen/heading_text_size"/>
+        android:textSize="@dimen/heading_text_size"
+        android:text="@string/cart"/>
 </RelativeLayout>

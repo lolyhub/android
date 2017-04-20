@@ -7,48 +7,69 @@
         android:id="@+id/title_header_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:weightSum="4"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/wallet_listitem_topviewtext"
+            android:layout_weight="1"
             android:text="@string/program"
-            android:textSize="@dimen/textSize"
-            android:layout_marginLeft="@dimen/marginTwenty"
-            android:padding="@dimen/marginTwenty"
-            android:textStyle="bold"
             />
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/wallet_listitem_topviewtext"
             android:text="@string/txtpoints"
-            android:layout_marginLeft="@dimen/marginTen"
-            android:padding="@dimen/marginTwenty"
-            android:textSize="@dimen/textSize"
-            android:textStyle="bold"
+            android:layout_weight="1"
             />
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/wallet_listitem_topviewtext"
             android:text="@string/LP"
-            android:padding="@dimen/marginTwenty"
-            android:textSize="@dimen/textSize"
-            android:textStyle="bold"
+            android:layout_weight="1"
             />
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:padding="@dimen/marginTwenty"
+            style="@style/wallet_listitem_topviewtext"
             android:text="@string/wallet_exchangetxt"
-            android:textSize="@dimen/textSize"
-            android:textStyle="bold"
+            android:layout_weight="1"
             />
     </LinearLayout>
     <ExpandableListView
         android:id="@+id/expandableListView"
         android:layout_below="@+id/title_header_container"
+        android:layout_above="@+id/bottomLayout"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
         android:divider="@android:color/darker_gray"
         android:dividerHeight="0.5dp" />
+    <RelativeLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:padding="@dimen/wallet_txt_padding"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/wallet_program_bottomView">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/wallet_txt_size"
+            android:textColor="@android:color/black"
+            android:text="@string/wallet_totallp_txt"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textSize="@dimen/wallet_txt_size"
+            android:layout_marginRight="60dp"
+            android:text="@string/wallet_LP_points"
+            android:textColor="@color/wallet_lppoints_color"/>
+    </RelativeLayout>
+    <Button
+        android:id="@+id/wallet_program_bottomView"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_button_height"
+        android:textAllCaps="false"
+        android:text="@string/wallet_addprgram_txt"
+        android:textSize="@dimen/bottom_button_textsize"
+        android:textColor="@android:color/white"
+        android:background="@color/wallet_addprogram_color"
+        />
 
 </RelativeLayout>

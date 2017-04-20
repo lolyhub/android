@@ -9,7 +9,6 @@ import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.utilities.CommonUtils;
@@ -18,11 +17,24 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import static com.lolyhub.lolyhubapp.R.id.textView;
+
 public class WalletExpandableListAdapter extends BaseExpandableListAdapter {
 
     private Context context;
     private List<String> expandableListTitle;
     private HashMap<String, List<String>> expandableListDetail;
+
+    public static class GroupViewHolder{
+       public LinearLayout wallet_cancelLayout;
+        public  ImageView imageView;
+        public TextView pointsTextView;
+        public  TextView lpPointsTextView;
+        public LinearLayout plusLayout;
+    }
+    public static class ChildViewHolder{
+
+    }
     public WalletExpandableListAdapter(Context context){
         this.context=context;
     }
@@ -89,16 +101,24 @@ public class WalletExpandableListAdapter extends BaseExpandableListAdapter {
     public View getGroupView(final int listPosition, final boolean isExpanded,
                              View convertView, final ViewGroup parent) {
         String listTitle = (String) getGroup(listPosition);
+        GroupViewHolder groupViewHolder;
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) this.context.
                     getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = layoutInflater.inflate(R.layout.item_wallet_header_row, null);
+            convertView = layoutInflater.inflate(R.layout.item_wallet_header_rows, null);
+             groupViewHolder=new GroupViewHolder();
+            groupViewHolder.imageView= (ImageView) convertView.findViewById(R.id.wallet_item_img_id);
+            groupViewHolder.wallet_cancelLayout= (LinearLayout) convertView.findViewById(R.id.wallet_cancel_layout);
+            groupViewHolder.plusLayout= (LinearLayout) convertView.findViewById(R.id.wallet_plus_container);
+            groupViewHolder.pointsTextView= (TextView) convertView.findViewById(R.id.wallet_header_points_id);
+            groupViewHolder.lpPointsTextView= (TextView) convertView.findViewById(R.id.wallet_header_lppoints_id);
+
+            convertView.setTag(groupViewHolder);
+        }else{
+            groupViewHolder= (GroupViewHolder) convertView.getTag();
         }
-        final LinearLayout cancelLayout= (LinearLayout) convertView.findViewById(R.id.item_cancel_layout);
-        final LinearLayout parentLayout= (LinearLayout) convertView.findViewById(R.id.listContainer_id);
-        final ImageView headerImage= (ImageView) convertView.findViewById(R.id.header_img_id);
-        LinearLayout textView= (LinearLayout) convertView.findViewById(R.id.wallet_plus_container);
-        cancelLayout.setOnClickListener(new View.OnClickListener() {
+
+        groupViewHolder.wallet_cancelLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ArrayList<Integer> stringObj=new ArrayList<Integer>();
@@ -106,29 +126,17 @@ public class WalletExpandableListAdapter extends BaseExpandableListAdapter {
                 notifyDataSetInvalidated();
             }
         });
-        textView.setOnClickListener(new View.OnClickListener() {
+        groupViewHolder.plusLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             //   Toast.makeText(context, "clicked on plus", Toast.LENGTH_SHORT).show();
                 if(isExpanded) {
                     ((ExpandableListView) parent).collapseGroup(listPosition);
-                    cancelLayout.setVisibility(View.GONE);
-                    ViewGroup.MarginLayoutParams params =
-                            (ViewGroup.MarginLayoutParams)headerImage.getLayoutParams();
-                    params.setMargins(0,0,0,0);
-                    headerImage.setLayoutParams(params);
-                    headerImage.requestLayout();
                 }
                 else
                 {
                     ((ExpandableListView) parent).expandGroup(listPosition, true);
-                    cancelLayout.setVisibility(View.VISIBLE);
-                    ViewGroup.MarginLayoutParams params =
-                            (ViewGroup.MarginLayoutParams)headerImage.getLayoutParams();
-                    params.setMargins(-50,0,0,0);
-                    headerImage.setLayoutParams(params);
-                    headerImage.requestLayout();
                 }
+
             }
         });
 
@@ -136,6 +144,9 @@ public class WalletExpandableListAdapter extends BaseExpandableListAdapter {
                 .findViewById(R.id.listTitle);
         listTitleTextView.setTypeface(null, Typeface.BOLD);
         listTitleTextView.setText(listTitle);*/
+
+
+
         return convertView;
     }
 
