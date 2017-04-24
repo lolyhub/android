@@ -1,6 +1,7 @@
 package com.neosoft.lolyhub.lolyhubapp.view.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -22,10 +23,10 @@ import android.widget.Toast;
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.constants.CommonConstant;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CardAdapter;
-import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CartNavigationAdpater;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CartSwipeToDeleteAdapter;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.NavigationListingAdapter;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.Pager;
+import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.ProductScreenAdapter;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.SwipeToDeleteAdapter;
 import com.neosoft.lolyhub.lolyhubapp.controllers.interfaces.NetworkReceiver;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.Countries;
@@ -51,7 +52,7 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
     private View searchView,walletView,wishlistView,cartView,homeView;
     @BindView(R.id.navigation_item_list)  RecyclerView mNavigationRecyclerView;
     private NavigationListingAdapter mNavigationAdapterListing;
-    private CartNavigationAdpater mCartNavigationAdapter;
+
     @BindView(R.id.drawer_layout)  DrawerLayout drawer;
     private ArrayList<Object> items = new ArrayList<>();
     private SwipeToDeleteAdapter mSwipeAdapter;
@@ -137,6 +138,9 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver, 
                 ArrayList<String> list=new ArrayList<String>();
                 for (int i=0;i<2;i++){
                     list.add("objects");
+                }
+                if (tab.getPosition()==1){
+                    startActivity(new Intent(HomeActivity.this, ProductActivity.class));
                 }
                 /*if (tab.getPosition()==3){
                     mSwipeAdapter=new SwipeToDeleteAdapter(HomeActivity.this,list);

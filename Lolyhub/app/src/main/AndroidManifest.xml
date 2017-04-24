@@ -37,6 +37,8 @@
         </activity>-->
         <activity android:name="com.neosoft.lolyhub.lolyhubapp.view.activities.WishlistActivity"
             android:theme="@style/Theme.AppCompat.Translucent"/>
+        <activity android:name="com.neosoft.lolyhub.lolyhubapp.view.activities.ProductActivity"
+            android:theme="@style/AppTheme"/>
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
         android:value="@string/facebook_app_id" />

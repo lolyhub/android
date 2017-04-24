@@ -128,4 +128,13 @@
     <string name="alert_wallet_cancel">Cancel</string>
     <string name="wallet_addprgram_txt">Add Program</string>
     <string name="wallet_totallp_txt">Total LP</string>
+
+    <!--wallet alert placeholders-->
+    <string name="productdetails_listitemhorizontal_titletxt">Your fitness choice, 3 months VIP subscription in body masters all VIP branches for men only this offer will be valid till 30/12/2017 </string>
+    <string name="productdetails_listitemhorizontal_redeemfor">Redeem for</string>
+    <string name="productdetails_listitemhorizontal_earning">Earning</string>
+    <string name="productdetails_listitemhorizontal_redeemLP">2833 LP</string>
+    <string name="productdetails_listitemhorizontal_earningLP">2833 + LP</string>
+    <string name="productdetails_listitemhorizontal_cart">CART</string>
+    <string name="productdetails_listitemhorizontal_wislist">WISHLIST</string>
 </resources>
