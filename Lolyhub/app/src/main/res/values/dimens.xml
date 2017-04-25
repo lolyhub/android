@@ -92,16 +92,19 @@
     <dimen name="cart_plusbutton_text_size">12sp</dimen>
 
     <!--product details sizes-->
-    <dimen name="productscreen_listswitch_size">40dp</dimen>
+    <dimen name="productscreen_listswitch_size">25dp</dimen>
     <dimen name="productscreen_listview_margintop">10dp</dimen>
     <dimen name="productscreen_itemhorizontal_imghight">180dp</dimen>
-    <dimen name="productscreen_padding">16dp</dimen>
-    <dimen name="productscreen_listview_textsize">14sp</dimen>
+    <dimen name="productscreen_padding">10dp</dimen>
+    <dimen name="productscreen_listview_textsize">12sp</dimen>
     <dimen name="productscreen_listviewhorizontal_marginleft">20dp</dimen>
     <dimen name="productscreen_listviewhorizontal_radioleft">30dp</dimen>
     <dimen name="productscreen_listviewhorizontal_margintop">10dp</dimen>
     <dimen name="productscreen_listviewhorizontal_radiomarginleft">30dp</dimen>
-    <dimen name="productscreen_listviewhorizontal_textsize">15sp</dimen>
+    <dimen name="productscreen_listviewhorizontal_textsize">13sp</dimen>
+    <dimen name="product_toolbar_titletxtsize">18sp</dimen>
+    <dimen name="productscreen_listviewhorizontal_radioViewTop">10dp</dimen>
+    <dimen name="productscreen_listviewhorizontal_radiotextsize">10sp</dimen>
 
 
 

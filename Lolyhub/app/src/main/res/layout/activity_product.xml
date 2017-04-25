@@ -1,7 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.neosoft.lolyhub.lolyhubapp.view.activities.ProductActivity">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarlayoutid"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:theme="@style/AppTheme.AppBarOverlay">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/action_backbutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_action_backarrow"/>
+                <TextView
+                    android:id="@+id/action_titletxtid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/product_toolbar_titletxtsize"
+                    android:text="@string/product_toolbar_title"
+                    android:textColor="@color/product_title_color"
+                    android:layout_centerInParent="true"/>
+                <ImageView
+                    android:id="@+id/action_searchid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_action_search"
+                    android:layout_marginRight="@dimen/productscreen_listview_margintop"
+                    android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+
+            </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <include layout="@layout/content_product" />
+</android.support.design.widget.CoordinatorLayout>
+
+<!--
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:paddingTop="@dimen/activity_horizontal_margin"
     android:layout_height="match_parent">
 <ImageView
     android:id="@+id/switchbutton_id"
@@ -22,6 +78,5 @@
         android:layout_marginTop="@dimen/productscreen_listview_margintop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
     </android.support.v7.widget.RecyclerView>
-</RelativeLayout>
+</RelativeLayout>-->

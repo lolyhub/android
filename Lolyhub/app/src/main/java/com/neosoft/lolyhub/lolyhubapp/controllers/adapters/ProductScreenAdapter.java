@@ -1,6 +1,7 @@
 package com.neosoft.lolyhub.lolyhubapp.controllers.adapters;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.lolyhub.lolyhubapp.R;
@@ -63,6 +65,7 @@ public class ProductScreenAdapter extends RecyclerView.Adapter<ProductScreenAdap
             viewHolder.product_radioViewHorizontal.setVisibility(View.VISIBLE);
         }
 
+
         // v.setOnClickListener(HomeActivity.myOnClickListener);
 
         return viewHolder;
@@ -91,6 +94,7 @@ public class ProductScreenAdapter extends RecyclerView.Adapter<ProductScreenAdap
         public TextView product_wishlist;
         public LinearLayout product_radioview;
         public LinearLayout product_radioViewHorizontal;
+        public CardView product_container;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -102,6 +106,7 @@ public class ProductScreenAdapter extends RecyclerView.Adapter<ProductScreenAdap
             product_wishlist= (TextView) itemView.findViewById(R.id.product_item_wishlistradioid);
             product_radioview= (LinearLayout) itemView.findViewById(R.id.radioButtonConatiner);
             product_radioViewHorizontal= (LinearLayout) itemView.findViewById(R.id.radioButtonContainerHori);
+            product_container= (CardView) itemView.findViewById(R.id.product_container);
         }
     }
 }

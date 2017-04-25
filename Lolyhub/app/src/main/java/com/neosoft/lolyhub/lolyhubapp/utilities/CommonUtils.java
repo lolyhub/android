@@ -71,14 +71,14 @@ public class CommonUtils  {
         // it show the dialog box
         dialog.show();
     }
-    public  static void initDrawer(Activity activity){
+   /* public  static void initDrawer(Activity activity){
         DrawerLayout drawer = (DrawerLayout) activity.findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 activity, drawer, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-    }
+    }*/
 
     public static void gainFocus(Context mContext,EditText mEditText ){
     //  mEditText.requestFocus();

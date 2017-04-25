@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.neosoft.lolyhub.lolyhubapp.view.activities.ProductActivity">
+<item android:id="@+id/action_search"
+      android:title="search"
+      android:icon="@android:drawable/ic_menu_search"
+      android:orderInCategory="200"
+      app:showAsAction="always"
+      android:actionViewClass="android.support.v7.widget.SearchView"
+    />
+<item android:id="@+id/action_back"
+    android:title="back"
+    android:icon="@drawable/ic_action_backarrow"
+    android:orderInCategory="100"
+    app:showAsAction="always"
+    />
+</menu>

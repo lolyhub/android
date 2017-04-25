@@ -137,4 +137,5 @@
     <string name="productdetails_listitemhorizontal_earningLP">2833 + LP</string>
     <string name="productdetails_listitemhorizontal_cart">CART</string>
     <string name="productdetails_listitemhorizontal_wislist">WISHLIST</string>
+    <string name="product_toolbar_title">Watches</string>
 </resources>
