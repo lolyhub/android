@@ -20,7 +20,9 @@ android {
         }
     }
 }
-
+repositories {
+    mavenCentral()
+}
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -53,6 +55,7 @@ dependencies {
     compile 'org.greenrobot:eventbus:3.0.0'
 
     compile 'com.daimajia.swipelayout:library:1.2.0@aar'
+    compile 'fr.avianey.com.viewpagerindicator:library:2.4.1.1@aar'
 
 }
 apply plugin: 'com.google.gms.google-services'

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.neosoft.lolyhub.lolyhubapp.view.activities.ProductActivity">
+    tools:context="com.neosoft.lolyhub.lolyhubapp.view.activities.ProductDetailActivity">
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBarlayoutid"
         android:layout_height="wrap_content"
@@ -57,37 +57,7 @@
 
             </RelativeLayout>
 
-            </android.support.v7.widget.Toolbar>
+        </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
-    <include layout="@layout/content_product" />
+    <include layout="@layout/content_layout_productdetail" />
 </android.support.design.widget.CoordinatorLayout>
-
-<!--
-
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:paddingTop="@dimen/activity_horizontal_margin"
-    android:layout_height="match_parent">
-<ImageView
-    android:id="@+id/switchbutton_id"
-    android:layout_width="@dimen/productscreen_listswitch_size"
-    android:layout_height="@dimen/productscreen_listswitch_size"
-    android:src="@drawable/filter"
-    />
-    <ImageView
-        android:id="@+id/filter_id"
-        android:layout_width="@dimen/productscreen_listswitch_size"
-        android:layout_height="@dimen/productscreen_listswitch_size"
-        android:src="@drawable/sort"
-        android:layout_alignParentRight="true"
-        />
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/productdetail_listview"
-        android:layout_below="@+id/filter_id"
-        android:layout_marginTop="@dimen/productscreen_listview_margintop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </android.support.v7.widget.RecyclerView>
-</RelativeLayout>-->

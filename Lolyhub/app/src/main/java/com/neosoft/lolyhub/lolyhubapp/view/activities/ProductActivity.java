@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -44,6 +45,7 @@ public class ProductActivity extends AppCompatActivity {
     }
     private void initViews(){
         mProductListview= (RecyclerView) findViewById(R.id.productdetail_listview);
+        mSearchView.setVisibility(View.VISIBLE);
     }
     private void initProductAdapter(){
         productScreenAdapter=new ProductScreenAdapter(this,false);
@@ -59,7 +61,6 @@ public class ProductActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.product_menu,menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id=item.getItemId();

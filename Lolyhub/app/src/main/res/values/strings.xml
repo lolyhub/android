@@ -138,4 +138,16 @@
     <string name="productdetails_listitemhorizontal_cart">CART</string>
     <string name="productdetails_listitemhorizontal_wislist">WISHLIST</string>
     <string name="product_toolbar_title">Watches</string>
+
+    <!--product detail placeholders-->
+    <string name="productdetail_producttitle">Hublot Ferrari Luxury Watch</string>
+    <string name="productdetail_productvalue">Product value</string>
+    <string name="productdetail_productsarvalue">20,0000 SAR</string>
+    <string name="productdetail_productstock">24 Vouhers in stock</string>
+    <string name="productdetail_productdescription">Descriptions:</string>
+    <string name="productdetail_productterms">Terms &amp; Conditions</string>
+    <string name="productdetail_productlocation">Location:</string>
+    <string name="productdetail_detail_txt">Hublot has created limited edition ferrari watch that costs more than most of the actual cars.Hublot has created limited edition ferrari watch that costs more than most of the actual cars.Hublot has created limited edition ferrari watch that costs more than most of the actual cars.Hublot has created limited edition ferrari watch that costs more than most of the actual cars.Hublot has created limited edition ferrari watch that costs more than most of the actual cars.</string>
+    <string name="productdetail_redeem">REDEEM</string>
+
 </resources>

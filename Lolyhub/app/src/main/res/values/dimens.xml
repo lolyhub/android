@@ -91,7 +91,7 @@
     <dimen name="cart_plus_button_topmargin">7dp</dimen>
     <dimen name="cart_plusbutton_text_size">12sp</dimen>
 
-    <!--product details sizes-->
+    <!--product page sizes-->
     <dimen name="productscreen_listswitch_size">25dp</dimen>
     <dimen name="productscreen_listview_margintop">10dp</dimen>
     <dimen name="productscreen_itemhorizontal_imghight">180dp</dimen>
@@ -105,6 +105,14 @@
     <dimen name="product_toolbar_titletxtsize">18sp</dimen>
     <dimen name="productscreen_listviewhorizontal_radioViewTop">10dp</dimen>
     <dimen name="productscreen_listviewhorizontal_radiotextsize">10sp</dimen>
+
+    <!--product details sizes-->
+    <dimen name="productdetail_viewpager_size">300dp</dimen>
+    <dimen name="productdetail_radioviews_margin">40dp</dimen>
+    <dimen name="productdetail_titlecontainer_topmargin">5dp</dimen>
+    <dimen name="productdetail_titleview_textsize">15sp</dimen>
+    <dimen name="productdetail_titleview_padding">10dp</dimen>
+    <dimen name="productdetail_titleview_text_width">100dp</dimen>
 
 
 

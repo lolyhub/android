@@ -15,9 +15,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true">
         <activity
-            android:name="com.neosoft.lolyhub.lolyhubapp.view.activities.HomeActivity"
+            android:name="com.neosoft.lolyhub.lolyhubapp.view.activities.ProductDetailActivity"
             android:label="@string/app_name"
-            android:theme="@style/NoActionBar">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
