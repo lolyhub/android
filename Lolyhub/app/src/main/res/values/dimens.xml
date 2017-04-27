@@ -105,6 +105,9 @@
     <dimen name="product_toolbar_titletxtsize">18sp</dimen>
     <dimen name="productscreen_listviewhorizontal_radioViewTop">10dp</dimen>
     <dimen name="productscreen_listviewhorizontal_radiotextsize">10sp</dimen>
+    <dimen name="productscreen_redeem_width">80dp</dimen>
+    <dimen name="productscreen_verticalradio_padding">5dp</dimen>
+    <dimen name="productscreen_vertical_radioview_margintop">20dp</dimen>
 
     <!--product details sizes-->
     <dimen name="productdetail_viewpager_size">300dp</dimen>

@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.ProductScreenAdapter;
 import com.neosoft.lolyhub.lolyhubapp.utilities.GridSpacingItemDecoration;
+import com.neosoft.lolyhub.lolyhubapp.utilities.Utilities;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,12 +30,16 @@ import retrofit2.http.Query;
 
 public class ProductActivity extends AppCompatActivity {
     private ProductScreenAdapter productScreenAdapter;
+    private ProductScreenAdapter productScreenAdapterVertical;
     private RecyclerView mProductListview;
+    private boolean isSwitchMode=false;
     @BindView(R.id.toolbar)Toolbar mToolBar;
     @BindView(R.id.action_backbutton)ImageView mBackButton;
     @BindView(R.id.action_searchid)ImageView mSearchView;
     @BindView(R.id.action_titletxtid)TextView mToolbarTitle;
-
+    @BindView(R.id.switchbutton_id)ImageView mListSwitchTab;
+    @BindView(R.id.filter_id)ImageView mFilterTab;
+    private Utilities utilities;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +51,7 @@ public class ProductActivity extends AppCompatActivity {
     private void initViews(){
         mProductListview= (RecyclerView) findViewById(R.id.productdetail_listview);
         mSearchView.setVisibility(View.VISIBLE);
+        utilities=new Utilities(ProductActivity.this);
     }
     private void initProductAdapter(){
         productScreenAdapter=new ProductScreenAdapter(this,false);
@@ -56,6 +62,17 @@ public class ProductActivity extends AppCompatActivity {
 @OnClick(R.id.action_backbutton)void backArrowPress(){
     this.finish();
 }
+@OnClick(R.id.switchbutton_id)void switchList(){
+    if (!isSwitchMode){
+        isSwitchMode=true;
+        productScreenAdapterVertical=new ProductScreenAdapter(ProductActivity.this,true);
+        utilities.setListMode(ProductActivity.this,productScreenAdapterVertical,mProductListview,1,isSwitchMode);
+    }else if (isSwitchMode){
+        isSwitchMode=false;
+        productScreenAdapter=new ProductScreenAdapter(ProductActivity.this,false);
+      utilities.setListMode(ProductActivity.this,productScreenAdapter,mProductListview,2,isSwitchMode);
+    }
+   }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.product_menu,menu);

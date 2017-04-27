@@ -61,8 +61,10 @@ public class ProductScreenAdapter extends RecyclerView.Adapter<ProductScreenAdap
 
         if (isVertical){
             viewHolder.product_radioview.setVisibility(View.VISIBLE);
-        }else{
+            viewHolder.product_radioViewHorizontal.setVisibility(View.GONE);
+        }else if(!isVertical){
             viewHolder.product_radioViewHorizontal.setVisibility(View.VISIBLE);
+            viewHolder.product_radioview.setVisibility(View.GONE);
         }
 
 

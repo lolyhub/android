@@ -37,7 +37,7 @@
             android:layout_marginLeft="@dimen/productscreen_listview_margintop">
             <TextView
                 android:id="@+id/list_redeemid"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/productscreen_redeem_width"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/productscreen_listviewhorizontal_textsize"
                 android:text="@string/productdetails_listitemhorizontal_redeemfor"/>
@@ -57,27 +57,51 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/productscreen_listviewhorizontal_radioleft"
+            android:layout_marginTop="@dimen/productscreen_listviewhorizontal_margintop"
             android:layout_below="@+id/imgTitleContainer"
-
-            android:orientation="vertical">
-            <RadioGroup
-                android:layout_width="match_parent"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
                 <RadioButton
                     android:id="@+id/product_item_cartradiotwo"
-                    style="@style/customTextVerticalView"
-                    android:text="@string/productdetails_listitemhorizontal_cart"
-                    android:buttonTint="@android:color/holo_red_dark"
+                    android:layout_width="wrap_content"
+                    android:textSize="@dimen/wishlist_item_small_textsize"
+                    android:background="@drawable/custumradio_button"
+                    android:button="@null"
+                    android:layout_height="wrap_content"
                     />
                 <RadioButton
                     android:id="@+id/product_item_wishlistradiotwo"
-                    android:text="@string/productdetails_listitemhorizontal_wislist"
-                    style="@style/customTextVerticalView"
-                    android:buttonTint="@android:color/holo_red_dark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/productscreen_listviewhorizontal_margintop"
+                    android:button="@null"
+                    android:textSize="@dimen/wishlist_item_small_textsize"
+                    android:background="@drawable/custumradio_button"
                     />
-            </RadioGroup>
+                </RadioGroup>
+            </LinearLayout>
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
+               <TextView
+                   style="@style/customTextVerticalView"
+                   android:layout_marginLeft="@dimen/productdetail_titlecontainer_topmargin"
+                   android:text="@string/cart"/>
 
+               <TextView
+                   style="@style/customTextVerticalView"
+                   android:layout_marginTop="@dimen/productscreen_listviewhorizontal_margintop"
+                   android:layout_marginLeft="@dimen/productdetail_titlecontainer_topmargin"
+                   android:text="@string/wishlist"/>
+           </LinearLayout>
 
         </LinearLayout>
         <LinearLayout
@@ -90,7 +114,7 @@
             android:layout_marginLeft="@dimen/productscreen_listview_margintop">
             <TextView
                 android:id="@+id/list_earningid"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/productscreen_redeem_width"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/productscreen_listviewhorizontal_textsize"
                 android:text="@string/productdetails_listitemhorizontal_earning"/>
@@ -99,11 +123,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/earningColor"
-                android:layout_marginLeft="@dimen/productscreen_listviewhorizontal_marginleft"
+                android:layout_marginLeft="@dimen/productscreen_listviewhorizontal_margintop"
                 android:textSize="@dimen/productscreen_listviewhorizontal_textsize"
                 android:text="@string/productdetails_listitemhorizontal_earningLP"/>
         </LinearLayout>
-
         <LinearLayout
             android:id="@+id/radioButtonContainerHori"
             android:visibility="gone"
@@ -111,6 +134,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/earningContainerId"
             android:layout_marginTop="@dimen/productscreen_listview_margintop"
+            android:layout_marginLeft="@dimen/productscreen_listview_margintop"
             android:layout_marginBottom="@dimen/productscreen_listview_margintop"
             android:orientation="horizontal">
             <RadioGroup
@@ -120,19 +144,28 @@
                 <RadioButton
                     android:id="@+id/product_item_cartradioid"
                     android:layout_width="wrap_content"
+                    android:textSize="@dimen/wishlist_item_small_textsize"
+                    android:background="@drawable/custumradio_button"
+                    android:button="@null"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/productscreen_listviewhorizontal_radiotextsize"
-                    android:text="@string/productdetails_listitemhorizontal_cart"
-                    android:buttonTint="@android:color/holo_red_dark"
                     />
+                <TextView
+                    style="@style/customTextVerticalView"
+                    android:layout_marginLeft="@dimen/productdetail_titlecontainer_topmargin"
+                    android:text="@string/cart"/>
                 <RadioButton
                     android:id="@+id/product_item_wishlistradioid"
-                    android:text="@string/productdetails_listitemhorizontal_wislist"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/productscreen_listviewhorizontal_radiotextsize"
-                    android:buttonTint="@android:color/holo_red_dark"
+                    android:button="@null"
+                    android:layout_marginLeft="@dimen/productdetail_radioviews_margin"
+                    android:textSize="@dimen/wishlist_item_small_textsize"
+                    android:background="@drawable/custumradio_button"
                     />
+                <TextView
+                    style="@style/customTextVerticalView"
+                    android:layout_marginLeft="@dimen/productdetail_titlecontainer_topmargin"
+                    android:text="@string/wishlist"/>
             </RadioGroup>
 
         </LinearLayout>

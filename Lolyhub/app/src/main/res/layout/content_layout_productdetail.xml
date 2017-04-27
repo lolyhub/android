@@ -36,6 +36,7 @@
         <Button
             android:id="@+id/productdetail_bottomView"
             android:layout_alignParentBottom="true"
+            android:layout_below="@+id/productdetail_location_container"
             android:layout_width="match_parent"
             android:layout_height="@dimen/bottom_button_height"
             android:textAllCaps="false"
@@ -110,6 +111,7 @@
                 android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/productdetail_titleview_padding"
                 android:layout_alignParentRight="true"
                 android:src="@drawable/up"/>
             <ImageView
@@ -117,6 +119,7 @@
                 android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/productdetail_titleview_padding"
                 android:layout_alignParentRight="true"
                 android:src="@drawable/down"/>
 
@@ -127,6 +130,7 @@
             android:layout_marginTop="@dimen/productdetail_titlecontainer_topmargin"
             android:layout_marginLeft="@dimen/productscreen_padding"
             android:layout_width="match_parent"
+            android:visibility="gone"
             android:layout_height="wrap_content">
             <LinearLayout
                 android:id="@+id/productdetail_redeempoints_container"
@@ -209,6 +213,7 @@
                 android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/productdetail_titleview_padding"
                 android:layout_alignParentRight="true"
                 android:src="@drawable/up"/>
             <ImageView
@@ -216,6 +221,7 @@
                 android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/productdetail_titleview_padding"
                 android:layout_alignParentRight="true"
                 android:src="@drawable/down"/>
         </RelativeLayout>
@@ -225,6 +231,7 @@
             android:layout_marginLeft="@dimen/productscreen_padding"
             android:layout_below="@+id/productdetail_description_container"
             style="@style/customTextVerticalView"
+            android:visibility="gone"
             android:text="@string/productdetail_detail_txt" />
         <RelativeLayout
             android:id="@+id/productdetail_terms_container"
@@ -246,6 +253,7 @@
                 android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/productdetail_titleview_padding"
                 android:layout_alignParentRight="true"
                 android:src="@drawable/up"/>
             <ImageView
@@ -253,6 +261,7 @@
                 android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/productdetail_titleview_padding"
                 android:layout_alignParentRight="true"
                 android:src="@drawable/down"/>
         </RelativeLayout>
@@ -262,6 +271,7 @@
             android:layout_marginLeft="@dimen/productscreen_padding"
             android:layout_below="@+id/productdetail_terms_container"
             style="@style/customTextVerticalView"
+            android:visibility="gone"
             android:text="@string/productdetail_detail_txt" />
         <RelativeLayout
             android:id="@+id/productdetail_location_container"
@@ -283,11 +293,13 @@
                 android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/productdetail_titleview_padding"
                 android:layout_alignParentRight="true"
                 android:src="@drawable/up"/>
             <ImageView
                 android:id="@+id/productdetail_location_arrowdown"
                 android:visibility="gone"
+                android:padding="@dimen/productdetail_titleview_padding"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -295,6 +307,7 @@
         </RelativeLayout>
         <ImageView
             android:id="@+id/productdetail_locationImg_id"
+            android:visibility="gone"
             android:layout_marginTop="@dimen/productdetail_titlecontainer_topmargin"
             android:layout_below="@+id/productdetail_location_container"
             android:layout_marginLeft="@dimen/productscreen_padding"

@@ -12,6 +12,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -21,6 +23,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.lolyhub.lolyhubapp.R;
+import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.ProductScreenAdapter;
 
 import java.util.ArrayList;
 
@@ -71,15 +74,6 @@ public class CommonUtils  {
         // it show the dialog box
         dialog.show();
     }
-   /* public  static void initDrawer(Activity activity){
-        DrawerLayout drawer = (DrawerLayout) activity.findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                activity, drawer, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-    }*/
-
     public static void gainFocus(Context mContext,EditText mEditText ){
     //  mEditText.requestFocus();
        /* InputMethodManager imm = (InputMethodManager)mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -119,5 +113,6 @@ public class CommonUtils  {
         builder.getWindow().setLayout(width, height);
 
     }
+
 
 }
