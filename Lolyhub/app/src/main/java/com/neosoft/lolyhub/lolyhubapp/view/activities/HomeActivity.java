@@ -98,9 +98,7 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver{
                 for (int i=0;i<2;i++){
                     list.add("objects");
                 }
-                if (tab.getPosition()==1){
-                    startActivity(new Intent(HomeActivity.this, ProductActivity.class));
-                }
+
                 /*if (tab.getPosition()==3){
                     mSwipeAdapter=new SwipeToDeleteAdapter(HomeActivity.this,list);
                     mNavigationRecyclerView.setAdapter(mSwipeAdapter);

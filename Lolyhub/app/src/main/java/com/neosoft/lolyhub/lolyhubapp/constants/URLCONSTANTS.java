@@ -7,4 +7,5 @@ package com.neosoft.lolyhub.lolyhubapp.constants;
 public class URLCONSTANTS {
     public static  String BASE_URL="http://lolyhubmobile.azurewebsites.net";
     public static String LOGIN_URL="/Service1.svc/login";
+
 }

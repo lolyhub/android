@@ -7,8 +7,16 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ExpandableListView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.lolyhub.lolyhubapp.R;
+import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.SearchViewExpandableAdapter;
+import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.WalletExpandableListAdapter;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 
 /**
@@ -16,6 +24,12 @@ import com.lolyhub.lolyhubapp.R;
  */
 
 public class ShopeFragment extends Fragment {
+    private View mView;
+    private SearchViewExpandableAdapter mSearchViewAdapter;
+    @BindView(R.id.searchExpandable)ExpandableListView expandleList;
+    private ExpandableListView expandleListView;
+    @BindView(R.id.searchIcon)ImageView searchViewIcon;
+    @BindView(R.id.searchTxt)TextView searchTxt;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +39,18 @@ public class ShopeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_shope, container, false);
-    }
+        mView=inflater.inflate(R.layout.fragment_shope, container, false);
+        ButterKnife.bind(this,mView);
+        initViews(mView);
 
+        return mView;
+    }
+    private void initViews(View view){
+        expandleListView= (ExpandableListView) view.findViewById(R.id.searchExpandable);
+        mSearchViewAdapter=new SearchViewExpandableAdapter(getActivity());
+        expandleList.setAdapter(mSearchViewAdapter);
+
+    }
     @Override
     public void onPrepareOptionsMenu(Menu menu) {
         menu.findItem(R.id.menu_search).setVisible(true);

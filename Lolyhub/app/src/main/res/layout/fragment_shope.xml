@@ -1,12 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:layout_width="match_parent"
+    android:layout_marginTop="10dp"
     android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/searchViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        android:background="@drawable/border">
+        <ImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="40dp"
+            android:padding="5dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/search"/>
+        <EditText
+            android:id="@+id/searchTxt"
+            android:background="@null"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_toLeftOf="@+id/searchIcon"
+            android:textSize="@dimen/textSize"
+            android:hint="search txt"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/allcategoryTxt"
+        android:layout_below="@id/searchViewContainer"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:textSize="18sp"
+        android:text="All categories"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Search Fragment"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
-</LinearLayout>
+        android:layout_height="wrap_content" />
+    <ExpandableListView
+        android:id="@+id/searchExpandable"
+        android:layout_below="@+id/allcategoryTxt"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:groupIndicator="@null">
+
+    </ExpandableListView>
+
+
+</RelativeLayout>
