@@ -14,10 +14,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lolyhub.lolyhubapp.R;
+import com.neosoft.lolyhub.lolyhubapp.constants.CommonConstant;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CardAdapter;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.WishlistCustomAdapter;
+import com.neosoft.lolyhub.lolyhubapp.rest.model.responsepojo.CartResponse;
 import com.neosoft.lolyhub.lolyhubapp.utilities.GetterSetter;
 import com.neosoft.lolyhub.lolyhubapp.view.activities.WishlistActivity;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 
@@ -88,5 +94,28 @@ public class WishListFragment extends Fragment{
     public void onPrepareOptionsMenu(Menu menu) {
         menu.findItem(R.id.menu_search).setVisible(false);
         super.onPrepareOptionsMenu(menu);
+    }
+    @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
+    public void onGetWishlistReposne(CartResponse response){
+        if (response.getRequestType().equalsIgnoreCase(CommonConstant.ADDTOWISHLIST)){
+            //add to wishlist function
+        }else if (response.getRequestType().equalsIgnoreCase(CommonConstant.DELETEFROMWISHLIST)){
+            //delete from wishlist function
+        }else if(response.getRequestType().equalsIgnoreCase(CommonConstant.GETITEMWISHLIST)){
+            //get item from wishlist function
+        }
+    }
+
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
     }
 }

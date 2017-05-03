@@ -62,7 +62,9 @@ public class HomeActivity extends AppCompatActivity implements NetworkReceiver{
      floatingActionButton.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
-             setDialog();
+
+             //setDialog();
+             startActivity(new Intent(HomeActivity.this,SettingActivity.class));
          }
      });
  }

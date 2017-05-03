@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="60dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/white">
-    <RelativeLayout
+    <ScrollView
+        android:id="@+id/scrollId"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="@dimen/bottom_button_height"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <RelativeLayout
             android:id="@+id/productdetail_img_id"
             android:layout_width="match_parent"
@@ -32,19 +37,6 @@
                 app:snap="false"
                 />
         </RelativeLayout>
-
-        <Button
-            android:id="@+id/productdetail_bottomView"
-            android:layout_alignParentBottom="true"
-            android:layout_below="@+id/productdetail_location_container"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/bottom_button_height"
-            android:textAllCaps="false"
-            android:text="@string/productdetail_redeem"
-            android:textSize="@dimen/bottom_button_textsize"
-            android:textColor="@android:color/white"
-            android:background="@color/wallet_lppoints_color"
-            />
         <LinearLayout
             android:id="@+id/productdetail_radioView_id"
             android:layout_width="match_parent"
@@ -312,10 +304,22 @@
             android:layout_below="@+id/productdetail_location_container"
             android:layout_marginLeft="@dimen/productscreen_padding"
             android:layout_width="wrap_content"
-            android:layout_marginBottom="@dimen/bottom_button_height"
+
             android:layout_height="wrap_content"
             android:src="@drawable/foods"
             />
-    </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+    <Button
+        android:id="@+id/productdetail_bottomView"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_button_height"
+        android:textAllCaps="false"
+        android:text="@string/productdetail_redeem"
+        android:textSize="@dimen/bottom_button_textsize"
+        android:textColor="@android:color/white"
+        android:background="@color/wallet_lppoints_color"
+        />
 
-</ScrollView>
+</RelativeLayout>

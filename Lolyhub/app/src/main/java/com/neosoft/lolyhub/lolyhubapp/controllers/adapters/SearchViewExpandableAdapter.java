@@ -127,14 +127,14 @@ public class SearchViewExpandableAdapter extends BaseExpandableListAdapter {
             groupViewHolder= (SearchViewExpandableAdapter.GroupViewHolder) convertView.getTag();
         }
                 if(isExpanded) {
-                   groupViewHolder.headerUpArrow.setImageResource(R.drawable.up);
+                   groupViewHolder.headerUpArrow.setImageResource(R.drawable.plus);
                   //  ((ExpandableListView) parent).collapseGroup(listPosition);
                     groupViewHolder.headerDownAroow.setVisibility(View.GONE);
                     groupViewHolder.headerUpArrow.setVisibility(View.VISIBLE);
                 }
                 else
                 {
-                    groupViewHolder.headerDownAroow.setImageResource(R.drawable.down);
+                    groupViewHolder.headerDownAroow.setImageResource(R.drawable.minus);
                     groupViewHolder.headerDownAroow.setVisibility(View.VISIBLE);
                     groupViewHolder.headerUpArrow.setVisibility(View.GONE);
                     //((ExpandableListView) parent).expandGroup(listPosition, true);
@@ -144,14 +144,14 @@ public class SearchViewExpandableAdapter extends BaseExpandableListAdapter {
                     @Override
                     public void onClick(View v) {
                         if(isExpanded) {
-                            groupViewHolder.headerUpArrow.setImageResource(R.drawable.up);
+                            groupViewHolder.headerUpArrow.setImageResource(R.drawable.plus);
                             ((ExpandableListView) parent).collapseGroup(listPosition);
                             groupViewHolder.headerDownAroow.setVisibility(View.GONE);
                             groupViewHolder.headerUpArrow.setVisibility(View.VISIBLE);
                         }
                         else
                         {
-                            groupViewHolder.headerDownAroow.setImageResource(R.drawable.down);
+                            groupViewHolder.headerDownAroow.setImageResource(R.drawable.minus);
                             groupViewHolder.headerDownAroow.setVisibility(View.VISIBLE);
                             groupViewHolder.headerUpArrow.setVisibility(View.GONE);
                             ((ExpandableListView) parent).expandGroup(listPosition, true);

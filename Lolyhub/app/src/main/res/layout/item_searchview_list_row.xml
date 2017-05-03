@@ -11,5 +11,5 @@
         android:layout_marginLeft="20dp"
         android:layout_height="wrap_content"
         android:textSize="14sp"
-        android:text="subTitle"/>
+        android:text="Waatches"/>
 </LinearLayout>

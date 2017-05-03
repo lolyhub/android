@@ -1,6 +1,7 @@
 package com.neosoft.lolyhub.lolyhubapp.controllers.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.controllers.interfaces.ClickListener;
 import com.neosoft.lolyhub.lolyhubapp.rest.model.ProductViewModel;
+import com.neosoft.lolyhub.lolyhubapp.view.activities.ProductDetailActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,8 +70,6 @@ public class ProductScreenAdapter extends RecyclerView.Adapter<ProductScreenAdap
         }
 
 
-        // v.setOnClickListener(HomeActivity.myOnClickListener);
-
         return viewHolder;
     }
 
@@ -78,7 +78,13 @@ public class ProductScreenAdapter extends RecyclerView.Adapter<ProductScreenAdap
       /*  ProductViewModel result = mItems.get(i);
         viewHolder.txtView.setText(result.getTitle());*/
         //    viewHolder.imageViewmageView.setImageResource(result.getAlpha2_code());
-
+     viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+             Intent intent=new Intent(mContext, ProductDetailActivity.class);
+             mContext.startActivity(intent);
+         }
+     });
 
     }
 

@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -13,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.ProductScreenAdapter;
@@ -32,6 +34,9 @@ public class ProductActivity extends AppCompatActivity {
     private ProductScreenAdapter productScreenAdapter;
     private ProductScreenAdapter productScreenAdapterVertical;
     private RecyclerView mProductListview;
+    private SearchView searchViewMenu;
+    private MenuItem searchMenuItem;
+    private  SearchView.OnQueryTextListener listener;
     private boolean isSwitchMode=false;
     @BindView(R.id.toolbar)Toolbar mToolBar;
     @BindView(R.id.action_backbutton)ImageView mBackButton;
@@ -50,14 +55,27 @@ public class ProductActivity extends AppCompatActivity {
     }
     private void initViews(){
         mProductListview= (RecyclerView) findViewById(R.id.productdetail_listview);
-        mSearchView.setVisibility(View.VISIBLE);
+        //mSearchView.setVisibility(View.VISIBLE);
+        setSupportActionBar(mToolBar);
         utilities=new Utilities(ProductActivity.this);
+
     }
     private void initProductAdapter(){
         productScreenAdapter=new ProductScreenAdapter(this,false);
         mProductListview.setLayoutManager(new GridLayoutManager(this,2));
         mProductListview.setAdapter(productScreenAdapter);
         mProductListview.addItemDecoration(new GridSpacingItemDecoration(1,1,true));
+
+       listener= new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        };
     }
 @OnClick(R.id.action_backbutton)void backArrowPress(){
     this.finish();
@@ -75,7 +93,13 @@ public class ProductActivity extends AppCompatActivity {
    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.product_menu,menu);
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.search_menu, menu);
+        searchMenuItem = menu.findItem(R.id.action_search);
+        searchViewMenu = (SearchView) searchMenuItem.getActionView();
+        searchViewMenu.setOnQueryTextListener(listener);
+        ImageView searchClose = (ImageView) searchViewMenu.findViewById(android.support.v7.appcompat.R.id.search_close_btn);
+        searchClose.setImageResource(R.drawable.close);
         return true;
     }
     @Override

@@ -133,6 +133,9 @@ public class ProductDetailActivity extends AppCompatActivity {
         });
 
     }
+    @OnClick(R.id.action_backbutton)void showBackButton(){
+        ProductDetailActivity.this.finish();
+    }
     @OnClick(R.id.action_shareid)void shareData(){
         Toast.makeText(ProductDetailActivity.this, "want to share data?", Toast.LENGTH_SHORT).show();
     }

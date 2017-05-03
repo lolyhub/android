@@ -12,8 +12,15 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.lolyhub.lolyhubapp.R;
+import com.neosoft.lolyhub.lolyhubapp.constants.CommonConstant;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.CartCustomAdapter;
+import com.neosoft.lolyhub.lolyhubapp.rest.model.responsepojo.CartResponse;
+import com.neosoft.lolyhub.lolyhubapp.rest.model.responsepojo.UpdateCartResponse;
 import com.neosoft.lolyhub.lolyhubapp.utilities.GetterSetter;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 
@@ -33,7 +40,6 @@ public class CartFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
-
     }
     @Nullable
     @Override
@@ -66,6 +72,32 @@ public class CartFragment extends Fragment {
     public void onPrepareOptionsMenu(Menu menu) {
         menu.findItem(R.id.menu_search).setVisible(false);
         super.onPrepareOptionsMenu(menu);
+    }
+    @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
+    public void onGetCartReposne(CartResponse response){
+        if (response.getRequestType().equalsIgnoreCase(CommonConstant.ADDTOCART)){
+            //add to cart function
+        }else if (response.getRequestType().equalsIgnoreCase(CommonConstant.DELETEFROMCART)){
+            //delete from cart function
+        }else if(response.getRequestType().equalsIgnoreCase(CommonConstant.GETITEMCART)){
+            //get item from cart function
+        }
+    }
+
+    @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
+    public void onUpdateData(UpdateCartResponse response){
+
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
     }
 }
 
