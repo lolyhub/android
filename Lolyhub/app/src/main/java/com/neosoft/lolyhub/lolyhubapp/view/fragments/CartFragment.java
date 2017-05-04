@@ -67,7 +67,6 @@ public class CartFragment extends Fragment {
         mWishlistReclerview.setAdapter(mWishlistCustomAdapter);
 
     }
-
     @Override
     public void onPrepareOptionsMenu(Menu menu) {
         menu.findItem(R.id.menu_search).setVisible(false);
@@ -83,7 +82,6 @@ public class CartFragment extends Fragment {
             //get item from cart function
         }
     }
-
     @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
     public void onUpdateData(UpdateCartResponse response){
 
@@ -93,7 +91,6 @@ public class CartFragment extends Fragment {
         super.onPause();
         EventBus.getDefault().register(this);
     }
-
     @Override
     public void onStop() {
         super.onStop();

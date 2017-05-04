@@ -122,7 +122,7 @@ public class NetworkCall {
                 });
     }
 public void serviceCallCartWishlist(RestClient service, CartRequest cartRequest, final String name){
-            service.addToCart(cartRequest)
+             service.addToCart(cartRequest)
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(new Subscriber<CartResponse>() {

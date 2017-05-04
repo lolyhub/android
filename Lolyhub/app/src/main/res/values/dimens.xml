@@ -69,6 +69,10 @@
     <dimen name="wallet_item_row_exchange_size">15sp</dimen>
     <dimen name="wallet_item_row_exchange_btn_height">40dp</dimen>
 
+    <!--sign up screen sizes-->
+    <dimen name="signup_spacing_size">10dp</dimen>
+
+
     <!--wishlist screen sizes-->
     <dimen name="wishlist_itemimg_width">100dp</dimen>
     <dimen name="wishlist_itemimg_height">70dp</dimen>
@@ -116,6 +120,9 @@
     <dimen name="productdetail_titleview_textsize">15sp</dimen>
     <dimen name="productdetail_titleview_padding">10dp</dimen>
     <dimen name="productdetail_titleview_text_width">100dp</dimen>
+
+    <!--toggle screen sizes -->
+    <dimen name="toogle_options_spacing">10dp</dimen>
 
 
 

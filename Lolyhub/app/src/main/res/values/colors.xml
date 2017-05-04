@@ -16,8 +16,7 @@
     <color name="transperent">#ffffff</color>
     <color name="wishlist_button_color">#7AC24D</color>
     <color name="red">#D50000</color>
-    <color name="transparent">#80000000</color>
-
+    <color name="transparent">#CC000000</color>
     <color name="wallet_points_color">#0079C1</color>
     <color name="wallet_lppoints_color">#52D035</color>
     <color name="wallet_plusicon_color">#4D4D4D</color>

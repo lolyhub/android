@@ -21,162 +21,45 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_marginTop="@dimen/marginTwenty"
-            android:weightSum="2">
+             >
             <EditText
                 android:id="@+id/edit_firstName"
                 style="@style/CustomSignUpEdittext"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
                 android:hint="@string/firstname"/>
-            <View
-                android:layout_width="@dimen/marginTen"
-                android:layout_height="0dp"/>
-
             <EditText
                 android:id="@+id/edit_lastName"
+                android:layout_marginTop="@dimen/signup_spacing_size"
                 style="@style/CustomSignUpEdittext"
-                android:layout_weight="1"
-                android:hint="@string/lastname"/>
-
-        </LinearLayout>
-
-        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
+            android:hint="@string/lastname"/>
             <EditText
                 android:id="@+id/edit_email"
                 android:layout_marginTop="@dimen/marginTen"
                 style="@style/CustomSignUpEdittext"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
                 android:hint="@string/enterEmail"/>
-            <View
-                android:layout_width="@dimen/marginTen"
-                android:layout_height="0dp"/>
-
-            <EditText
-                android:id="@+id/edit_reEnterEmail"
-                android:layout_marginTop="@dimen/marginTen"
-                style="@style/CustomSignUpEdittext"
-                android:layout_weight="1"
-                android:hint="@string/reenterEmail"/>
-        </LinearLayout>
-        <EditText
-            android:id="@+id/edit_newUser"
-            style="@style/CustomSignUpEdittext"
-            android:layout_marginTop="@dimen/marginTen"
-            android:hint="@string/newUsername"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
             <EditText
                 android:id="@+id/edit_password"
                 android:layout_marginTop="@dimen/marginTen"
                 style="@style/CustomSignUpEdittext"
                 android:inputType="textPassword"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
                 android:hint="@string/password"/>
-            <View
-                android:layout_width="@dimen/marginTen"
-                android:layout_height="0dp"/>
-
             <EditText
-                android:id="@+id/edit_reEnterPassword"
+                android:id="@+id/edit_ReEnterPassword"
                 android:layout_marginTop="@dimen/marginTen"
                 style="@style/CustomSignUpEdittext"
                 android:inputType="textPassword"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
                 android:hint="@string/reenterPassword"/>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
-            <TextView
-                android:id="@+id/edit_birthDate"
-                android:layout_marginTop="@dimen/marginTen"
-                style="@style/CustomSignUpEdittext"
-                android:layout_weight="1"
-                android:hint="@string/BirthDate"/>
-            <View
-                android:layout_width="@dimen/marginTen"
-                android:layout_height="0dp"/>
-            <LinearLayout
-                android:id="@+id/genderLayout_ID"
-                style="@style/genderLayout"
-                android:orientation="horizontal"
-                android:layout_marginTop="@dimen/marginTen"
-                android:weightSum="2"
-                android:layout_weight="1">
-                <TextView
-                    android:id="@+id/male_id"
-                    style="@style/CustomSignUpEdittext"
-                    android:text="@string/male"
-                    android:layout_weight="1"/>
-                <TextView
-                    android:id="@+id/female_id"
-                    style="@style/CustomSignUpEdittext"
-                    android:background="@color/grey"
-                    android:text="@string/female"
-                    android:layout_weight="1"/>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
-            <Spinner
-                android:id="@+id/select_country"
-                android:layout_marginTop="@dimen/marginTen"
-                android:layout_marginBottom="@dimen/marginTen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-            </Spinner>
-            <View
-                android:layout_width="@dimen/marginTen"
-                android:layout_height="0dp"/>
-            <Spinner
-                android:id="@+id/select_city"
-                android:layout_marginTop="@dimen/marginTen"
-                android:layout_marginBottom="@dimen/marginTen"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"
-                android:layout_height="wrap_content">
 
-            </Spinner>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="@dimen/marginTen"
-            android:background="@drawable/round_editetxt">
-            <Spinner
-                android:id="@+id/select_codeCountry"
-                android:layout_marginTop="@dimen/marginTen"
-                android:layout_marginBottom="@dimen/marginTen"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content">
-            </Spinner>
 
-            <EditText
-                android:id="@+id/edit_phoneNumber"
-                android:inputType="number"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingBottom="10dp"
-                android:hint="@string/number"/>
-        </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -222,22 +105,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/marginTen"
             android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/toggle"
+                android:layout_width="@dimen/marginThirty"
+                android:layout_height="@dimen/height_togglebutton"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/textSize"
                 android:text="@string/subscribe"/>
-            <ToggleButton
-                android:id="@+id/toggle"
-                android:layout_width="@dimen/marginThirty"
-                android:layout_height="@dimen/height_togglebutton"
-                android:layout_marginLeft="@dimen/marginThirty"
-                android:layout_marginStart="@dimen/marginThirty"
-                android:background="@drawable/togglebuttoncheck"
-                android:textOn=""
-                android:textOff=""
-                android:focusable="false"
-                android:focusableInTouchMode="false" />
         </LinearLayout>
 
         <Button
@@ -262,23 +138,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/marginTwenty"
-            android:weightSum="3"
-            android:orientation="horizontal">
+            android:orientation="vertical">
             <ImageView
                 android:id="@+id/fbLogin_ID"
                 style="@style/SocialLoginButton"
-                android:layout_marginRight="@dimen/marginFive"
+                android:layout_width="match_parent"
                 android:src="@drawable/facbook"/>
             <ImageView
                 android:id="@+id/gplusLogin_ID"
+                android:layout_marginTop="@dimen/signup_spacing_size"
                 style="@style/SocialLoginButton"
-                android:layout_marginRight="@dimen/marginFive"
+                 android:layout_width="match_parent"
                 android:src="@drawable/gplus"/>
-            <ImageView
-                android:id="@+id/twitterLogin_ID"
-                style="@style/SocialLoginButton"
-                android:src="@drawable/twitter"/>
-
         </LinearLayout>
 
     </LinearLayout>

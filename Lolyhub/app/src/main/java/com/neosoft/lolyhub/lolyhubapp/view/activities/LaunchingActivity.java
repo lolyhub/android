@@ -17,7 +17,6 @@ import com.lolyhub.lolyhubapp.R;
 public class LaunchingActivity extends AppCompatActivity implements View.OnClickListener{
     private Button mSignUpLaunchingButton;
     private Button mSignInLaunchingButton;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +25,6 @@ public class LaunchingActivity extends AppCompatActivity implements View.OnClick
         mSignInLaunchingButton= (Button) findViewById(R.id.btnLoginLaunch);
         mSignUpLaunchingButton.setOnClickListener(this);
         mSignInLaunchingButton.setOnClickListener(this);
-
     }
 
     @Override
@@ -34,12 +32,9 @@ public class LaunchingActivity extends AppCompatActivity implements View.OnClick
         switch (view.getId()){
             case R.id.btnSignUpLaunch:
                 startActivity(new Intent(LaunchingActivity.this,SignUpActivity.class));
-
-
                 break;
             case R.id.btnLoginLaunch:
                 startActivity(new Intent(LaunchingActivity.this,LoginActivity.class));
-
                 break;
         }
 

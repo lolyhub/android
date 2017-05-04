@@ -10,7 +10,6 @@
         android:padding="10dp"
         android:textSize="16sp"
         android:text="HeaderTitle"/>
-
     <RelativeLayout
         android:id="@+id/search_icon_container"
         android:layout_width="50dp"
@@ -19,15 +18,15 @@
         <ImageView
             android:id="@+id/header_upImg"
             android:layout_width="match_parent"
-            android:padding="10dp"
-            android:visibility="gone"
+            android:padding="8dp"
+            android:visibility="visible"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:src="@drawable/plus"/>
         <ImageView
             android:id="@+id/header_downImg"
             android:layout_width="match_parent"
-            android:padding="10dp"
+            android:padding="8dp"
             android:visibility="gone"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
