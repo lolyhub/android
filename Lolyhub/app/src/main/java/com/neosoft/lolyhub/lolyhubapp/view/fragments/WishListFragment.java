@@ -71,7 +71,6 @@ public class WishListFragment extends Fragment{
         mWishlistReclerview= (RecyclerView)view.findViewById(R.id.wishlist_recyclerview);
         mWishlistReclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
         mWishlistReclerview.setAdapter(mWishlistCustomAdapter);
-
     }
     public class MyOnClickListener implements View.OnClickListener {
 

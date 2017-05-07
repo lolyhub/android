@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/activity_horizontal_margin"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/id_container"
+        android:layout_marginTop="@dimen/signup_spacing_size"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:id="@+id/id_programHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="@dimen/signin_padding"
+                android:text="Program History"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/id_orderHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="@dimen/signin_padding"
+                android:text="Order History"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/threeViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/order_margin_thirty"
+        android:layout_below="@+id/id_container"
+        android:background="@drawable/border"
+        android:weightSum="3"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/order_maargin"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Total vouchers redeemed"
+                />
+            <TextView
+                android:id="@+id/id_totalVouchersRedeem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="38"
+                />
+        </LinearLayout>
+        <View
+            android:layout_width="0.5dp"
+            android:background="@color/grey"
+            android:layout_height="match_parent"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/order_maargin"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Total LP Points redeemed"
+                />
+            <TextView
+                android:id="@+id/id_totalLPRedeem"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:text="7012 LP"
+                />
+        </LinearLayout>
+        <View
+            android:layout_width="0.5dp"
+            android:background="@color/grey"
+            android:layout_height="match_parent"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/order_maargin"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Total LP points Earned"
+                />
+            <TextView
+                android:id="@+id/id_totalLPEarn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="336 LP"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:id="@+id/id_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        android:layout_marginTop="@dimen/order_margin_thirty"
+        android:layout_below="@+id/threeViewContainer"/>
+        <TextView
+            android:id="@+id/id_searchBydate"
+            android:layout_below="@id/id_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/order_maargin"
+            android:text="Search By Date:"
+            />
+        <RelativeLayout
+            android:id="@+id/searchViewContainer"
+            android:layout_below="@id/id_searchBydate"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:background="@drawable/border">
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="40dp"
+                android:padding="5dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/calender"/>
+            <EditText
+                android:id="@+id/searchTxt"
+                android:background="@null"
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_toLeftOf="@+id/searchIcon"
+                android:textSize="@dimen/textSize"
+                android:hint="search txt"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/id_date"
+            android:layout_below="@+id/searchViewContainer"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:text="Friday 24 april 2017"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/order_listView"
+            android:layout_below="@id/id_date"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/order_maargin"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </RelativeLayout>
+</ScrollView>

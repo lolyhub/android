@@ -41,13 +41,7 @@ public class SearchViewExpandableAdapter extends BaseExpandableListAdapter {
     public SearchViewExpandableAdapter(Context context){
         this.context=context;
     }
-    /*  public WalletExpandableListAdapter(Context context, List<String> expandableListTitle,
-                                         HashMap<String, List<String>> expandableListDetail) {
-          this.context = context;
-          this.expandableListTitle = expandableListTitle;
-          this.expandableListDetail = expandableListDetail;
-      }
-  */
+
     @Override
     public Object getChild(int listPosition, int expandedListPosition) {
        /* return this.expandableListDetail.get(this.expandableListTitle.get(listPosition))

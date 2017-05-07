@@ -55,7 +55,7 @@
     </style>
 
     <style name="SocialLoginButton" parent="TextAppearance.AppCompat">
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/loginLogoutButtonSize</item>
         <item name="android:layout_weight">1</item>
         <item name="android:adjustViewBounds">true</item>
@@ -69,7 +69,7 @@
         <item name="android:textSize">@dimen/textSize</item>
         <item name="android:background">@drawable/round_editetxt</item>
         <item name="android:padding">@dimen/edit_Text_padding</item>
-        <item name="android:gravity">center</item>
+        <item name="android:gravity">left</item>
         <item name="android:maxLines">1</item>
         <item name="android:singleLine">true</item>
     </style>

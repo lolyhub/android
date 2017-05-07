@@ -24,4 +24,5 @@
     <color name="colorPrimaryTheme">#EDEDED</color>
     <color name="product_title_color">#666666</color>
     <color name="productdetail_titleview_color">#F9F9F9</color>
+    <color name="white">#ffffff</color>
 </resources>

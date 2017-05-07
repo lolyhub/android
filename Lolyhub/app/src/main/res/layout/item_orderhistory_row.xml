@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/product_container"
+    android:layout_margin="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="@dimen/productscreen_padding"
+        android:background="?attr/selectableItemBackground"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/id_orderImg"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:src="@drawable/logo"/>
+        <LinearLayout
+            android:id="@+id/container_list"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginLeft="@dimen/order_maargin"
+            android:layout_marginRight="@dimen/order_maargin"
+            android:layout_below="@+id/id_orderImg"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/custom_item_row_txtview"
+                    android:text="@string/order_number"/>
+                <TextView
+                    android:id="@+id/id_number"
+                    style="@style/custom_item_row_txtview"
+                    android:layout_marginLeft="@dimen/order_maargin"
+                    android:text="30"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/custom_item_row_txtview"
+                    android:text="@string/redeem_for"/>
+                <TextView
+                    android:id="@+id/id_redeemValue"
+                    style="@style/custom_item_row_txtview"
+                    android:textColor="@color/wallet_lppoints_color"
+                    android:layout_marginLeft="@dimen/order_maargin"
+                    android:text="167 LP"/>
+                <TextView
+                    style="@style/custom_item_row_txtview"
+                    android:layout_marginLeft="@dimen/order_maargin"
+                    android:text="@string/order_earning"/>
+                <TextView
+                    android:id="@+id/id_earningValue"
+                    style="@style/custom_item_row_txtview"
+                    android:textColor="@color/earningColor"
+                    android:layout_marginLeft="@dimen/order_maargin"
+                    android:text="@string/order_earning_value"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/custom_item_row_txtview"
+                    android:text="@string/redeem_date"/>
+                <TextView
+                    android:id="@+id/id_redeemDateValue"
+                    style="@style/custom_item_row_txtview"
+                    android:textColor="@color/wallet_points_color"
+                    android:layout_marginLeft="@dimen/order_maargin"
+                    android:text="@string/redeem_date_value"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/custom_item_row_txtview"
+                    android:text="@string/redeeem_time"/>
+                <TextView
+                    android:id="@+id/id_redeemTimeValue"
+                    style="@style/custom_item_row_txtview"
+                    android:textColor="@color/wallet_points_color"
+                    android:layout_marginLeft="@dimen/order_maargin"
+                    android:text="@string/redeeem_time_value"/>
+            </LinearLayout>
+        </LinearLayout>
+        <Button
+            android:id="@+id/id_viewVoucher"
+
+            android:layout_alignParentBottom="true"
+            android:background="@color/wallet_points_color"
+            android:text="View Voucher Detail"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

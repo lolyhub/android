@@ -19,6 +19,11 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
 
+    <!--placeholder for loginsignup  screen-->
+    <string name="signin">Sign In</string>
+    <string name="signup">Sign Up</string>
+    
+    
     <!--placeholder for login logout screens-->
 
     <string name="signIn">Sign In</string>
@@ -149,5 +154,16 @@
     <string name="productdetail_productlocation">Location:</string>
     <string name="productdetail_detail_txt">Hublot has created limited edition ferrari watch that costs more than most of the actual cars.Hublot has created limited edition ferrari watch that costs more than most of the actual cars.Hublot has created limited edition ferrari watch that costs more than most of the actual cars.Hublot has created limited edition ferrari watch that costs more than most of the actual cars.Hublot has created limited edition ferrari watch that costs more than most of the actual cars.</string>
     <string name="productdetail_redeem">REDEEM</string>
+    
+    <!--order history screen placeholders-->
+    <string name="order_number">number:</string>
+    <string name="redeem_for">redeem for:</string>
+    <string name="redeem_for_value">157 LP</string>
+    <string name="redeem_date">redeem date:</string>
+    <string name="redeem_date_value">15/2/2017</string>
+    <string name="redeeem_time">redeem time:</string>
+    <string name="redeeem_time_value">14:2 PM</string>
+    <string name="order_earning">earning:</string>
+    <string name="order_earning_value">+8 LP</string>
 
 </resources>

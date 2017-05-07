@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:padding="@dimen/registration_layout_margin"
+    android:padding="@dimen/activity_horizontal_margin"
     android:layout_height="match_parent">
     <ProgressBar
         android:id="@+id/login_progress_id"
@@ -12,24 +12,17 @@
         style="?android:attr/progressBarStyleLarge"
         android:layout_marginTop="@dimen/marginTwenty"
         android:layout_centerInParent="true"
-         />
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="@dimen/boldSizeText"
-            android:textStyle="bold"
-            android:text="@string/login"/>
         <EditText
             android:id="@+id/edit_userMobile"
             style="@style/CustomSignUpEdittext"
             android:hint="@string/usernameMobile"
-            android:layout_marginTop="@dimen/login_layaout_height"/>
+           />
         <EditText
             android:id="@+id/edit_userPassword"
             android:layout_marginTop="@dimen/marginTen"

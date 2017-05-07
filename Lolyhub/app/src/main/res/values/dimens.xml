@@ -124,6 +124,14 @@
     <!--toggle screen sizes -->
     <dimen name="toogle_options_spacing">10dp</dimen>
 
+    <!--loginsignup screen sizes -->
+    <dimen name="signin_padding">15dp</dimen>
+    <dimen name="loginbtn_margintop">10dp</dimen>
 
+    <!--orderhistory sizes-->
+    <dimen name="order_maargin">10dp</dimen>
+    <dimen name="order_txt_size">14sp</dimen>
+    <dimen name="order_margin_top">15dp</dimen>
+    <dimen name="order_margin_thirty">30dp</dimen>
 
 </resources>
