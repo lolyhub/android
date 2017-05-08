@@ -134,4 +134,16 @@
     <dimen name="order_margin_top">15dp</dimen>
     <dimen name="order_margin_thirty">30dp</dimen>
 
+    <!--addProgram page sizes-->
+    <dimen name="seachViewHeight">35dp</dimen>
+    <dimen name="seachViewImage_width">40dp</dimen>
+    <dimen name="addProgram_addprogramtxt_size">18sp</dimen>
+    <dimen name="addProgramImg_height">10dp</dimen>
+    <dimen name="addProgramImg_margintop">5dp</dimen>
+    <dimen name="addProgramLayout_height">200dp</dimen>
+    <dimen name="addProgramLayout_txt_size">14sp</dimen>
+    <dimen name="addProgramLayout_img_width">120dp</dimen>
+    <dimen name="addProgramLayout_img_height">100dp</dimen>
+    <dimen name="addPgram_buttonmargin_top">20dp</dimen>
+
 </resources>

@@ -37,7 +37,7 @@ public class ProductDetailActivity extends AppCompatActivity {
     private static final Integer[] IMAGES= {R.drawable.watches,R.drawable.foods,R.drawable.watches,R.drawable.cart_img};
     private ArrayList<Integer> ImagesArray = new ArrayList<Integer>();
     private CirclePageIndicator indicator;
-    @BindView(R.id.toolbar)Toolbar mToolBar;
+    @BindView(R.id.product_detail_toolbar)Toolbar mToolBar;
     @BindView(R.id.action_backbutton)ImageView mBackButton;
     @BindView(R.id.action_titletxtid)TextView mToolbarTitll;
     @BindView(R.id.action_shareid)ImageView mSharview;

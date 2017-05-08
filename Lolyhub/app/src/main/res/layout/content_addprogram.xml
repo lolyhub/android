@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_marginTop="@dimen/actionBarSize"
+    android:padding="@dimen/activity_horizontal_margin"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/searchViewContainer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/seachViewHeight"
+            android:orientation="horizontal"
+            android:background="@drawable/border">
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="@dimen/seachViewImage_width"
+                android:padding="5dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/search"/>
+            <EditText
+                android:id="@+id/searchTxt"
+                android:background="@null"
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_toLeftOf="@+id/searchIcon"
+                android:textSize="@dimen/textSize"
+                android:hint="search txt"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/addProgramContainer"
+            android:layout_below="@+id/searchViewContainer"
+            android:layout_marginTop="@dimen/addProgramImg_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/addProgram_addprogramtxt_size"
+                android:textStyle="bold"
+                android:text="AddProgram"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/addProgramImg_height"
+                android:layout_marginTop="@dimen/addProgramImg_margintop"
+                android:src="@drawable/color_band"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/addProgramLyout"
+            android:layout_below="@id/addProgramContainer"
+            android:layout_width="match_parent"
+            android:background="@drawable/border"
+            android:layout_height="@dimen/addProgramLayout_height"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/id_qitaftxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/addProgramLayout_txt_size"
+                android:layout_gravity="center"
+                android:text="Qitaf Program"/>
+            <ImageView
+                android:id="@+id/id_qitafImg"
+                android:layout_width="@dimen/addProgramLayout_img_width"
+                android:layout_height="@dimen/addProgramLayout_img_height"
+                android:src="@drawable/logo"
+                android:layout_gravity="center"/>
+            <Button
+                android:id="@+id/id_addProgramButton"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/addPgram_buttonmargin_top"
+                android:layout_height="@dimen/seachViewImage_width"
+                android:textAllCaps="false"
+                android:textSize="@dimen/addProgram_addprogramtxt_size"
+                android:textColor="@color/white"
+                android:background="@color/earningColor"
+                android:text="Add Prgram"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/registerContainer"
+            android:layout_below="@+id/addProgramLyout"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/addProgram_addprogramtxt_size"
+                android:textStyle="bold"
+                android:text="Registered Program"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/addProgramImg_height"
+                android:layout_marginTop="@dimen/addProgramImg_margintop"
+                android:src="@drawable/color_band"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/registerLyout"
+            android:layout_below="@id/registerContainer"
+            android:layout_marginTop="@dimen/addProgramImg_height"
+            android:layout_width="match_parent"
+            android:background="@drawable/border"
+            android:layout_height="@dimen/addProgramLayout_height"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/id_registerqitaftxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/addProgramLayout_txt_size"
+                android:layout_gravity="center"
+                android:text="Qitaf Program"/>
+            <ImageView
+                android:id="@+id/id_registerqitafImg"
+                android:layout_width="@dimen/addProgramLayout_img_width"
+                android:layout_height="@dimen/addProgramLayout_img_height"
+                android:src="@drawable/logo"
+                android:layout_gravity="center"/>
+            <Button
+                android:id="@+id/id_updateInfoButton"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/addPgram_buttonmargin_top"
+                android:layout_height="@dimen/seachViewImage_width"
+                android:textAllCaps="false"
+                android:textSize="@dimen/addProgram_addprogramtxt_size"
+                android:textColor="@color/white"
+                android:background="@color/blueColor"
+                android:text="Update and Information"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>

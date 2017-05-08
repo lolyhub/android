@@ -1,5 +1,6 @@
 package com.neosoft.lolyhub.lolyhubapp.view.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -38,10 +39,10 @@ public class SettingActivity extends AppCompatActivity {
 
     }
     @OnClick(R.id.adProgramTxt)void addProgramSetting(){
-
+        startActivity(new Intent(SettingActivity.this,AddProgramActivity.class));
     }
     @OnClick(R.id.orderhistoryTxt)void historySetting(){
-
+     startActivity(new Intent(SettingActivity.this,OrderHistoryActivity.class));
     }
     @OnClick(R.id.acountSettingTxt)void accountSettingting(){
 
