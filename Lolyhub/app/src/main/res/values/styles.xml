@@ -121,6 +121,10 @@
         <item name="android:padding">@dimen/wallet_topbar_marginleft</item>
         <item name="android:layout_marginLeft">@dimen/wallet_topbar_marginleft</item>
     </style>
-
+<style name="aboutusHeadingTxt" parent="TextAppearance.AppCompat">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:textSize">@dimen/heading_text_size</item>
+</style>
 
 </resources>

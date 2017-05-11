@@ -104,14 +104,13 @@ public class WishListFragment extends Fragment{
             //get item from wishlist function
         }
     }
-
-
     @Override
     public void onPause() {
         super.onPause();
-        EventBus.getDefault().register(this);
+        if (!EventBus.getDefault().isRegistered(this)){
+            EventBus.getDefault().register(this);
+        }
     }
-
     @Override
     public void onStop() {
         super.onStop();

@@ -15,7 +15,7 @@
         android:layout_below="@id/id_lolyLogo"
         android:layout_marginTop="@dimen/signup_spacing_size"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/login_btn_height"
         android:weightSum="2"
         android:orientation="horizontal">
         <RelativeLayout

@@ -18,6 +18,8 @@
     <dimen name="actionBarSize">56dp</dimen>
     <dimen name="login_layaout_height">40dp</dimen>
     <dimen name="textSize">14sp</dimen>
+    <dimen name="forgotpassword_padding">5dp</dimen>
+
     <dimen name="wishlist_cart_textsize">12sp</dimen>
 
     <dimen name="textSizeMarketPlace">18sp</dimen>
@@ -125,8 +127,9 @@
     <dimen name="toogle_options_spacing">10dp</dimen>
 
     <!--loginsignup screen sizes -->
-    <dimen name="signin_padding">15dp</dimen>
+    <dimen name="signin_padding">10dp</dimen>
     <dimen name="loginbtn_margintop">10dp</dimen>
+    <dimen name="login_btn_height">40dp</dimen>
 
     <!--orderhistory sizes-->
     <dimen name="order_maargin">10dp</dimen>
@@ -145,5 +148,26 @@
     <dimen name="addProgramLayout_img_width">120dp</dimen>
     <dimen name="addProgramLayout_img_height">100dp</dimen>
     <dimen name="addPgram_buttonmargin_top">20dp</dimen>
+
+    <!--about us page sizes-->
+    <dimen name="aboutus_headingtxt_size">16sp</dimen>
+    <dimen name="aboutus_headingndtitle_spacing">20dp</dimen>
+    <dimen name="aboutus_subtitle_size">16sp</dimen>
+    <dimen name="aboutus_img_height">10dp</dimen>
+
+    <!--contact  us page sizes-->
+    <dimen name="contactus_edittext_padding">8dp</dimen>
+    <dimen name="conatctus_edittext_margintop">10dp</dimen>
+    <dimen name="conatctus_msg_height">200dp</dimen>
+    <dimen name="conatactus_submitbtn_height">40dp</dimen>
+
+    <!--forgot page sizes-->
+    <dimen name="forgotpass_submit_height">40dp</dimen>
+    <dimen name="forgotpass_topmargin">10dp</dimen>
+
+    <!--password change page sizes-->
+    <dimen name="passwordchange_edittextpadding">10dp</dimen>
+    <dimen name="passwordchange_btn_height">40dp</dimen>
+    <dimen name="passwordchange_bnt_spacing">5dp</dimen>
 
 </resources>

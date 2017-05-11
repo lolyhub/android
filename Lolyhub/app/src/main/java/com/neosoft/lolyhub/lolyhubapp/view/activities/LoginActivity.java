@@ -81,8 +81,6 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
     private NetworkReceiver mReceiver;
     private ProgressBar mProgressBar;
   //twiiter login
-
-
     //facebook login
     @BindView(R.id.fbSignOut_signout) Button mFbSignOut;
 

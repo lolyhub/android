@@ -2,9 +2,12 @@ package com.neosoft.lolyhub.lolyhubapp.utilities;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 
+import com.lolyhub.lolyhubapp.R;
 import com.neosoft.lolyhub.lolyhubapp.controllers.adapters.ProductScreenAdapter;
 
 /**
@@ -22,4 +25,8 @@ public class Utilities  {
         mProductListview.setAdapter(productScreenAdapter);
     }
 
+    public void setToolbar(Activity activity,Toolbar toolbar){
+        toolbar.setTitle("Title");
+        toolbar.setTitleTextColor(ContextCompat.getColor(activity,android.R.color.black));
+    }
 }

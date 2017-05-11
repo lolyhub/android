@@ -35,9 +35,10 @@
     <string name="female">Female</string>
     <string name="usernameMobile">Enter your user name or Mobile</string>
     <string name="password">Password</string>
-    <string name="remember">Remember me</string>
+    <string name="remember">Remember Me</string>
     <string name="pressHere">Press Here</string>
     <string name="forgotpassword">Forgot your password?</string>
+
     <string name="firstname">First Name</string>
     <string name="lastname">Last Name</string>
     <string name="enterEmail">Email</string>
@@ -165,5 +166,26 @@
     <string name="redeeem_time_value">14:2 PM</string>
     <string name="order_earning">earning:</string>
     <string name="order_earning_value">+8 LP</string>
+    <!--about us screen placeholders-->
+<string name="wats_our_story">Whats out story ?</string>
+    <string name="story_txt">Lolyhub is building new trend in the Ecommerce world. Lolyhub is building new trend in the Ecommerce world. Lolyhub is building new trend in the Ecommerce world. Lolyhub is building new trend in the Ecommerce world. </string>
+    <string name="missing_oround">So what have we been missing around?</string>
+    <string name="missing_txt">We have brought together retailer and loyalty program provider into one platform where freeks like us can redeem and benefit from others availbale on our site.
+    We have brought together retailer and loyalty program provider into one platform where freeks like us can redeem and benefit from others availbale on our site.
+    We have brought together retailer and loyalty program provider into one platform where freeks like us can redeem and benefit from others availbale on our site.We have brought together retailer and loyalty program provider into one platform where freeks like us can redeem and benefit from others availbale on our site</string>
+    <!--contact  us screen placeholders-->
+    <string name="contactus_txt">Contact us</string>
+    <string name="contactus_help">How can we help?</string>
+    <string name="contactus_urname">Your name</string>
+    <string name="contactus_urEmail">Your Email</string>
+    <string name="contactus_urSubject">Your Subject</string>
+    <string name="contactus_urMessage">Your Message</string>
+    <string name="contactus_submit">Submit</string>
+    <string name="conatctus_byEmail">Contact us by email</string>
+    <string name="contactus_emailid">info@lolyhub.com</string>
+
+
+
+
 
 </resources>

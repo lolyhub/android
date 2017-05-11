@@ -41,7 +41,6 @@ public class ProductDetailActivity extends AppCompatActivity {
     @BindView(R.id.action_backbutton)ImageView mBackButton;
     @BindView(R.id.action_titletxtid)TextView mToolbarTitll;
     @BindView(R.id.action_shareid)ImageView mSharview;
-
     @BindView(R.id.productdetail_titleview_itemscontainer)RelativeLayout mProductDetail_TitleViewContainer;
     @BindView(R.id.productdetail_descriptiontxt_id)TextView mDescriptiontext;
     @BindView(R.id.productdetail_termstxt_id)TextView mTermsTxt;
@@ -55,9 +54,6 @@ public class ProductDetailActivity extends AppCompatActivity {
     @BindView(R.id.productdetail_terms_arrowdown)ImageView TermsDownArrow;
     @BindView(R.id.productdetail_location_arrowup)ImageView LocationUpArrow;
     @BindView(R.id.productdetail_location_arrowdown)ImageView LocationDownArrow;
-
-
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -26,32 +26,41 @@
         <EditText
             android:id="@+id/edit_userPassword"
             android:layout_marginTop="@dimen/marginTen"
+            android:inputType="textPassword"
             style="@style/CustomSignUpEdittext"
             android:hint="@string/password">
         </EditText>
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_marginTop="@dimen/marginTen"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/txt_forgotPass"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/blueColor"
-                android:textSize="@dimen/textSize"
-                android:text="@string/forgotpassword"/>
-            <TextView
-                android:id="@+id/txt_pressHere"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/blueColor"
-                android:textSize="@dimen/textSize"
-                android:layout_marginLeft="@dimen/marginTen"
-                android:layout_toRightOf="@id/txt_forgotPass"
-                android:text="@string/pressHere"
-                />
-        </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/paddingTen"
+                android:orientation="horizontal">
+                <CheckBox
+                    android:id="@+id/id_rememberChk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txt_forgotPass"
+                    android:layout_toRightOf="@id/id_rememberChk"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blueColor"
+                    android:textSize="@dimen/textSize"
+                    android:text="@string/remember"/>
+                <TextView
+                    android:id="@+id/txt_pressForgot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blueColor"
+                    android:padding="@dimen/forgotpassword_padding"
+                    android:textSize="@dimen/textSize"
+                    android:text="@string/forgotpassword"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    />
+            </RelativeLayout>
         <Button
             android:id="@+id/btn_login"
             android:layout_marginTop="@dimen/marginTwenty"

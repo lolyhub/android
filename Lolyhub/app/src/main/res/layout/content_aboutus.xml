@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_vertical_margin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/ourstoryContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            style="@style/aboutusHeadingTxt"
+            android:text="@string/wats_our_story"
+            android:textStyle="bold"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/aboutus_img_height"
+            android:src="@drawable/color_band"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/id_aboutus_detailtxt"
+        android:layout_below="@id/ourstoryContainer"
+        android:layout_marginTop="@dimen/aboutus_headingndtitle_spacing"
+       style="@style/aboutusHeadingTxt"
+        android:text="@string/story_txt"/>
+
+    <TextView
+        android:id="@+id/id_aboutus_missingtxt"
+        android:layout_below="@id/id_aboutus_detailtxt"
+        android:layout_marginTop="@dimen/aboutus_headingndtitle_spacing"
+        style="@style/aboutusHeadingTxt"
+        android:textStyle="bold"
+        android:text="@string/missing_oround"/>
+
+    <TextView
+        android:id="@+id/id_aboutus_missingdetailtxt"
+        android:layout_below="@id/id_aboutus_missingtxt"
+        android:layout_marginTop="@dimen/aboutus_headingndtitle_spacing"
+        style="@style/aboutusHeadingTxt"
+        android:text="@string/missing_txt"/>
+</RelativeLayout>

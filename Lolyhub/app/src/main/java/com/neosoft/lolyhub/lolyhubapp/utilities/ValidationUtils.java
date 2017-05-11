@@ -109,11 +109,11 @@ public class ValidationUtils {
         return false;
     }
 
-
-    public boolean isValidEmail(CharSequence email) {
-        if (!TextUtils.isEmpty(email)) {
-            return Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    public final static boolean isValidEmail(CharSequence target) {
+        if (target == null) {
+            return false;
+        } else {
+            return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
         }
-        return false;
     }
 }

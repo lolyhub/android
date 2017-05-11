@@ -32,9 +32,13 @@
         </activity>
         <activity android:name="com.neosoft.lolyhub.lolyhubapp.view.activities.CartActivity"
             android:theme="@style/Theme.AppCompat.Translucent"/>
-       <!-- <activity android:name="com.neosoft.lolyhub.lolyhubapp.view.activities.HomeActivity"
+      <!--  <activity android:name="com.neosoft.lolyhub.lolyhubapp.view.activities.HomeActivity"
             android:theme="@style/NoActionBar">
         </activity>-->
+         <activity android:name="com.neosoft.lolyhub.lolyhubapp.view.activities.ForgotPasswordActivity"
+            android:theme="@style/AppTheme">
+        </activity>
+
          <activity android:name="com.neosoft.lolyhub.lolyhubapp.view.activities.OrderHistoryActivity"
            android:theme="@style/AppTheme">
        </activity>
