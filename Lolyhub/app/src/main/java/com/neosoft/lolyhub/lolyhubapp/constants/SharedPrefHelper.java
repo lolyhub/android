@@ -21,6 +21,13 @@ public class SharedPrefHelper {
         editor.apply();
 
     }
+    public static void clearStringPref(Context context){
+        SharedPreferences setings=context.getSharedPreferences(PrefConstant.LoginPref,0);
+        SharedPreferences.Editor editor=setings.edit();
+        editor.clear();
+        editor.commit();
+
+    }
     /**
      * Get a string shared preference
      * @param key - Key to look up in shared preferences.

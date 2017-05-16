@@ -87,13 +87,15 @@
                 android:id="@+id/fbLogin_ID"
                 style="@style/SocialLoginButton"
                 android:layout_width="match_parent"
-                android:src="@drawable/facbook"/>
+                android:layout_height="@dimen/loginLogoutButtonSize"
+                android:src="@drawable/fb_signup"/>
             <ImageView
                 android:id="@+id/gplusLogin_ID"
                 style="@style/SocialLoginButton"
                 android:layout_marginTop="@dimen/loginbtn_margintop"
+                android:layout_height="@dimen/loginLogoutButtonSize"
                 android:layout_width="match_parent"
-                android:src="@drawable/gplus"/>
+                android:src="@drawable/google_signup"/>
 
         </LinearLayout>
 

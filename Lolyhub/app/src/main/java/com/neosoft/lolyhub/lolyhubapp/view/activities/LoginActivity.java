@@ -57,12 +57,9 @@ import java.util.Arrays;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
-
 /**
  * Created by neosoft on 9/1/17.
  */
-
 public class LoginActivity extends AppCompatActivity implements  GoogleApiClient.OnConnectionFailedListener{
     //views for login module
     @BindView(R.id.edit_userMobile) EditText mEdit_UserMobuile;
@@ -109,7 +106,7 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
         ButterKnife.bind(this);
         initFbCallBack();
 
-        mGoogleApiClient=((ApplicationUtil)getApplication()).getGoogleApiClient(LoginActivity.this,this);
+      //  mGoogleApiClient=((ApplicationUtil)getApplication()).getGoogleApiClient(LoginActivity.this,this);
         initValues();
     }
     private void initValues(){

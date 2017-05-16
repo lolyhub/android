@@ -10,6 +10,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Scope;
 import com.neosoft.lolyhub.lolyhubapp.utilities.TypefaceUtil;
 import com.neosoft.lolyhub.lolyhubapp.view.activities.LoginActivity;
+import com.neosoft.lolyhub.lolyhubapp.view.activities.LoginSignupActivity;
 
 /**
  * Created by neosoft on 29/12/16.
@@ -18,7 +19,7 @@ import com.neosoft.lolyhub.lolyhubapp.view.activities.LoginActivity;
 public class ApplicationUtil extends Application{
     private GoogleSignInOptions mSignInOptions;
     private GoogleApiClient mGoogleApiClient;
-    public LoginActivity activity;
+    public LoginSignupActivity activity;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -33,7 +34,7 @@ public class ApplicationUtil extends Application{
 
         return mSignInOptions;
     }
-    public GoogleApiClient getGoogleApiClient(LoginActivity activity, GoogleApiClient.OnConnectionFailedListener listener){
+    public GoogleApiClient getGoogleApiClient(LoginSignupActivity activity, GoogleApiClient.OnConnectionFailedListener listener){
         this.activity = activity;
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .enableAutoManage(this.activity, listener)

@@ -13,5 +13,8 @@ public class PrefConstant {
     public static String saveLogin="saveLogin";
     public static String USERNAME="saveUserName";
     public static String PASSWORD="savePassword";
+    public static String FACEBOOK_SIGNIN="faceboklogin";
+    public static String GOOGLE_SIGNIN="googlelogin";
+
 
 }
